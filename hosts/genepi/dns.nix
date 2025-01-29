@@ -1,9 +1,9 @@
 { config, ... }:
 {
-  # networking.firewall.interfaces."${config.services.tailscale.interfaceName}" = {
-  #   allowedTCPPorts = [ 53 ];
-  #   allowedUDPPorts = [ 53 ];
-  # };
+  networking.firewall.interfaces."${config.services.tailscale.interfaceName}" = {
+    allowedTCPPorts = [ 53 ];
+    allowedUDPPorts = [ 53 ];
+  };
 
   services.unbound = {
     enable = true;
