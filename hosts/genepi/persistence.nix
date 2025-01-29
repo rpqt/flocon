@@ -13,8 +13,8 @@
       "/etc/ssh/ssh_host_rsa_key.pub"
       "/etc/ssh/ssh_host_ed25519_key"
       "/etc/ssh/ssh_host_ed25519_key.pub"
-
-      "/var/lib/tailscaled.state"
+      # tailscale
+      "/var/lib/tailscale/tailscaled.state"
     ];
     users.rpqt = {
       directories = [ ];
