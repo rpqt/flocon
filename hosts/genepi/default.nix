@@ -1,0 +1,21 @@
+{
+  inputs,
+  ...
+}:
+{
+  imports = [
+    inputs.disko.nixosModules.disko
+    inputs.nixos-hardware.nixosModules.raspberry-pi-4
+    inputs.agenix.nixosModules.default
+    inputs.impermanence.nixosModules.impermanence
+    ./acme.nix
+    ./boot.nix
+    ./disk.nix
+    ./dns.nix
+    ./hardware.nix
+    ./monitoring.nix
+    ./network.nix
+    ./nginx.nix
+    ./persistence.nix
+  ];
+}
