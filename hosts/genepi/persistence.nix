@@ -4,6 +4,8 @@
     enable = true;
     directories = [
       "/var/lib/nixos"
+      "/var/lib/acme"
+      "/var/lib/prometheus2"
     ];
     files = [
       # so that systemd doesn't think each boot is the first
