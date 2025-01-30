@@ -3,5 +3,6 @@
 
   hosts = {
     genepi = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICQUzjid5mfMYginIUCVWTF7rWvWz0mUZBZsl5EhDIDl root@genepi";
+    storagebox = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIICf9svRenC/PLKIL9nk6K/pxQgoiFC41wTNvoIncOxs";
   };
 }

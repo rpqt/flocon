@@ -9,6 +9,7 @@
     inputs.agenix.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
     ./acme.nix
+    ./backup.nix
     ./boot.nix
     ./disk.nix
     ./dns.nix
