@@ -13,6 +13,7 @@
     ./boot.nix
     ./disk.nix
     ./dns.nix
+    ./freshrss.nix
     ./hardware.nix
     ./immich.nix
     ./monitoring.nix
