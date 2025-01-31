@@ -31,7 +31,7 @@
         # Raspberry Pi 4
         genepi = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs;
+            inherit inputs self;
             inherit (import ./parts) keys;
           };
           system = "aarch64-linux";
