@@ -7,6 +7,10 @@
       "/var/lib/acme"
       "/var/lib/prometheus2"
       "/var/lib/immich"
+      "/var/lib/redis-immich"
+      "/var/lib/postgresql"
+      "/var/lib/grafana"
+      "/var/lib/freshrss"
     ];
     files = [
       # so that systemd doesn't think each boot is the first
