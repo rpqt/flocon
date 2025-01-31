@@ -7,6 +7,7 @@
 let
   storagebox-user = "u422292-sub1";
   storagebox-host = "${storagebox-user}.your-storagebox.de";
+  storagebox-nightly-backup-name = "storagebox-nightly";
 in
 {
   environment.systemPackages = [
@@ -20,27 +21,52 @@ in
     "${storagebox-host}".publicKey = keys.hosts.storagebox-rsa;
   };
 
-  services.restic.backups = {
-    storagebox-nightly = {
-      initialize = true;
-      paths = [
-        "/persist"
-      ];
-      passwordFile = config.age.secrets.restic-genepi-storagebox-key.path;
-      repository = "sftp://${storagebox-user}@${storagebox-host}/";
-      extraOptions = [
-        "sftp.command='${pkgs.sshpass}/bin/sshpass -f ${config.age.secrets.restic-genepi-storagebox-password.path} -- ssh ${storagebox-host} -l ${storagebox-user} -s sftp'"
-      ];
-      timerConfig = {
-        OnCalendar = "03:00";
-        RandomizedDelaySec = "1h";
-      };
-      pruneOpts = [
-        "--keep-daily 7"
-        "--keep-weekly 5"
-        "--keep-monthly 12"
-        "--keep-yearly 10"
-      ];
+  services.restic.backups."${storagebox-nightly-backup-name}" = {
+    initialize = true;
+    paths = [
+      "/persist"
+    ];
+    exclude = [
+      "/persist/@backup-snapshot"
+    ];
+    passwordFile = config.age.secrets.restic-genepi-storagebox-key.path;
+    repository = "sftp://${storagebox-user}@${storagebox-host}/";
+    extraOptions = [
+      "sftp.command='${pkgs.sshpass}/bin/sshpass -f ${config.age.secrets.restic-genepi-storagebox-password.path} -- ssh ${storagebox-host} -l ${storagebox-user} -s sftp'"
+    ];
+    timerConfig = {
+      OnCalendar = "03:00";
+      RandomizedDelaySec = "1h";
     };
+    pruneOpts = [
+      "--keep-daily 7"
+      "--keep-weekly 5"
+      "--keep-monthly 12"
+      "--keep-yearly 10"
+    ];
+    backupPrepareCommand = ''
+      set -Eeuxo pipefail
+      # clean old snapshot
+      if btrfs subvolume delete /persist/@backup-snapshot; then
+          echo "WARNING: previous run did not cleanly finish, removing old snapshot"
+      fi
+
+      btrfs subvolume snapshot -r /persist /persist/@backup-snapshot
+
+      umount /persist
+      mount -t btrfs -o subvol=/persist/@backup-snapshot /dev/disk/by-partlabel/disk-main-root /persist
+    '';
+    backupCleanupCommand = ''
+      btrfs subvolume delete /persist/@backup-snapshot
+    '';
+  };
+
+  systemd.services."restic-backups-${storagebox-nightly-backup-name}" = {
+    path = with pkgs; [
+      btrfs-progs
+      umount
+      mount
+    ];
+    serviceConfig.privateMounts = true;
   };
 }
