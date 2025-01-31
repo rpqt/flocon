@@ -14,8 +14,14 @@
         interface = [ "${config.services.tailscale.interfaceName}" ];
         access-control = [ "100.0.0.0/8 allow" ];
 
-        local-zone = [ ''"grafana.home.rpqt.fr." redirect'' ];
-        local-data = [ ''"grafana.home.rpqt.fr. IN A 100.83.123.79"'' ];
+        local-zone = [
+          ''"grafana.home.rpqt.fr." redirect''
+          ''"images.home.rpqt.fr" redirect''
+        ];
+        local-data = [
+          ''"grafana.home.rpqt.fr. IN A 100.83.123.79"''
+          ''"images.home.rpqt.fr. IN A 100.83.123.79"''
+        ];
       };
     };
   };

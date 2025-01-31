@@ -6,6 +6,7 @@
       "/var/lib/nixos"
       "/var/lib/acme"
       "/var/lib/prometheus2"
+      "/var/lib/immich"
     ];
     files = [
       # so that systemd doesn't think each boot is the first

@@ -14,6 +14,7 @@
     ./disk.nix
     ./dns.nix
     ./hardware.nix
+    ./immich.nix
     ./monitoring.nix
     ./network.nix
     ./nginx.nix
