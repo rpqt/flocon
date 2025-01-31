@@ -36,14 +36,8 @@
           };
           system = "aarch64-linux";
           modules = [
-            home-manager.nixosModules.home-manager
-            ./system
             ./hosts/genepi
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.rpqt = ./hosts/genepi/home.nix;
-            }
+            ./system
           ];
         };
 
