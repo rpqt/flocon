@@ -17,7 +17,7 @@ in
   age.secrets.restic-genepi-storagebox-password.file = ../../secrets/restic-genepi-storagebox-password.age;
 
   programs.ssh.knownHosts = {
-    "${storagebox-host}".publicKey = keys.hosts.storagebox;
+    "${storagebox-host}".publicKey = keys.hosts.storagebox-rsa;
   };
 
   services.restic.backups = {
@@ -27,7 +27,7 @@ in
         "/persist"
       ];
       passwordFile = config.age.secrets.restic-genepi-storagebox-key.path;
-      repository = "sftp://${storagebox-user}@${storagebox-host}";
+      repository = "sftp://${storagebox-user}@${storagebox-host}/";
       extraOptions = [
         "sftp.command='${pkgs.sshpass}/bin/sshpass -f ${config.age.secrets.restic-genepi-storagebox-password.path} -- ssh ${storagebox-host} -l ${storagebox-user} -s sftp'"
       ];
@@ -35,6 +35,12 @@ in
         OnCalendar = "03:00";
         RandomizedDelaySec = "1h";
       };
+      pruneOpts = [
+        "--keep-daily 7"
+        "--keep-weekly 5"
+        "--keep-monthly 12"
+        "--keep-yearly 10"
+      ];
     };
   };
 }
