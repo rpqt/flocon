@@ -16,7 +16,7 @@
     ./freshrss.nix
     ./hardware.nix
     ./immich.nix
-    ./monitoring.nix
+    ./monitoring
     ./network.nix
     ./nginx.nix
     ./persistence.nix
