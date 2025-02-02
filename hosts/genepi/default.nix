@@ -20,6 +20,7 @@
     ./network.nix
     ./nginx.nix
     ./persistence.nix
+    ./taskchampion.nix
 
     inputs.home-manager.nixosModules.home-manager
     {
