@@ -11,6 +11,7 @@
     ./acme.nix
     ./backup.nix
     ./boot.nix
+    ./builder.nix
     ./disk.nix
     ./dns.nix
     ./freshrss.nix
