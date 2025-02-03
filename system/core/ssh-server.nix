@@ -8,7 +8,6 @@
       AuthenticationMethods = "publickey";
       PubkeyAuthentication = "yes";
       ChallengeResponseAuthentication = "no";
-      UsePAM = false;
       X11Forwarding = false;
     };
   };
