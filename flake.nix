@@ -102,6 +102,26 @@
       };
 
       checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
+
+      devShells =
+        let
+          system = "x86_64-linux";
+          pkgs = import nixpkgs {
+            inherit system;
+          };
+        in
+        {
+          "${system}".default = pkgs.mkShell {
+            packages = [
+              pkgs.terraform-ls
+              pkgs.deploy-rs
+              pkgs.zsh
+            ];
+            shellhook = ''
+              exec zsh
+            '';
+          };
+        };
     };
 
   inputs = {
