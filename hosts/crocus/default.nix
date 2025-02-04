@@ -7,8 +7,10 @@
 {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
+    inputs.agenix.nixosModules.default
     inputs.disko.nixosModules.disko
     ./disk.nix
+    ./radicle.nix
   ];
 
   networking.hostName = "crocus";
@@ -52,5 +54,21 @@
         ];
       }
     ];
+  };
+
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+  };
+
+  networking.firewall.allowedTCPPorts = [
+    80
+    443
+  ];
+
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "admin@rpqt.fr";
   };
 }

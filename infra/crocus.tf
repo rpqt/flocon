@@ -41,4 +41,12 @@ resource "hcloud_firewall" "crocus_firewall" {
     port       = "443"
     source_ips = ["0.0.0.0/0", "::/0"]
   }
+
+  # radicle-node
+  rule {
+    direction  = "in"
+    protocol   = "tcp"
+    port       = "8776"
+    source_ips = ["0.0.0.0/0", "::/0"]
+  }
 }
