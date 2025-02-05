@@ -12,7 +12,19 @@
   ];
 
   networking.hostName = "crocus";
-  networking.useDHCP = true;
+
+  networking.useDHCP = false;
+  systemd.network.enable = true;
+  systemd.network.networks."10-wan" = {
+    matchConfig.Name = "enp1s0";
+    networkConfig.DHCP = "ipv4";
+    address = [
+      "2a01:4f8:1c1e:e415::1/64"
+    ];
+    routes = [
+      { Gateway = "fe80::1"; }
+    ];
+  };
 
   boot.loader.grub = {
     efiSupport = true;
