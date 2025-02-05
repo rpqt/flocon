@@ -8,6 +8,7 @@
 
     pkgs.devenv
     pkgs.direnv
+    pkgs.radicle-node
 
     pkgs.deploy-rs
 
