@@ -21,6 +21,7 @@
     ./network.nix
     ./nginx.nix
     ./persistence.nix
+    ./syncthing.nix
     ./taskchampion.nix
 
     inputs.home-manager.nixosModules.home-manager
