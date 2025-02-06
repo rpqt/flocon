@@ -8,6 +8,7 @@ let
   storagebox-user = "u422292-sub1";
   storagebox-host = "${storagebox-user}.your-storagebox.de";
   storagebox-nightly-backup-name = "storagebox-nightly";
+  storagebox-weekly-home-backup-name = "storagebox-weekly-home";
 in
 {
   environment.systemPackages = [
@@ -68,5 +69,27 @@ in
       mount
     ];
     serviceConfig.privateMounts = true;
+  };
+
+  # Backup home
+  services.restic.backups."${storagebox-weekly-home-backup-name}" = {
+    initialize = true;
+    paths = [
+      "/home/rpqt"
+    ];
+    passwordFile = config.age.secrets.restic-genepi-storagebox-key.path;
+    repository = "sftp://${storagebox-user}@${storagebox-host}/";
+    extraOptions = [
+      "sftp.command='${pkgs.sshpass}/bin/sshpass -f ${config.age.secrets.restic-genepi-storagebox-password.path} -- ssh ${storagebox-host} -l ${storagebox-user} -s sftp'"
+    ];
+    timerConfig = {
+      OnCalendar = "Sat 03:30";
+      RandomizedDelaySec = "1h";
+    };
+    pruneOpts = [
+      "--keep-weekly 1"
+      "--keep-monthly 12"
+      "--keep-yearly 10"
+    ];
   };
 }
