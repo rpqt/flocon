@@ -39,6 +39,12 @@ in
             "pixel-7a"
           ];
         };
+        "Videos" = {
+          path = "${home}/Media/Videos";
+          devices = [
+            "haze"
+          ];
+        };
       };
     };
   };
