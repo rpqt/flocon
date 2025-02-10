@@ -6,6 +6,8 @@
   home.packages = [
     inputs.agenix.packages.x86_64-linux.default
 
+    pkgs.helix
+
     pkgs.devenv
     pkgs.direnv
     pkgs.radicle-node
@@ -15,6 +17,14 @@
     pkgs.nil # Nix language server
     pkgs.nixfmt-rfc-style
   ];
+
+  programs.zsh.enable = true;
+  programs.starship.enable = true;
+  programs.atuin.enable = true;
+  programs.bat.enable = true;
+  programs.git.enable = true;
+
+  programs.alacritty.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
