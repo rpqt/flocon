@@ -15,6 +15,19 @@
     {
       nixosConfigurations = {
 
+        # VivoBook laptop
+        haze = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+            inherit (import ./parts) keys;
+          };
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/haze
+            ./system
+          ];
+        };
+
         # Hetzner VPS
         crocus = nixpkgs.lib.nixosSystem {
           specialArgs = {
