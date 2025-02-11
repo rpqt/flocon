@@ -22,8 +22,6 @@
       "/etc/ssh/ssh_host_ed25519_key.pub"
       # tailscale
       "/var/lib/tailscale/tailscaled.state"
-      # taskchampion
-      "/var/lib/taskchampion-sync-server/taskchampion-sync-server.sqlite3"
     ];
     users.rpqt = {
       directories = [ ];
