@@ -4,5 +4,7 @@
     wifi.powersave = true;
   };
 
+  networking.useDHCP = true;
+
   users.users."rpqt".extraGroups = [ "networkmanager" ];
 }
