@@ -9,6 +9,7 @@
     inputs.impermanence.nixosModules.impermanence
     ./boot.nix
     ./disk.nix
+    ./thunderbird.nix
     ./hardware.nix
     ./network.nix
     ./sway.nix
