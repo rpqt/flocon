@@ -35,6 +35,7 @@ in
           path = "${home}/Documents";
           devices = [
             "genepi"
+            "pixel-7a"
           ];
         };
         "Music" = {
