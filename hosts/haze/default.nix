@@ -12,6 +12,7 @@
     ./discord.nix
     ./disk.nix
     ./firefox.nix
+    ./gnome.nix
     ./thunderbird.nix
     ./hardware.nix
     ./network.nix
