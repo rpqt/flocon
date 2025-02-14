@@ -7,6 +7,7 @@
     inputs.disko.nixosModules.disko
     inputs.agenix.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
+    ./beeper.nix
     ./boot.nix
     ./disk.nix
     ./thunderbird.nix
