@@ -11,6 +11,7 @@
     ./boot.nix
     ./discord.nix
     ./disk.nix
+    ./firefox.nix
     ./thunderbird.nix
     ./hardware.nix
     ./network.nix
