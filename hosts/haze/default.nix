@@ -9,6 +9,7 @@
     inputs.impermanence.nixosModules.impermanence
     ./beeper.nix
     ./boot.nix
+    ./discord.nix
     ./disk.nix
     ./thunderbird.nix
     ./hardware.nix
