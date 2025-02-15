@@ -23,8 +23,9 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       ls = "eza";
-      ll = "ls -lh";
       lsa = "ls -A";
+      ll = "ls -lh";
+      lla = "ls -lAh";
       h = "hx";
       g = "git";
       cd = "z";
