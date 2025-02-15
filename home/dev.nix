@@ -9,5 +9,9 @@
     nixfmt-rfc-style
   ];
 
-  programs.direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
 }
