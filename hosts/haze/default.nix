@@ -13,6 +13,7 @@
     ./disk.nix
     ./firefox.nix
     ./gnome.nix
+    ./ssh.nix
     ./thunderbird.nix
     ./hardware.nix
     ./network.nix
