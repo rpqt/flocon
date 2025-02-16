@@ -1,12 +1,11 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./fonts.nix
     ./pass.nix
   ];
 
   home.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
-
     pkgs.alacritty
     pkgs.tofi
     pkgs.i3status-rust
@@ -16,8 +15,6 @@
 
     pkgs.seahorse
   ];
-
-  fonts.fontconfig.enable = true;
 
   programs.alacritty.enable = true;
   xdg.configFile."alacritty".source = "${config.dotfiles.path}/.config/alacritty";
@@ -31,6 +28,6 @@
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.capitaine-cursors;
-    name = "capitaine-cursors-4";
+    name = "capitaine-cursors";
   };
 }
