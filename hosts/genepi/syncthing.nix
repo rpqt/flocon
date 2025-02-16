@@ -39,6 +39,12 @@ in
             "pixel-7a"
           ];
         };
+        "Pictures" = {
+          path = "${home}/Media/Pictures";
+          devices = [
+            "haze"
+          ];
+        };
         "Videos" = {
           path = "${home}/Media/Videos";
           devices = [

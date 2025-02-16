@@ -45,6 +45,12 @@ in
             "pixel-7a"
           ];
         };
+        "Pictures" = {
+          path = "${home}/Pictures";
+          devices = [
+            "genepi"
+          ];
+        };
         "Videos" = {
           path = "${home}/Videos";
           devices = [
