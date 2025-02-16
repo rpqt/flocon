@@ -1,6 +1,7 @@
+{ pkgs, ... }:
 {
   programs.firefox = {
     enable = true;
-    nativeMessagingHosts.passff = true;
+    nativeMessagingHosts.packages = [ pkgs.passff-host ];
   };
 }
