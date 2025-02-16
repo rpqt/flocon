@@ -12,49 +12,42 @@
       self,
       ...
     }:
-    {
-      nixosConfigurations = {
-
+    let
+      inherit (nixpkgs) lib;
+      hosts = {
         # VivoBook laptop
-        haze = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            inherit (import ./parts) keys;
-          };
+        haze = {
           system = "x86_64-linux";
-          modules = [
-            ./hosts/haze
-            ./system
-          ];
         };
-
         # Hetzner VPS
-        crocus = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            inherit (import ./parts) keys;
-          };
+        crocus = {
           system = "x86_64-linux";
-          modules = [
-            ./hosts/crocus
-            ./system
-          ];
         };
-
         # Raspberry Pi 4
-        genepi = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs self;
-            inherit (import ./parts) keys;
-          };
+        genepi = {
           system = "aarch64-linux";
-          modules = [
-            ./hosts/genepi
-            ./system
-          ];
         };
-
       };
+    in
+    {
+      nixosConfigurations =
+        let
+          mkNixosConfig =
+            hostname:
+            { system }:
+            lib.nixosSystem {
+              inherit system;
+              specialArgs = {
+                inherit inputs self;
+                inherit (import ./parts) keys;
+              };
+              modules = [
+                ./hosts/${hostname}
+                ./system
+              ];
+            };
+        in
+        builtins.mapAttrs mkNixosConfig hosts;
 
       # Raspberry Pi 4 installer ISO.
       packages.aarch64-linux.installer-sd-image = nixos-generators.nixosGenerate {
