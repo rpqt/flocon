@@ -6,5 +6,6 @@
     ../../home/dev.nix
     ../../home/dotfiles.nix
     ../../home/helix.nix
+    ../../home/minecraft.nix
   ];
 }
