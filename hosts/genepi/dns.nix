@@ -31,11 +31,4 @@ in
       };
     };
   };
-
-  systemd.services.unbound.after = [ "tailscaled.service" ];
-
-  systemd.services.tailscaled.after = [
-    "network-online.target"
-    "systemd-resolved.service"
-  ];
 }
