@@ -12,6 +12,7 @@
     ./discord.nix
     ./disk.nix
     ./firefox.nix
+    ./gimp.nix
     ./gnome.nix
     ./ssh.nix
     ./thunderbird.nix
