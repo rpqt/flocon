@@ -7,5 +7,7 @@
     ../../home/dotfiles.nix
     ../../home/helix.nix
     ../../home/minecraft.nix
+    ../../home/desktop
+    ../../home/desktop/sway.nix
   ];
 }
