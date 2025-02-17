@@ -8,6 +8,7 @@
     duf
     eza
     fd
+    glow
     ripgrep
     tealdeer
     tree
