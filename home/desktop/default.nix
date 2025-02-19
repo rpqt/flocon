@@ -3,13 +3,12 @@
   imports = [
     ./fonts.nix
     ./pass.nix
+    ./wayland.nix
   ];
 
   home.packages = with pkgs; [
     discord
     seahorse
-
-    wl-clipboard
   ];
 
   home.pointerCursor = {

@@ -10,6 +10,7 @@
     grim
     slurp
     playerctl
+    swaybg
   ];
 
   xdg.configFile = {
