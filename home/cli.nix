@@ -10,6 +10,7 @@
     fd
     glow
     ripgrep
+    skim
     tealdeer
     tree
     vivid
