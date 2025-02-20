@@ -14,6 +14,7 @@
     ./firefox.nix
     ./gimp.nix
     ./gnome.nix
+    ./hyprland.nix
     ./ssh.nix
     ./thunderbird.nix
     ./hardware.nix
