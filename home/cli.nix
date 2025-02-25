@@ -12,7 +12,6 @@
     ripgrep
     skim
     tealdeer
-    tree
     vivid
     zoxide
   ];
@@ -33,6 +32,7 @@
       h = "hx";
       g = "git";
       cd = "z";
+      tree = "eza --tree";
       ".." = "cd ..";
       "..." = "cd ../..";
     };
