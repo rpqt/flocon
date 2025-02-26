@@ -39,4 +39,6 @@
   };
 
   xdg.configFile."git".source = "${config.dotfiles.path}/.config/git";
+
+  home.sessionPath = [ "${config.dotfiles.path}/bin" ];
 }
