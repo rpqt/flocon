@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     alacritty
+    ghostty
     tofi
     i3status-rust
     mako
@@ -24,4 +25,6 @@
 
   programs.alacritty.enable = true;
   xdg.configFile."alacritty".source = "${config.dotfiles.path}/.config/alacritty";
+
+  xdg.configFile."ghostty/config".source = "${config.dotfiles.path}/.config/ghostty/config";
 }
