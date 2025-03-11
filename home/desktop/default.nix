@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     discord
     seahorse
+    wofi-emoji
   ];
 
   home.pointerCursor = {
