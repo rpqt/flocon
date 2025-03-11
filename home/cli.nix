@@ -9,6 +9,7 @@
     eza
     fd
     glow
+    lazygit
     ripgrep
     skim
     taskwarrior3
