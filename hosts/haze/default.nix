@@ -16,6 +16,7 @@
     ./gnome.nix
     ./hyprland.nix
     ./ssh.nix
+    ./steam.nix
     ./thunderbird.nix
     ./hardware.nix
     ./network.nix
