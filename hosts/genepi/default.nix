@@ -18,6 +18,7 @@
     ./hardware.nix
     ./immich.nix
     ./monitoring
+    ./mpd.nix
     ./network.nix
     ./nginx.nix
     ./persistence.nix
