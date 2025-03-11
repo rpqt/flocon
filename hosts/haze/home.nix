@@ -1,5 +1,6 @@
 {
   imports = [
+    ../../home/chat.nix
     ../../home/cli.nix
     ../../home/common.nix
     ../../home/desktop
