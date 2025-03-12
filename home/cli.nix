@@ -10,6 +10,7 @@
     fd
     glow
     lazygit
+    nh
     ripgrep
     skim
     taskwarrior3
