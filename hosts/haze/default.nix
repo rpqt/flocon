@@ -23,6 +23,7 @@
     ./niri.nix
     ./sway.nix
     ./syncthing.nix
+    ./video.nix
 
     inputs.home-manager.nixosModules.home-manager
     {
