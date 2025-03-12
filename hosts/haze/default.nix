@@ -20,6 +20,7 @@
     ./thunderbird.nix
     ./hardware.nix
     ./network.nix
+    ./niri.nix
     ./sway.nix
     ./syncthing.nix
 
