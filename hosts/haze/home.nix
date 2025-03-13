@@ -10,6 +10,7 @@
     ../../home/mail
     ../../home/minecraft.nix
     ../../home/desktop
+    ../../home/desktop/niri.nix
     ../../home/desktop/sway.nix
   ];
 }
