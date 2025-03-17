@@ -15,6 +15,7 @@
     ./disk.nix
     ./dns.nix
     ./freshrss.nix
+    ./glance.nix
     ./hardware.nix
     ./immich.nix
     ./monitoring

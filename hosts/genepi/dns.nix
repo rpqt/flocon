@@ -4,6 +4,7 @@ let
   genepi = {
     ip = "100.83.123.79";
     subdomains = [
+      "glance"
       "grafana"
       "images"
       "rss"
