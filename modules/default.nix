@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./remote-builder.nix
+  ];
+}
