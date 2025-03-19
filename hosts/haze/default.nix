@@ -14,14 +14,11 @@
     ./firefox.nix
     ./gimp.nix
     ./gnome.nix
-    ./hyprland.nix
     ./ssh.nix
     ./steam.nix
     ./thunderbird.nix
     ./hardware.nix
     ./network.nix
-    ./niri.nix
-    ./sway.nix
     ./syncthing.nix
     ./video.nix
 
@@ -33,6 +30,12 @@
       home-manager.extraSpecialArgs = { inherit inputs; };
     }
   ];
+
+  specialisation = {
+    hyprland.configuration = ./hyprland.nix;
+    niri.configuration = ./niri.nix;
+    sway.configuration = ./sway.nix;
+  };
 
   # Remote builds
   nix = {
