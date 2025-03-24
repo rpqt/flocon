@@ -17,6 +17,7 @@
     ./freshrss.nix
     ./glance.nix
     ./hardware.nix
+    ./homeassistant.nix
     ./immich.nix
     ./monitoring
     ./mpd.nix
