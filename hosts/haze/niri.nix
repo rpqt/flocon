@@ -6,6 +6,7 @@
     brightnessctl
     i3bar-river
     mako
+    pavucontrol
     playerctl
     swaybg
     swaylock
