@@ -18,6 +18,9 @@
   # Workaround: run PulseAudio system-wide so that the mpd user can access it
   services.pulseaudio.systemWide = true;
 
+  # Fixes the stutter when changing volume (found this randomly)
+  hardware.pulseaudio.daemon.config.flat-volumes = "no";
+
   users.users.${config.services.mpd.user}.extraGroups = [ "pulse-access" ];
 
   users.users.rpqt.homeMode = "755";
