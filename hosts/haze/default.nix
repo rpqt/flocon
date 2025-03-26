@@ -15,6 +15,7 @@
     ./gimp.nix
     ./gnome.nix
     ./hibernate.nix
+    ./niri.nix
     ./ssh.nix
     ./steam.nix
     ./thunderbird.nix
@@ -33,9 +34,18 @@
   ];
 
   specialisation = {
-    hyprland.configuration = ./hyprland.nix;
-    niri.configuration = ./niri.nix;
-    sway.configuration = ./sway.nix;
+    hyprland.configuration =
+      { ... }:
+      {
+        imports = [ ./hyprland.nix ];
+        disabledModules = [ ./niri.nix ];
+      };
+    sway.configuration =
+      { ... }:
+      {
+        imports = [ ./sway.nix ];
+        disabledModules = [ ./niri.nix ];
+      };
   };
 
   # Remote builds
