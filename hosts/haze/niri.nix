@@ -11,7 +11,7 @@
     swaybg
     swaylock
     tofi
-    wlsunset
+    wl-gammarelay-rs
     xwayland-satellite
   ];
 
