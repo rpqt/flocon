@@ -7,9 +7,8 @@
     inputs.disko.nixosModules.disko
     inputs.agenix.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
-    ./beeper.nix
     ./boot.nix
-    ./discord.nix
+    ./chat.nix
     ./disk.nix
     ./firefox.nix
     ./gimp.nix
