@@ -4,6 +4,7 @@
   outputs =
     inputs@{
       nixpkgs,
+      clan-core,
       deploy-rs,
       home-manager,
       impermanence,
@@ -28,27 +29,41 @@
           system = "aarch64-linux";
         };
       };
+      clan = clan-core.lib.buildClan {
+        self = self;
+        meta.name = "blossom";
+        machines = {
+          crocus = {
+            nixpkgs.hostPlatform = "x86_64-linux";
+            imports = [
+              ./hosts/crocus
+            ];
+          };
+        };
+      };
     in
     {
-      nixosConfigurations =
-        let
-          mkNixosConfig =
-            hostname:
-            { system }:
-            lib.nixosSystem {
-              inherit system;
-              specialArgs = {
-                inherit inputs self;
-                inherit (import ./parts) keys;
-              };
-              modules = [
-                ./hosts/${hostname}
-                ./modules
-                ./system
-              ];
-            };
-        in
-        builtins.mapAttrs mkNixosConfig hosts;
+      inherit (clan) clanInternals nixosConfigurations;
+      clan = { inherit (clan) templates; };
+      # nixosConfigurations =
+      #   let
+      #     mkNixosConfig =
+      #       hostname:
+      #       { system }:
+      #       lib.nixosSystem {
+      #         inherit system;
+      #         specialArgs = {
+      #           inherit inputs self;
+      #           inherit (import ./parts) keys;
+      #         };
+      #         modules = [
+      #           ./hosts/${hostname}
+      #           ./modules
+      #           ./system
+      #         ];
+      #       };
+      #   in
+      #   builtins.mapAttrs mkNixosConfig hosts;
 
       # Raspberry Pi 4 installer ISO.
       packages.aarch64-linux.installer-sd-image = nixos-generators.nixosGenerate {
@@ -121,6 +136,7 @@
           "${system}".default = pkgs.mkShell {
             packages = [
               inputs.agenix.packages.x86_64-linux.default
+              clan-core.packages.${system}.clan-cli
               pkgs.nil # Nix language server
               pkgs.nixfmt-rfc-style
               pkgs.opentofu
@@ -162,6 +178,10 @@
     };
     agenix = {
       url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    clan-core = {
+      url = "git+https://git.clan.lol/clan/clan-core";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

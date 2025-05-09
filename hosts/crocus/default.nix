@@ -11,6 +11,8 @@
     inputs.disko.nixosModules.disko
     ./disk.nix
     ./radicle.nix
+    ./modules
+    ./system
   ];
 
   networking.hostName = "crocus";
