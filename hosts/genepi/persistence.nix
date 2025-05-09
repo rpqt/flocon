@@ -55,4 +55,10 @@
     umount /btrfs_tmp
     rmdir /btrfs_tmp
   '';
+
+  # Give agenix persistent paths so it can load secrets before the mount
+  age.identityPaths = [
+    "/persist/etc/ssh/ssh_host_ed25519_key"
+    "/persist/etc/ssh/ssh_host_rsa_key"
+  ];
 }
