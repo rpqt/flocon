@@ -123,6 +123,7 @@
               inputs.agenix.packages.x86_64-linux.default
               pkgs.nil # Nix language server
               pkgs.nixfmt-rfc-style
+              pkgs.opentofu
               pkgs.terraform-ls
               pkgs.deploy-rs
               pkgs.zsh
