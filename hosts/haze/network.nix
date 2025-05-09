@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   networking.hostName = "haze";
 
@@ -7,4 +8,6 @@
   };
 
   users.users."rpqt".extraGroups = [ "networkmanager" ];
+
+  environment.systemPackages = [ pkgs.networkmanager-openconnect ];
 }
