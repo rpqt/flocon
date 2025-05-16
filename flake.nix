@@ -5,7 +5,6 @@
     inputs@{
       nixpkgs,
       clan-core,
-      deploy-rs,
       home-manager,
       impermanence,
       nixos-generators,
@@ -14,116 +13,55 @@
       ...
     }:
     let
-      inherit (nixpkgs) lib;
-      hosts = {
-        # VivoBook laptop
-        haze = {
-          system = "x86_64-linux";
-        };
-        # Hetzner VPS
-        crocus = {
-          system = "x86_64-linux";
-        };
-        # Raspberry Pi 4
-        genepi = {
-          system = "aarch64-linux";
-        };
-      };
       clan = clan-core.lib.buildClan {
         self = self;
         meta.name = "blossom";
-        machines = {
-          crocus = {
-            nixpkgs.hostPlatform = "x86_64-linux";
-            imports = [
-              ./hosts/crocus
-            ];
+        specialArgs = {
+          inherit inputs self;
+          inherit (import ./parts) keys;
+        };
+        inventory = {
+          instances = {
+            "rpqt-admin" = {
+              module.input = "clan-core";
+              module.name = "admin";
+              roles.default.machines = {
+                "crocus" = { };
+                "genepi" = { };
+                "haze" = { };
+              };
+              roles.default.settings.allowedKeys = {
+                rpqt_haze = (import ./parts).keys.rpqt.haze;
+              };
+            };
+          };
+          services = {
+            zerotier.default = {
+              roles.controller.machines = [
+                "crocus"
+              ];
+              roles.peer.machines = [
+                "haze"
+                "genepi"
+              ];
+            };
+            sshd.default = {
+              roles.server.machines = [ "crocus" ];
+            };
+            user-password.rpqt = {
+              roles.default.machines = [
+                "crocus"
+                "genepi"
+                "haze"
+              ];
+              config.user = "rpqt";
+            };
           };
         };
       };
     in
     {
       inherit (clan) clanInternals nixosConfigurations;
-      clan = { inherit (clan) templates; };
-      # nixosConfigurations =
-      #   let
-      #     mkNixosConfig =
-      #       hostname:
-      #       { system }:
-      #       lib.nixosSystem {
-      #         inherit system;
-      #         specialArgs = {
-      #           inherit inputs self;
-      #           inherit (import ./parts) keys;
-      #         };
-      #         modules = [
-      #           ./hosts/${hostname}
-      #           ./modules
-      #           ./system
-      #         ];
-      #       };
-      #   in
-      #   builtins.mapAttrs mkNixosConfig hosts;
-
-      # Raspberry Pi 4 installer ISO.
-      packages.aarch64-linux.installer-sd-image = nixos-generators.nixosGenerate {
-        specialArgs = {
-          inherit inputs;
-          inherit (import ./parts) keys;
-        };
-        system = "aarch64-linux";
-        format = "sd-aarch64-installer";
-        modules = [
-          nixos-hardware.nixosModules.raspberry-pi-4
-          ./system/core
-          ./hosts/genepi/network.nix
-          ./hosts/genepi/hardware.nix
-          {
-            nixpkgs.overlays = [
-              (final: super: {
-                makeModulesClosure = x: super.makeModulesClosure (x // { allowMissing = true; });
-              })
-            ];
-          }
-        ];
-      };
-
-      homeConfigurations = {
-        "rpqt@haze" = home-manager.lib.homeManagerConfiguration {
-          extraSpecialArgs = {
-            inherit inputs;
-          };
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          modules = [
-            ./hosts/haze/home.nix
-          ];
-        };
-      };
-
-      deploy.nodes.crocus = {
-        hostname = "crocus";
-        profiles = {
-          system = {
-            user = "root";
-            sshUser = "rpqt";
-            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.crocus;
-          };
-        };
-      };
-
-      deploy.nodes.genepi = {
-        hostname = "genepi";
-        profiles = {
-          system = {
-            user = "root";
-            sshUser = "rpqt";
-            path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.genepi;
-            remoteBuild = true;
-          };
-        };
-      };
-
-      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
 
       devShells =
         let
@@ -135,7 +73,7 @@
         {
           "${system}".default = pkgs.mkShell {
             packages = [
-              inputs.agenix.packages.x86_64-linux.default
+              inputs.agenix.packages.${system}.default
               clan-core.packages.${system}.clan-cli
               pkgs.nil # Nix language server
               pkgs.nixfmt-rfc-style
@@ -157,10 +95,6 @@
     };
     disko = {
       url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    deploy-rs = {
-      url = "github:serokell/deploy-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {

@@ -1,7 +1,12 @@
-{ pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   home.username = "rpqt";
-  home.homeDirectory = "/home/rpqt";
+  home.homeDirectory = lib.mkForce "/home/rpqt";
 
   home.packages = [
     pkgs.helix

@@ -25,4 +25,6 @@ in
       '';
     };
   };
+
+  clan.core.state.userdata.folders = [ "/var/lib/immich" ];
 }

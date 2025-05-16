@@ -7,11 +7,11 @@ let
   home = config.users.users.${user}.home;
 in
 {
-  age.secrets.syncthing-key.file = ./secrets/syncthing-key.pem.age;
-  age.secrets.syncthing-cert.file = ./secrets/syncthing-cert.pem.age;
+  # age.secrets.syncthing-key.file = ./secrets/syncthing-key.pem.age;
+  # age.secrets.syncthing-cert.file = ./secrets/syncthing-cert.pem.age;
 
   services.syncthing = {
-    enable = true;
+    enable = false;
     user = user;
     group = "users";
     dataDir = home;

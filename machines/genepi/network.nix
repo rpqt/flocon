@@ -1,6 +1,4 @@
 {
-  networking.hostName = "genepi";
-
   # Tailscale seems to break when not using resolved
   services.resolved.enable = true;
   networking.useDHCP = true;

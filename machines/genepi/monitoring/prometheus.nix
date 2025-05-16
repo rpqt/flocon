@@ -58,4 +58,6 @@ in
       };
     };
   };
+
+  clan.core.state.userdata.folders = [ "/var/lib/prometheus2" ];
 }

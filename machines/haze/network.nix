@@ -1,7 +1,5 @@
 { pkgs, ... }:
 {
-  networking.hostName = "haze";
-
   networking.networkmanager = {
     enable = true;
     wifi.powersave = true;

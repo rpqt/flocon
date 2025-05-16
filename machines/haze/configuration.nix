@@ -4,12 +4,10 @@
 }:
 {
   imports = [
-    inputs.disko.nixosModules.disko
+    # inputs.disko.nixosModules.disko
     inputs.agenix.nixosModules.default
-    inputs.impermanence.nixosModules.impermanence
     ./boot.nix
     ./chat.nix
-    ./disk.nix
     ./firefox.nix
     ./gimp.nix
     ./gnome.nix
@@ -18,10 +16,12 @@
     ./ssh.nix
     ./steam.nix
     ./thunderbird.nix
-    ./hardware.nix
     ./network.nix
     ./syncthing.nix
     ./video.nix
+    ../../system
+
+    inputs.clan-core.clanModules.state-version
 
     inputs.home-manager.nixosModules.home-manager
     {
@@ -31,6 +31,9 @@
       home-manager.extraSpecialArgs = { inherit inputs; };
     }
   ];
+
+  networking.hostName = "haze";
+  clan.core.networking.targetHost = "rpqt@haze.local";
 
   specialisation = {
     hyprland.configuration =

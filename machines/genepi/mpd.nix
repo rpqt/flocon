@@ -19,7 +19,7 @@
   services.pulseaudio.systemWide = true;
 
   # Fixes the stutter when changing volume (found this randomly)
-  hardware.pulseaudio.daemon.config.flat-volumes = "no";
+  services.pulseaudio.daemon.config.flat-volumes = "no";
 
   users.users.${config.services.mpd.user}.extraGroups = [ "pulse-access" ];
 

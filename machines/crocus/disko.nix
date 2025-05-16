@@ -1,6 +1,16 @@
 {
-  disko.devices.disk.os = {
-    device = "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_48353082";
+  clan-core,
+  config,
+  ...
+}:
+let
+  suffix = config.clan.core.vars.generators.disk-id.files.diskId.value;
+in
+{
+  imports = [ clan-core.clanModules.disk-id ];
+
+  disko.devices.disk.main = {
+    name = "main-" + suffix;
     type = "disk";
     content = {
       type = "gpt";

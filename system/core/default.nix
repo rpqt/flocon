@@ -19,7 +19,7 @@
     wheelNeedsPassword = false;
   };
 
-  system.stateVersion = lib.mkDefault "24.11";
+  # system.stateVersion = lib.mkDefault "24.11";
 
   time.timeZone = lib.mkDefault "Europe/Paris";
 }
