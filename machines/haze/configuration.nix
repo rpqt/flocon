@@ -51,6 +51,8 @@
       };
   };
 
+  programs.kdeconnect.enable = true;
+
   # Remote builds
   nix = {
     distributedBuilds = true;
