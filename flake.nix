@@ -64,29 +64,34 @@
       inherit (clan) clanInternals nixosConfigurations;
 
       devShells =
-        let
-          system = "x86_64-linux";
-          pkgs = import nixpkgs {
-            inherit system;
-          };
-        in
-        {
-          "${system}".default = pkgs.mkShell {
-            packages = [
-              inputs.agenix.packages.${system}.default
-              clan-core.packages.${system}.clan-cli
-              pkgs.nil # Nix language server
-              pkgs.nixfmt-rfc-style
-              pkgs.opentofu
-              pkgs.terraform-ls
-              pkgs.deploy-rs
-              pkgs.zsh
-            ];
-            shellhook = ''
-              exec zsh
-            '';
-          };
-        };
+        nixpkgs.lib.genAttrs
+          [
+            "x86_64-linux"
+            "aarch64-linux"
+          ]
+          (
+            system:
+            let
+              pkgs = nixpkgs.legacyPackages.${system};
+            in
+            {
+              default = pkgs.mkShell {
+                packages = [
+                  inputs.agenix.packages.${system}.default
+                  clan-core.packages.${system}.clan-cli
+                  pkgs.nil # Nix language server
+                  pkgs.nixfmt-rfc-style
+                  pkgs.opentofu
+                  pkgs.terraform-ls
+                  pkgs.deploy-rs
+                  pkgs.zsh
+                ];
+                shellhook = ''
+                  exec zsh
+                '';
+              };
+            }
+          );
     };
 
   inputs = {
