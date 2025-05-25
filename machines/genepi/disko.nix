@@ -1,66 +1,40 @@
 {
+  clan-core,
+  config,
+  ...
+}:
+let
+  suffix = config.clan.core.vars.generators.disk-id.files.diskId.value;
+in
+{
+  imports = [ clan-core.clanModules.disk-id ];
+
   disko.devices.disk.main = {
+    name = "main-" + suffix;
     type = "disk";
-    device = "/dev/disk/by-id/ata-WD_Green_M.2_2280_480GB_2251E6411147";
     content = {
       type = "gpt";
       partitions = {
-        ESP = {
+        boot = {
+          type = "EF02";
+          size = "1M";
           priority = 1;
-          name = "ESP";
-          start = "1M";
-          end = "512M";
+        };
+        ESP = {
           type = "EF00";
+          size = "512M";
           content = {
             type = "filesystem";
             format = "vfat";
             mountpoint = "/boot";
-            mountOptions = [ "umask=0077" ];
           };
         };
         root = {
           end = "-4G";
           content = {
-            type = "btrfs";
-            extraArgs = [
-              "-L"
-              "nixos"
-              "-f" # Override existing partition
-            ];
-            subvolumes = {
-              "/root" = {
-                mountpoint = "/";
-                mountOptions = [
-                  "subvol=root"
-                  "compress=zstd"
-                  "noatime"
-                ];
-              };
-              "/home" = {
-                mountpoint = "/home";
-                mountOptions = [
-                  "subvol=home"
-                  "compress=zstd"
-                  "noatime"
-                ];
-              };
-              "/nix" = {
-                mountpoint = "/nix";
-                mountOptions = [
-                  "subvol=nix"
-                  "compress=zstd"
-                  "noatime"
-                ];
-              };
-              "/log" = {
-                mountpoint = "/var/log";
-                mountOptions = [
-                  "subvol=log"
-                  "compress=zstd"
-                  "noatime"
-                ];
-              };
-            };
+            type = "filesystem";
+            format = "ext4";
+            mountpoint = "/";
           };
         };
         swap = {
