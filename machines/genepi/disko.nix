@@ -52,14 +52,6 @@
                   "noatime"
                 ];
               };
-              "/persist" = {
-                mountpoint = "/persist";
-                mountOptions = [
-                  "subvol=persist"
-                  "compress=zstd"
-                  "noatime"
-                ];
-              };
               "/log" = {
                 mountpoint = "/var/log";
                 mountOptions = [
@@ -80,7 +72,4 @@
       };
     };
   };
-
-  fileSystems."/persist".neededForBoot = true;
-  fileSystems."/var/log".neededForBoot = true;
 }

@@ -5,7 +5,6 @@
 {
   imports = [
     inputs.agenix.nixosModules.default
-    inputs.impermanence.nixosModules.impermanence
     ./acme.nix
     ./boot.nix
     ./builder.nix
@@ -18,7 +17,6 @@
     ./mpd.nix
     ./network.nix
     ./nginx.nix
-    ./persistence.nix
     ./syncthing.nix
     ./taskchampion.nix
 
