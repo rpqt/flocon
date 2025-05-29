@@ -4,6 +4,7 @@
     devenv
     direnv
     hut
+    nix-output-monitor
     radicle-node
     typescript-language-server
     nil # Nix language server
