@@ -5,7 +5,6 @@
     ghostty
     tofi
     i3status-rust
-    mako
     wlsunset
     kanshi
     grim

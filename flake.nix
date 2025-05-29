@@ -123,6 +123,10 @@
       url = "git+https://git.clan.lol/clan/clan-core";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ignis = {
+      url = "github:linkfrg/ignis";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
