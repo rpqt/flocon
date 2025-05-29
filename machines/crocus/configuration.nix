@@ -12,6 +12,7 @@
     inputs.clan-core.clanModules.state-version
     ../../modules/remote-builder.nix
     ../../modules/borgbackup.nix
+    ./topology.nix
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";

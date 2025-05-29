@@ -92,6 +92,29 @@
               };
             }
           );
+
+      topology =
+        nixpkgs.lib.genAttrs
+          [
+            "x86_64-linux"
+            "aarch64-linux"
+          ]
+          (
+            system:
+            let
+              pkgs = import nixpkgs {
+                inherit system;
+                overlays = [ inputs.nix-topology.overlays.default ];
+              };
+            in
+            import inputs.nix-topology {
+              inherit pkgs;
+              modules = [
+                { inherit (self) nixosConfigurations; }
+                ./topology.nix
+              ];
+            }
+          );
     };
 
   inputs = {
@@ -125,6 +148,10 @@
     };
     ignis = {
       url = "github:linkfrg/ignis";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-topology = {
+      url = "github:oddlama/nix-topology";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

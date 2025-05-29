@@ -19,6 +19,7 @@
     ./nginx.nix
     ./syncthing.nix
     ./taskchampion.nix
+    ./topology.nix
 
     ../../system
     ../../modules/borgbackup.nix
