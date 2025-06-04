@@ -270,13 +270,13 @@
       "locked": {
         "lastModified": 1735384240,
         "narHash": "sha256-ikF9EzFlsRH8i4+SVUHETF4Jk1ob2JX1RLsuMdzrQOQ=",
-        "owner": "linkfrg",
+        "owner": "ignis-sh",
         "repo": "libgnome-volume-control-wheel",
         "rev": "2d1cb33dacdae43127bb843a48b159ea7b8925d0",
         "type": "github"
       },
       "original": {
-        "owner": "linkfrg",
+        "owner": "ignis-sh",
         "repo": "libgnome-volume-control-wheel",
         "type": "github"
       }
@@ -332,15 +332,15 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1748238399,
-        "narHash": "sha256-U81PS8omY1FrR2qHkiCPblFABCaqwkcvq/1TQHVHWN8=",
-        "owner": "linkfrg",
+        "lastModified": 1748898786,
+        "narHash": "sha256-xesaq/lWC5NCQgIbY0CjIzt0lUPryzfdcf2my1X/zdU=",
+        "owner": "ignis-sh",
         "repo": "ignis",
-        "rev": "9be1c66f41a02d9ff6ab7197929e41f713186a22",
+        "rev": "8a94285fd9234fe457796440f806b7556b59e31f",
         "type": "github"
       },
       "original": {
-        "owner": "linkfrg",
+        "owner": "ignis-sh",
         "repo": "ignis",
         "type": "github"
       }

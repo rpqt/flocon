@@ -147,7 +147,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ignis = {
-      url = "github:linkfrg/ignis";
+      url = "github:ignis-sh/ignis";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-topology = {
