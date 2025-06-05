@@ -8,12 +8,18 @@
   ];
 
   boot.loader = {
-    grub.enable = false;
-    generic-extlinux-compatible.enable = true;
+    generic-extlinux-compatible.enable = false;
+    efi.canTouchEfiVariables = true;
+    systemd-boot.enable = true;
   };
 
+  nixpkgs.overlays = [
+    (final: super: {
+      makeModulesClosure = x: super.makeModulesClosure (x // { allowMissing = true; });
+    })
+  ];
+
   boot.supportedFilesystems = [
-    "btrfs"
     "vfat"
   ];
 }
