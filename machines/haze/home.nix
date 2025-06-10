@@ -1,17 +1,17 @@
 {
   imports = [
-    ../../home/chat.nix
-    ../../home/cli.nix
-    ../../home/common.nix
-    ../../home/desktop
-    ../../home/dev.nix
-    ../../home/dotfiles.nix
-    ../../home/helix.nix
-    ../../home/mail
-    ../../home/minecraft.nix
-    ../../home/desktop
-    ../../home/desktop/gnome.nix
-    ../../home/desktop/niri.nix
-    ../../home/desktop/sway.nix
+    ../../home-manager/chat.nix
+    ../../home-manager/cli.nix
+    ../../home-manager/common.nix
+    ../../home-manager/desktop
+    ../../home-manager/dev.nix
+    ../../home-manager/dotfiles.nix
+    ../../home-manager/helix.nix
+    ../../home-manager/mail
+    ../../home-manager/minecraft.nix
+    ../../home-manager/desktop
+    ../../home-manager/desktop/gnome.nix
+    ../../home-manager/desktop/niri.nix
+    ../../home-manager/desktop/sway.nix
   ];
 }
