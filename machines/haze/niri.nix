@@ -8,7 +8,6 @@
     playerctl
     swaybg
     swaylock
-    tail-tray
     tofi
     wl-gammarelay-rs
     xwayland-satellite
