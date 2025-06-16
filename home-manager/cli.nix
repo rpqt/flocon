@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     bottom
     btop
+    comma
     difftastic
     doggo
     duf
