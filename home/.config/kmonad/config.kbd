@@ -1,0 +1,46 @@
+(defcfg
+  input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  output (uinput-sink "KMonad laptop keyboard output")
+  fallthrough true
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt ins  del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc home
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \    pgup
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret       pgdn
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft           end
+  lctl      lmet lalt         spc         ralt rctl
+)
+
+(defalias
+  maj (layer-toggle azerty-shift)
+  agr (layer-toggle azerty-altgr)
+)
+
+(deflayer azerty
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt ins  del
+  grv  &    é    "    '    \(   -    è    \_   ç    à    \)   =    bspc home
+  tab  a    z    e    r    t    y    u    i    o    p    ^    $    *    pgup
+  caps q    s    d    f    g    h    j    k    l    m    ù    ret       pgdn
+  @maj w    x    c    v    b    n    ,    ;    :    !    rsft           end
+  lctl      lmet lalt         spc         @agr rctl
+)
+
+(deflayer azerty-shift
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    1    2    3    4    5    6    7    8    9    0    °    +    _    _
+  _    a    _    _    _    _    _    _    _    _    _    _    £    µ    _
+  _    _    _    _    _    _    _    _    _    _    _    %    _         _
+  @maj _    _    _    _    _    _    ?    .    /    §    rsft           _
+  lctl      lmet lalt         spc         ralt rctl
+)
+
+(deflayer azerty-altgr
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    ~    #    {    [    |    grv  \    ^    @    ]    }    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _         _
+  _    _    _    _    _    _    _    _    _    _    _    rsft           _
+  lctl      lmet lalt         spc         @agr rctl
+)

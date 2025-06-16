@@ -1,0 +1,53 @@
+[theme]
+theme = "kanagawa"
+[theme.overrides]
+separator = "<span size='13000'></span>"
+
+[icons]
+icons = "material-nf"
+
+[[block]]
+block = "privacy"
+[[block.driver]]
+name = "pipewire"
+
+[[block]]
+block = "music"
+format = " $icon {$combo.str(max_w:70) $prev $next |}"
+[[block.click]]
+button = "left"
+action = "play_pause"
+
+[[block]]
+block = "bluetooth"
+mac = "20:74:CF:B5:B7:7A"
+format = " $icon $name{ $percentage|} "
+disconnected_format = ""
+
+[[block]]
+block = "bluetooth"
+mac = "28:11:A5:6B:44:8B"
+format = " $icon $name{ $percentage|} "
+disconnected_format = ""
+
+[[block]]
+block = "bluetooth"
+mac = "00:1E:7C:50:24:8F"
+format = " $icon $name{ $percentage|} "
+disconnected_format = ""
+
+[[block]]
+block = "toggle"
+format = " $icon ensivpn "
+command_state = 'nmcli -f general.state con show Ensimag-VPN-ETU-udp | grep -v deactivated'
+command_on = "pass show web/ensimag.fr | head -n 1 | nmcli c up Ensimag-VPN-ETU-udp --ask"
+command_off = "nmcli c down Ensimag-VPN-ETU-udp"
+
+[[block]]
+block = "net"
+interval = 10
+device = "wlan0"
+format = " $icon {$ssid|$device} "
+[[block.click]]
+button = "left"
+cmd = "iwgtk"

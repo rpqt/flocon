@@ -1,0 +1,16 @@
+BasedOnStyle: LLVM
+
+IndentWidth: 8
+TabWidth: 8
+UseTab: Always
+
+ColumnLimit: 80
+
+IndentCaseLabels: false
+IndentGotoLabels: false
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: false
+
+AlwaysBreakAfterDefinitionReturnType: false

@@ -1,0 +1,10 @@
+font = "JetBrains Mono NF Bold 12"
+height = 24
+background = "#000000"
+command = "i3status-rs"
+tags_margin = 0.0
+tags_padding = 8.0
+tag_fg = "#727169"
+tag_bg = "#000000"
+tag_focused_fg = "#dcd7ba"
+tag_focused_bg = "#000000"

@@ -1,0 +1,3 @@
+instance "sr.ht" {
+	access-token-cmd pass oauth/sr.ht-hut@haze
+}

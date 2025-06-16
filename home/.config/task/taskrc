@@ -1,0 +1,4 @@
+data.location=~/.local/share/task
+hooks.location=~/.config/task/hooks
+
+include ~/.config/task/sync

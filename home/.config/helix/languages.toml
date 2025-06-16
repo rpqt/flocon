@@ -1,0 +1,59 @@
+[[language]]
+name = "c"
+scope = "source.c"
+file-types = ["c", "h"]
+indent = { tab-width = 4, unit = "\t" }
+auto-format = true
+language-servers = [ { name = "clangd" } ]
+
+[language-server.clangd]
+command = "clangd"
+args = ["--header-insertion=never"]
+
+[[language]]
+name = "rust"
+language-servers = [ "rust-analyzer" ]
+
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+
+[language-server.deno-lsp.config.deno]
+enable = true
+lint = true
+suggest.imports.hosts = { "https://deno.land" = true }
+
+[[language]]
+name = "typescript"
+file-types = ["ts"]
+language-servers = ["deno-lsp"]
+
+[[language]]
+name = "djot"
+scope = "source.djot"
+file-types = ["dj"]
+
+[[grammar]]
+name = "djot"
+source = { git = "https://github.com/treeman/tree-sitter-djot", rev = "master" }
+
+[[language]]
+name = "nix"
+formatter = { command = "nixfmt" }
+
+[[language]]
+name = "java"
+formatter = { command = "google-java-format", args = ["--aosp"] }
+auto-format = true
+
+[[language]]
+name = "hcl"
+formatter = { command = "tofu", args = ["fmt", "-"] }
+auto-format = true
+
+[[language]]
+name = "vento"
+indent = { tab-width = 2, unit = "\t" }

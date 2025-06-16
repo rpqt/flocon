@@ -1,0 +1,16 @@
+# Directory for received taildrop files
+set $taildrop_inbox $HOME/Downloads
+
+# Screen temperature
+exec wlsunset -l 45 -L 6
+
+# Notifications
+exec mako
+
+# Output management
+exec kanshi
+
+# Auto receive taildrop files
+exec tailscale file get --loop --conflict=rename $taildrop_inbox
+
+exec swayidle -w

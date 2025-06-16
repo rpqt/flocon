@@ -1,0 +1,9 @@
+[ui]
+default-command = "log"
+
+[user]
+name = "Romain Paquet"
+email = "rpqt@rpqt.fr"
+
+[diff]
+diff.tool = ["difft", "--color=always", "$left", "$right"]

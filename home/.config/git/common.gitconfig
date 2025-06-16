@@ -1,0 +1,54 @@
+[user]
+	email = rpqt@rpqt.fr
+	name = Romain Paquet
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = ~/.config/git/ignore
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[color]
+	ui = auto
+[sendemail]
+	smtpserver = smtp.migadu.com
+	smtpuser = rpqt@rpqt.fr
+	smtpencryption = ssl
+	smtpserverport = 465
+[diff]
+	colormoved = "default"
+	colormovedws = "allow-indentation-change"
+[alias]
+	a = add
+	s = status
+	c = commit
+	news = -c diff.external=difft log -p HEAD@{1}..HEAD@{0} --ext-diff
+	dlog = -c diff.external=difft log -p --ext-diff
+	dshow = -c diff.external=difft show --ext-diff
+    dft = -c diff.external=difft diff
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[push]
+	autoSetupRemote = true
+	followTags = true
+[help]
+	autocorrect = prompt
+[commit]
+	verbose = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[pull]
+	rebase = true

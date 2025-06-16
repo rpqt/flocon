@@ -1,0 +1,37 @@
+include ~/.config/sway/kanagawa.sway
+
+set $font "JetBrains Mono NF Bold 12"
+set $background #000000
+
+bar {
+	id top_bar
+	status_command i3status-rs
+	position top
+	height 24
+	font $font
+	workspace_min_width 20
+	status_padding 0
+	status_edge_padding 0
+	colors {
+		background $background
+		focused_workspace #000000 #000000 $fujiWhite
+		active_workspace #000000 #000000 $fujiGray
+		inactive_workspace #000000 #000000 $fujiGray
+	}
+}
+
+bar {
+	id bottom_bar
+	status_command i3status-rs ~/.config/i3status-rust/bottom-config.toml
+	position bottom
+	height 24
+	font $font
+	workspace_buttons no
+	binding_mode_indicator no
+	tray_output none
+	colors {
+		background $background
+	}
+}
+
+# vim:ft=swayconfig

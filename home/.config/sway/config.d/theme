@@ -1,0 +1,22 @@
+include ~/.config/sway/kanagawa.sway
+
+default_border pixel 3
+smart_borders on
+titlebar_border_thickness 2
+font "JetBrains Mono NF 11"
+
+gaps outer 0
+gaps inner 0
+
+set $waveBlue3 #3D5F77
+set $waveBlue4 #6D8FA7
+
+# class                  border     background text       indicator  child_border
+client.focused_inactive  $sumiInk2  $sumiInk1  $fujiWhite $sumiInk2  $sumiInk2
+client.unfocused         $sumiInk2  $sumiInk1  $fujiWhite $sumiInk2  $sumiInk2
+client.focused           $waveBlue3 $waveBlue2 $fujiWhite $waveBlue4 $waveBlue2
+client.focused_tab_title $waveBlue2 $waveBlue2 $fujiWhite
+
+for_window [app_id="firefox"] border none
+
+output * bg ~/.local/state/wallpaper fill

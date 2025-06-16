@@ -1,0 +1,5 @@
+[include]
+  path = ~/.config/git/common.gitconfig
+  path = ~/.config/git/local.gitconfig
+[includeIf "gitdir:~/imag/"]
+	path = ~/.config/git/ensimag.gitconfig
