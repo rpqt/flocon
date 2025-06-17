@@ -1,5 +1,5 @@
 {
-  keys,
+  config,
   lib,
   pkgs,
   ...
@@ -17,7 +17,7 @@
 
     shell = pkgs.zsh;
 
-    openssh.authorizedKeys.keys = [ keys.rpqt.haze ];
+    openssh.authorizedKeys.keys = [ (import ../../parts/keys.nix).rpqt.haze ];
 
     extraGroups = [
       "wheel"

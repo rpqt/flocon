@@ -1,7 +1,7 @@
-{ inputs, ... }:
+{ self, ... }:
 {
   imports = [
-    inputs.nix-topology.nixosModules.default
+    self.inputs.nix-topology.nixosModules.default
     ./tailscale.nix
   ];
 }

@@ -1,5 +1,5 @@
 {
-  inputs,
+  self,
   modulesPath,
   config,
   ...
@@ -9,7 +9,7 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     # ./radicle.nix
     ../../system
-    inputs.clan-core.clanModules.state-version
+    self.inputs.clan-core.clanModules.state-version
     ../../modules/remote-builder.nix
     ../../modules/borgbackup.nix
     ./topology.nix

@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ config, self, ... }:
 let
   user = "u422292";
   sub-user = "${user}";
@@ -7,7 +7,7 @@ in
 {
   imports = [
     ./storagebox.nix
-    inputs.clan-core.clanModules.borgbackup
+    self.inputs.clan-core.clanModules.borgbackup
   ];
 
   clan.borgbackup.destinations."storagebox-${config.networking.hostName}" = {

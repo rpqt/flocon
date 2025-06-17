@@ -1,10 +1,10 @@
 {
-  inputs,
+  self,
   ...
 }:
 {
   imports = [
-    inputs.agenix.nixosModules.default
+    self.inputs.agenix.nixosModules.default
     ./acme.nix
     ./boot.nix
     ./builder.nix
@@ -24,10 +24,10 @@
     ../../system
     ../../modules/borgbackup.nix
 
-    inputs.clan-core.clanModules.state-version
-    inputs.clan-core.clanModules.trusted-nix-caches
+    self.inputs.clan-core.clanModules.state-version
+    self.inputs.clan-core.clanModules.trusted-nix-caches
 
-    inputs.home-manager.nixosModules.home-manager
+    self.inputs.home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;

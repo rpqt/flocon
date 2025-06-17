@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ self, pkgs, ... }:
 {
   programs.niri.enable = true;
 
@@ -11,8 +11,8 @@
     tofi
     wl-gammarelay-rs
     xwayland-satellite
-    inputs.ignis.packages.${pkgs.system}.ignis
-    inputs.matugen.packages.${pkgs.system}.default
+    self.inputs.ignis.packages.${pkgs.system}.ignis
+    self.inputs.matugen.packages.${pkgs.system}.default
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

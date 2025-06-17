@@ -1,4 +1,6 @@
-{ keys, ... }:
+let
+  keys = import ../../parts/keys.nix;
+in
 {
   imports = [
     ../../modules/remote-builder.nix
