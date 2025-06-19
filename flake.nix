@@ -19,55 +19,13 @@
         inputs.nix-topology.flakeModule
 
         ./devShells/flake-module.nix
+        ./machines/flake-module.nix
       ];
 
       systems = [
         "x86_64-linux"
         "aarch64-linux"
       ];
-
-      clan = {
-        meta.name = "blossom";
-
-        inventory = {
-          instances = {
-            "rpqt-admin" = {
-              module.input = "clan-core";
-              module.name = "admin";
-              roles.default.machines = {
-                "crocus" = { };
-                "genepi" = { };
-                "haze" = { };
-              };
-              roles.default.settings.allowedKeys = {
-                rpqt_haze = (import ./parts).keys.rpqt.haze;
-              };
-            };
-          };
-          services = {
-            zerotier.default = {
-              roles.controller.machines = [
-                "crocus"
-              ];
-              roles.peer.machines = [
-                "haze"
-                "genepi"
-              ];
-            };
-            sshd.default = {
-              roles.server.machines = [ "crocus" ];
-            };
-            user-password.rpqt = {
-              roles.default.machines = [
-                "crocus"
-                "genepi"
-                "haze"
-              ];
-              config.user = "rpqt";
-            };
-          };
-        };
-      };
 
       perSystem = _: {
         topology.modules = [
