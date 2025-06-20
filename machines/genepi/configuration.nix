@@ -8,7 +8,6 @@
     ./acme.nix
     ./boot.nix
     ./builder.nix
-    ./dns.nix
     ./freshrss.nix
     ./glance.nix
     ./homeassistant.nix
