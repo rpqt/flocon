@@ -4,6 +4,7 @@
     devenv
     direnv
     hut
+    jujutsu
     nix-output-monitor
     radicle-node
     typescript-language-server
