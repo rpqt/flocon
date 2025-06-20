@@ -31,19 +31,23 @@
         };
         roles.peer.tags."all" = { };
       };
-    };
 
-    inventory.services = {
-      sshd.default = {
-        roles.server.tags = [ "all" ];
+      "sshd" = {
+        module.input = "clan-core";
+        module.name = "sshd";
+        roles.server.tags.all = { };
       };
-      user-password.rpqt = {
-        roles.default.machines = [
-          "crocus"
-          "genepi"
-          "haze"
-        ];
-        config.user = "rpqt";
+
+      "rpqt-password-haze" = {
+        module.input = "clan-core";
+        module.name = "users";
+        roles.default.machines.haze = {
+          settings = {
+            prompt = false;
+            user = "rpqt";
+          };
+        };
+      };
       };
     };
   };
