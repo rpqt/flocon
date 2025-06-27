@@ -6,6 +6,7 @@
     hut
     jujutsu
     nix-output-monitor
+    python3
     radicle-node
     typescript-language-server
     nil # Nix language server
