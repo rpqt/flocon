@@ -7,6 +7,8 @@
 {
   users.mutableUsers = lib.mkDefault false;
 
+  services.userborn.enable = true;
+
   users.users.rpqt = {
     isNormalUser = true;
 
