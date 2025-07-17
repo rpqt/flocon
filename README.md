@@ -8,3 +8,11 @@
 - **secrets**: Age-encrypted secrets shared between multiple hosts.
   Host-specific secrets are stored in their own directories.
 - **system**: Base NixOS modules shared among all hosts
+
+## Dotfiles
+
+### Linking with dotbotc (for windows)
+
+```sh
+dotbot -c ./dotbot/windows.yaml -d home
+```
