@@ -2,7 +2,7 @@
 {
   services.radicle = {
     enable = true;
-    privateKeyFile = config.age.secrets.radicle-private-key.path;
+    privateKeyFile = config.clan.core.vars.generators.radicle.files.radicle-private-key.path;
     publicKey = keys.services.radicle;
     node = {
       openFirewall = true;
@@ -17,5 +17,11 @@
     };
   };
 
-  age.secrets.radicle-private-key.file = ../../secrets/radicle-private-key.age;
+  clan.core.vars.generators.radicle = {
+    prompts.radicle-private-key = {
+      description = "radicle node private key";
+      type = "hidden";
+      persist = true;
+    };
+  };
 }

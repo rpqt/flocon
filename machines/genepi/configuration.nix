@@ -4,7 +4,6 @@
 }:
 {
   imports = [
-    self.inputs.agenix.nixosModules.default
     ./acme.nix
     ./boot.nix
     ./builder.nix

@@ -7,24 +7,21 @@ let
   home = config.users.users.${user}.home;
 in
 {
-  # age.secrets.syncthing-key.file = ./secrets/syncthing-key.pem.age;
-  # age.secrets.syncthing-cert.file = ./secrets/syncthing-cert.pem.age;
-
   services.syncthing = {
-    enable = false;
+    enable = true;
     user = user;
     group = "users";
     dataDir = home;
     configDir = "${home}/.config/syncthing";
-    key = config.age.secrets.syncthing-key.path;
-    cert = config.age.secrets.syncthing-cert.path;
+    key = config.clan.core.vars.generators.syncthing.files."key".path;
+    cert = config.clan.core.vars.generators.syncthing.files."cert".path;
     openDefaultPorts = true;
     overrideDevices = true;
     overrideFolders = true;
     settings = {
       devices = {
         "genepi" = {
-          id = "EA7DC7O-IHB47EQ-AWT2QBJ-AWPDF5S-W4EM66A-KQPCTHI-UX53WKM-QTSAHQ4";
+          id = "TNP3M2Z-2AJ3CJE-4LLYHME-3KWCLN4-XQWBIDJ-PTDRANE-RRBYQWQ-KXJFTQU";
         };
         "pixel-7a" = {
           id = "IZE7B4Z-LKTJY6Q-77NN4JG-ADYRC77-TYPZTXE-Q35BWV2-AEO7Q3R-ZE63IAU";
@@ -59,5 +56,21 @@ in
         };
       };
     };
+  };
+
+  clan.core.vars.generators.syncthing = {
+    prompts.key = {
+      description = "syncthing private key";
+      type = "hidden";
+      persist = true;
+    };
+    files.key.owner = config.services.syncthing.user;
+
+    prompts.cert = {
+      description = "syncthing cert";
+      type = "hidden";
+      persist = true;
+    };
+    files.cert.owner = config.services.syncthing.user;
   };
 }

@@ -8,7 +8,6 @@
     {
       devShells.default = pkgs.mkShellNoCC {
         packages = [
-          inputs'.agenix.packages.default
           inputs'.clan-core.packages.clan-cli
           pkgs.garage
           pkgs.nil # Nix language server

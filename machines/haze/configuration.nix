@@ -4,8 +4,6 @@
 }:
 {
   imports = [
-    # inputs.disko.nixosModules.disko
-    self.inputs.agenix.nixosModules.default
     ./boot.nix
     ./chat.nix
     ./firefox.nix
