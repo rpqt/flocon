@@ -34,7 +34,9 @@
     ];
   };
 
-  services.avahi.enable = true;
+  services.avahi.allowInterfaces = [
+    "zts7mq7onf"
+  ];
 
   disko.devices.disk.main.device = "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_48353082";
 
