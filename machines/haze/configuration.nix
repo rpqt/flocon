@@ -66,4 +66,6 @@
       builders-use-substitutes = true
     '';
   };
+
+  services.tailscale.useRoutingFeatures = "client";
 }
