@@ -6,6 +6,7 @@
     brightnessctl
     pavucontrol
     playerctl
+    quickshell
     swaybg
     swaylock
     tofi
