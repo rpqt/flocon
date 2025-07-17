@@ -22,7 +22,6 @@
     ../../system
     ../../modules/borgbackup.nix
 
-    self.inputs.clan-core.clanModules.state-version
 
     self.inputs.home-manager.nixosModules.home-manager
     {
@@ -33,6 +32,8 @@
   ];
 
   networking.hostName = "genepi";
+
+  clan.core.settings.state-version.enable = true;
 
   disko.devices.disk.main.device = "/dev/disk/by-id/ata-WD_Green_M.2_2280_480GB_2251E6411147";
 

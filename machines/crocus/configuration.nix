@@ -9,7 +9,6 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     # ./radicle.nix
     ../../system
-    self.inputs.clan-core.clanModules.state-version
     ../../modules/remote-builder.nix
     ../../modules/borgbackup.nix
     ./topology.nix
@@ -34,6 +33,8 @@
       { Gateway = "fe80::1"; }
     ];
   };
+
+  clan.core.settings.state-version.enable = true;
 
   services.avahi.allowInterfaces = [
     "zts7mq7onf"

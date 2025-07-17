@@ -20,8 +20,6 @@
     ./video.nix
     ../../system
 
-    self.inputs.clan-core.clanModules.state-version
-
     self.inputs.home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
@@ -48,6 +46,8 @@
         disabledModules = [ ./niri.nix ];
       };
   };
+
+  clan.core.settings.state-version.enable = true;
 
   programs.kdeconnect.enable = true;
 
