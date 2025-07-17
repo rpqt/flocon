@@ -36,6 +36,8 @@
     "home.rpqt.fr"
   ];
 
+  clan.deployment.requireExplicitUpdate = true;
+
   clan.core.settings.state-version.enable = true;
 
   networking.nameservers = [
