@@ -20,8 +20,6 @@
     ./topology.nix
 
     ../../system
-    ../../modules/borgbackup.nix
-
 
     self.inputs.home-manager.nixosModules.home-manager
     {

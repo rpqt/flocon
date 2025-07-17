@@ -1,3 +1,4 @@
+{ self, lib, ... }:
 {
   clan = {
     meta.name = "blossom";
@@ -100,6 +101,30 @@
         module.input = "clan-core";
         module.name = "trusted-nix-caches";
         roles.default.tags.all = { };
+      };
+
+      "borgbackup-storagebox" = {
+        module.input = "clan-core";
+        module.name = "borgbackup";
+
+        roles.client.machines = lib.genAttrs [ "crocus" "genepi" ] (
+          machine:
+          let
+            config = self.nixosConfigurations.${machine}.config;
+            user = "u422292";
+            host = "${user}.your-storagebox.de";
+          in
+          {
+            settings.destinations."storagebox-${config.networking.hostName}" = {
+              repo = "${user}@${host}:./borgbackup/${config.networking.hostName}";
+              rsh = "ssh -oPort=23 -i ${config.clan.core.vars.generators.borgbackup.files."borgbackup.ssh".path}";
+            };
+          }
+        );
+        roles.client.extraModules = [
+          ../modules/storagebox.nix
+        ];
+        roles.server.machines = { };
       };
     };
   };
