@@ -20,8 +20,9 @@
     ./topology.nix
 
     ../../system
-    ../../modules/unbound.nix
-    ../../modules/unbound-auth.nix
+    ../../modules/borgbackup.nix
+
+    self.inputs.clan-core.clanModules.state-version
 
     self.inputs.home-manager.nixosModules.home-manager
     {

@@ -77,6 +77,11 @@
           };
         };
       };
+
+      "trusted-nix-caches" = {
+        module.input = "clan-core";
+        module.name = "trusted-nix-caches";
+        roles.default.tags.all = { };
       };
     };
   };

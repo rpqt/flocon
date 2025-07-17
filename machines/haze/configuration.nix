@@ -21,7 +21,6 @@
     ../../system
 
     self.inputs.clan-core.clanModules.state-version
-    self.inputs.clan-core.clanModules.trusted-nix-caches
 
     self.inputs.home-manager.nixosModules.home-manager
     {
