@@ -78,7 +78,6 @@
         module.name = "users";
         roles.default.machines.haze = {
           settings = {
-            prompt = false;
             user = "rpqt";
           };
         };
