@@ -54,6 +54,11 @@
                   url = "https://rss.home.rpqt.fr";
                   icon = "si:rss";
                 }
+                {
+                  title = "Syncthing";
+                  url = "https://genepi.home.rpqt.fr/syncthing";
+                  icon = "si:syncthing";
+                }
               ];
             }
           ];
