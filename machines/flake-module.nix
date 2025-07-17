@@ -1,7 +1,15 @@
 {
-
   clan = {
     meta.name = "blossom";
+
+    inventory.machines = {
+      crocus = {
+        deploy.targetHost = "root@crocus";
+      };
+      genepi = {
+        deploy.targetHost = "root@genepi";
+      };
+    };
 
     inventory.instances = {
       "rpqt-admin" = {

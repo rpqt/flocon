@@ -21,7 +21,6 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   networking.hostName = "crocus";
-  clan.core.networking.targetHost = "root@crocus.local";
 
   networking.useDHCP = false;
   systemd.network.enable = true;
