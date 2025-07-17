@@ -32,20 +32,6 @@
   networking.hostName = "haze";
   clan.core.networking.targetHost = "rpqt@haze.local";
 
-  specialisation = {
-    hyprland.configuration =
-      { ... }:
-      {
-        imports = [ ./hyprland.nix ];
-        disabledModules = [ ./niri.nix ];
-      };
-    sway.configuration =
-      { ... }:
-      {
-        imports = [ ./sway.nix ];
-        disabledModules = [ ./niri.nix ];
-      };
-  };
 
   clan.core.settings.state-version.enable = true;
 
