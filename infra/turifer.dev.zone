@@ -1,0 +1,18 @@
+$TTL 3600
+@	IN SOA dns100.ovh.net. tech.ovh.net. (2025071505 86400 3600 3600000 60)
+    IN NS     dns100.ovh.net.
+	IN NS     ns100.ovh.net.
+
+turifer.dev. 3000 IN TXT "hosted-email-verify=k5z4lcfc"
+turifer.dev. 3000 IN MX 10 aspmx1.migadu.com.
+turifer.dev. 3000 IN MX 20 aspmx2.migadu.com.
+turifer.dev. 3000 IN TXT "v=spf1 include:spf.migadu.com -all"
+key1._domainkey.turifer.dev. 3000 IN CNAME key1.turifer.dev._domainkey.migadu.com.
+key2._domainkey.turifer.dev. 3000 IN CNAME key2.turifer.dev._domainkey.migadu.com.
+key3._domainkey.turifer.dev. 3000 IN CNAME key3.turifer.dev._domainkey.migadu.com.
+_dmarc.turifer.dev. 3000 IN TXT "v=DMARC1; p=quarantine;"
+autoconfig.turifer.dev. 3000 IN CNAME autoconfig.migadu.com.
+_autodiscover._tcp.turifer.dev. 3000 IN SRV 0 1 443 autodiscover.migadu.com.
+_submissions._tcp.turifer.dev. 3000 IN SRV 0 1 465 smtp.migadu.com.
+_imaps._tcp.turifer.dev. 3000 IN SRV 0 1 993 imap.migadu.com.
+_pop3s._tcp.turifer.dev. 3000 IN SRV 0 1 995 pop.migadu.com.

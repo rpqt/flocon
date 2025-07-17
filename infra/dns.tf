@@ -21,3 +21,12 @@ resource "gandi_livedns_record" "rpqt_fr_radicle_aaaa" {
     hcloud_server.crocus_server.ipv6_address,
   ]
 }
+
+data "ovh_domain_zone" "turifer_dev" {
+  name = "turifer.dev"
+}
+
+resource "ovh_domain_zone_import" "turifer_dev_import" {
+  zone_name = "turifer.dev"
+  zone_file = file("./turifer.dev.zone")
+}

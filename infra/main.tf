@@ -8,5 +8,9 @@ terraform {
       source  = "hetznercloud/hcloud"
       version = "~> 1.45"
     }
+    ovh = {
+      source  = "ovh/ovh"
+      version = "2.5.0"
+    }
   }
 }
