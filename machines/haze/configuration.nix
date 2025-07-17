@@ -32,8 +32,16 @@
   networking.hostName = "haze";
   clan.core.networking.targetHost = "rpqt@haze.local";
 
+  networking.search = [
+    "home.rpqt.fr"
+  ];
 
   clan.core.settings.state-version.enable = true;
+
+  networking.nameservers = [
+    self.nixosConfigurations.genepi.config.clan.core.vars.generators.zerotier.files.zerotier-ip.value
+    self.nixosConfigurations.crocus.config.clan.core.vars.generators.zerotier.files.zerotier-ip.value
+  ];
 
   programs.kdeconnect.enable = true;
 
