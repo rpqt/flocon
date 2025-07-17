@@ -81,4 +81,6 @@
     acceptTerms = true;
     defaults.email = "admin@rpqt.fr";
   };
+
+  services.tailscale.useRoutingFeatures = "server";
 }
