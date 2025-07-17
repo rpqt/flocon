@@ -13,6 +13,7 @@
     ../../modules/remote-builder.nix
     ../../modules/borgbackup.nix
     ./topology.nix
+    self.nixosModules.gitea
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";

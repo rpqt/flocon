@@ -20,6 +20,7 @@
 
         ./devShells/flake-module.nix
         ./machines/flake-module.nix
+        ./modules/flake-module.nix
       ];
 
       systems = [
