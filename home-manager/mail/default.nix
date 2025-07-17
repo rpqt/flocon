@@ -15,7 +15,7 @@
       realName = "Romain Paquet";
       primary = true;
       flavor = "migadu.com";
-      thunderbird.enable = true;
+      thunderbird.enable = config.programs.thunderbird.enable;
     };
 
     "admin@rpqt.fr" = {
@@ -38,6 +38,14 @@
         host = "smtp.partage.renater.fr";
         port = 465;
       };
+      thunderbird.enable = config.programs.thunderbird.enable;
+    };
+
+    "admin@turifer.dev" = {
+      address = "admin@turifer.dev";
+      aliases = [ "postmaster@turifer.dev" ];
+      realName = "Postmaster";
+      flavor = "migadu.com";
       thunderbird.enable = config.programs.thunderbird.enable;
     };
   };
