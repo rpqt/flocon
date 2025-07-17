@@ -8,5 +8,7 @@
     defaultEditor = true;
   };
 
-  xdg.configFile."helix".source = "${config.dotfiles.path}/.config/helix";
+  xdg.configFile."helix/config.toml".source = "${config.dotfiles.path}/.config/helix/config.toml";
+  xdg.configFile."helix/languages.toml".source =
+    "${config.dotfiles.path}/.config/helix/languages.toml";
 }
