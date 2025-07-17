@@ -5,9 +5,15 @@
     inventory.machines = {
       crocus = {
         deploy.targetHost = "root@crocus";
+        tags = [
+          "garage"
+        ];
       };
       genepi = {
         deploy.targetHost = "root@genepi";
+        tags = [
+          "garage"
+        ];
       };
     };
 
@@ -76,6 +82,19 @@
             user = "rpqt";
           };
         };
+      };
+
+      "garage" = {
+        module.input = "clan-core";
+        module.name = "garage";
+        roles.default.tags.garage = { };
+      };
+
+      "garage-config" = {
+        module.input = "clan-core";
+        module.name = "importer";
+        roles.default.tags.garage = { };
+        roles.default.extraModules = [ ../modules/garage.nix ];
       };
 
       "trusted-nix-caches" = {
