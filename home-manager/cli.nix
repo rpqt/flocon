@@ -43,6 +43,7 @@
   };
 
   xdg.configFile."git".source = "${config.dotfiles.path}/.config/git";
+  xdg.configFile."jj/config.toml".source = "${config.dotfiles.path}/.config/jj/config.toml";
   xdg.configFile."task/taskrc".source = "${config.dotfiles.path}/.config/task/taskrc";
 
   home.sessionPath = [ "${config.dotfiles.path}/bin" ];
