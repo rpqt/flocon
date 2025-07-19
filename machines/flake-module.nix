@@ -39,7 +39,7 @@
         roles.moon.machines.crocus = {
           settings = {
             stableEndpoints = [
-              "167.235.28.141"
+              "116.203.18.122"
               "2a01:4f8:1c1e:e415::/64"
             ];
           };

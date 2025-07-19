@@ -28,5 +28,13 @@ data "ovh_domain_zone" "turifer_dev" {
 
 resource "ovh_domain_zone_import" "turifer_dev_import" {
   zone_name = "turifer.dev"
-  zone_file = file("./turifer.dev.zone")
+  zone_file = local.turifer_dev_zone_file
 }
+
+locals {
+  turifer_dev_zone_file = templatefile("./templates/turifer.dev.zone", {
+    crocus_ipv4_address = hcloud_server.crocus_server.ipv4_address
+    crocus_ipv6_address = hcloud_server.crocus_server.ipv6_address
+  })
+}
+

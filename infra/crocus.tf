@@ -1,8 +1,20 @@
 resource "hcloud_server" "crocus_server" {
   name         = "crocus"
   server_type  = "cx22"
+  datacenter   = "nbg1-dc3"
   image        = "ubuntu-20.04"
   firewall_ids = [hcloud_firewall.crocus_firewall.id]
+  public_net {
+    ipv4 = hcloud_primary_ip.crocus_ipv4.id
+  }
+}
+
+resource "hcloud_primary_ip" "crocus_ipv4" {
+  name          = "crocus_ipv4"
+  type          = "ipv4"
+  datacenter    = "nbg1-dc3"
+  assignee_type = "server"
+  auto_delete   = true
 }
 
 resource "hcloud_firewall" "crocus_firewall" {
