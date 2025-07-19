@@ -28,7 +28,7 @@ in
     settings = {
       devices = {
         "haze" = {
-          id = "QUX6KGF-7KNFTGD-RAX5OWC-NFQGRNK-S2TC2DQ-DQRWDTK-KMBTQXT-EVNRDQG";
+          id = "INMEQOC-5WT5JMJ-EYCBQVQ-LK2CIFQ-A5IRXPR-724CPE6-Z5A4UTH-5QGO4QD";
         };
         "pixel-7a" = {
           id = "IZE7B4Z-LKTJY6Q-77NN4JG-ADYRC77-TYPZTXE-Q35BWV2-AEO7Q3R-ZE63IAU";
