@@ -33,8 +33,6 @@
 
   clan.core.settings.state-version.enable = true;
 
-  disko.devices.disk.main.device = "/dev/disk/by-id/ata-WD_Green_M.2_2280_480GB_2251E6411147";
-
   nix.gc = {
     automatic = true;
     dates = "weekly";

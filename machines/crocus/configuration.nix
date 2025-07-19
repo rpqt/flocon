@@ -39,8 +39,6 @@
     "zts7mq7onf"
   ];
 
-  disko.devices.disk.main.device = "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_48353082";
-
   boot.loader.grub = {
     efiSupport = true;
     efiInstallAsRemovable = true;

@@ -1,17 +1,8 @@
 {
-  clan-core,
-  config,
-  ...
-}:
-let
-  suffix = config.clan.core.vars.generators.disk-id.files.diskId.value;
-in
-{
-  imports = [ clan-core.clanModules.disk-id ];
-
   disko.devices.disk.main = {
-    name = "main-" + suffix;
+    name = "main-dbca87cd30a5498488026c65b37eba60";
     type = "disk";
+    device = "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_48353082";
     content = {
       type = "gpt";
       partitions = {

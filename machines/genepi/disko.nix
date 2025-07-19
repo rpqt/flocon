@@ -1,17 +1,8 @@
 {
-  clan-core,
-  config,
-  ...
-}:
-let
-  suffix = config.clan.core.vars.generators.disk-id.files.diskId.value;
-in
-{
-  imports = [ clan-core.clanModules.disk-id ];
-
   disko.devices.disk.main = {
-    name = "main-" + suffix;
+    name = "main-72b27bb5253045f38a07b6bc368ab85c";
     type = "disk";
+    device = "/dev/disk/by-id/ata-WD_Green_M.2_2280_480GB_2251E6411147";
     content = {
       type = "gpt";
       partitions = {
