@@ -7,3 +7,6 @@ diff-formatter = ["difft", "--color=always", "$left", "$right"]
 [user]
 name = "Romain Paquet"
 email = "rpqt@rpqt.fr"
+
+[aliases]
+s = ["status", "--no-pager"]
