@@ -42,22 +42,22 @@
                 {
                   title = "Immich";
                   url = "https://images.home.rpqt.fr";
-                  icon = "si:immich";
+                  icon = "sh:immich";
                 }
                 {
                   title = "Grafana";
                   url = "https://grafana.home.rpqt.fr";
-                  icon = "si:grafana";
+                  icon = "sh:grafana";
                 }
                 {
                   title = "FreshRSS";
                   url = "https://rss.home.rpqt.fr";
-                  icon = "si:rss";
+                  icon = "sh:freshrss";
                 }
                 {
                   title = "Syncthing";
                   url = "https://genepi.home.rpqt.fr/syncthing";
-                  icon = "si:syncthing";
+                  icon = "sh:syncthing";
                 }
               ];
             }
