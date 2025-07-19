@@ -1,12 +1,10 @@
 {
   self,
-  modulesPath,
   config,
   ...
 }:
 {
   imports = [
-    (modulesPath + "/profiles/qemu-guest.nix")
     # ./radicle.nix
     ../../system
     ../../modules/remote-builder.nix
@@ -14,6 +12,12 @@
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix
     self.nixosModules.gitea
+    self.inputs.srvos.nixosModules.server
+    self.inputs.srvos.nixosModules.hardware-hetzner-cloud
+  ];
+
+  disabledModules = [
+    self.inputs.srvos.nixosModules.mixins-cloud-init
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
