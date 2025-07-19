@@ -9,6 +9,7 @@ let
   machines = {
     genepi = {
       subdomains = [
+        "actual"
         "glance"
         "grafana"
         "images"

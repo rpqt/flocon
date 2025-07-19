@@ -5,6 +5,7 @@
 {
   imports = [
     ./acme.nix
+    ./actual.nix
     ./boot.nix
     ./builder.nix
     ./freshrss.nix
