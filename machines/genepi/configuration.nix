@@ -20,6 +20,8 @@
     ./taskchampion.nix
     ./topology.nix
 
+    ../../modules/unbound.nix
+    ../../modules/unbound-auth.nix
     ../../system
 
     self.inputs.home-manager.nixosModules.home-manager
