@@ -13,6 +13,8 @@
     ../../modules/remote-builder.nix
     ../../modules/borgbackup.nix
     ./topology.nix
+    ../../modules/unbound.nix
+    ../../modules/unbound-auth.nix
     self.nixosModules.gitea
   ];
 
