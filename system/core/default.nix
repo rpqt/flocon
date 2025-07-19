@@ -1,5 +1,3 @@
-{ lib, ... }:
-
 {
   imports = [
     ./users.nix
@@ -18,8 +16,4 @@
     enable = true;
     wheelNeedsPassword = false;
   };
-
-  # system.stateVersion = lib.mkDefault "24.11";
-
-  time.timeZone = lib.mkDefault "Europe/Paris";
 }

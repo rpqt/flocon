@@ -37,6 +37,7 @@
     "home.rpqt.fr"
   ];
 
+  time.timeZone = "Europe/Paris";
   clan.deployment.requireExplicitUpdate = true;
 
   clan.core.settings.state-version.enable = true;
