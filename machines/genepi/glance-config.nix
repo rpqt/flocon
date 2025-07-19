@@ -59,6 +59,16 @@
                   url = "https://genepi.home.rpqt.fr/syncthing";
                   icon = "sh:syncthing";
                 }
+                {
+                  title = "Actual Budget";
+                  url = "https://actual.home.rpqt.fr";
+                  icon = "sh:actual-budget";
+                }
+                {
+                  title = "Gitea";
+                  url = "https://git.turifer.dev";
+                  icon = "sh:gitea";
+                }
               ];
             }
           ];
