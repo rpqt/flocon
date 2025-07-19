@@ -10,6 +10,7 @@
     ./gimp.nix
     ./gnome.nix
     ./hibernate.nix
+    ./hyprland.nix
     ./niri.nix
     ./ssh.nix
     ./steam.nix
