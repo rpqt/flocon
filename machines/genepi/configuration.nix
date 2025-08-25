@@ -11,7 +11,7 @@
     ./freshrss.nix
     ./glance.nix
     ./homeassistant.nix
-    # ./immich.nix
+    ./immich.nix
     ./monitoring
     ./mpd.nix
     ./network.nix
@@ -37,6 +37,7 @@
   networking.hostName = "genepi";
 
   time.timeZone = "Europe/Paris";
+
   clan.core.settings.state-version.enable = true;
 
   nix.gc = {
