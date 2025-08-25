@@ -53,27 +53,6 @@
         roles.peer.tags."all" = { };
       };
 
-      "avahi" = {
-        module.input = "clan-core";
-        module.name = "garage";
-        roles.default.tags.all = { };
-        roles.default.extraModules = [
-          {
-            services.avahi = {
-              enable = true;
-              nssmdns4 = true;
-              nssmdns6 = true;
-              publish = {
-                enable = true;
-                domain = true;
-                userServices = true;
-                addresses = true;
-              };
-            };
-          }
-        ];
-      };
-
       "sshd" = {
         module.input = "clan-core";
         module.name = "sshd";
