@@ -5,14 +5,12 @@
 
     inventory.machines = {
       crocus = {
-        deploy.targetHost = "root@crocus";
         tags = [
           "garage"
           "server"
         ];
       };
       genepi = {
-        deploy.targetHost = "root@genepi";
         tags = [
           "garage"
           "server"
