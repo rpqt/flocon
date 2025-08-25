@@ -69,6 +69,11 @@
                   url = "https://git.turifer.dev";
                   icon = "sh:gitea";
                 }
+                {
+                  title = "Pinchflat";
+                  url = "https://pinchflat.home.rpqt.fr";
+                  icon = "sh:pinchflat";
+                }
               ];
             }
           ];

@@ -16,6 +16,7 @@
     ./mpd.nix
     ./network.nix
     ./nginx.nix
+    ./pinchflat.nix
     ./syncthing.nix
     ./taskchampion.nix
     ./topology.nix

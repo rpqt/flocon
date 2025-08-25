@@ -13,6 +13,7 @@ let
         "glance"
         "grafana"
         "images"
+        "pinchflat"
         "rss"
         "tw"
       ];
