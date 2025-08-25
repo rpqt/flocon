@@ -76,6 +76,41 @@
                 }
               ];
             }
+            {
+              type = "monitor";
+              cache = "1m";
+              title = "Sites";
+              sites = [
+                {
+                  title = "Lounge";
+                  url = "https://lounge.home.rpqt.fr";
+                  icon = "si:html5";
+                }
+                {
+                  title = "Web corner";
+                  url = "https://rpqt.fr";
+                  icon = "si:html5";
+                }
+              ];
+            }
+            {
+              type = "bookmarks";
+              groups = [
+                {
+                  title = "Music";
+                  links = [
+                    {
+                      title = "YouTube Music";
+                      url = "https://music.youtube.com";
+                    }
+                    {
+                      title = "Music for programming";
+                      url = "https://musicforprogramming.net/latest/";
+                    }
+                  ];
+                }
+              ];
+            }
           ];
         }
         {
