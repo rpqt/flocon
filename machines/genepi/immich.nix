@@ -26,5 +26,5 @@ in
     };
   };
 
-  clan.core.state.userdata.folders = [ "/var/lib/immich" ];
+  clan.core.state.immich.folders = [ "/var/lib/immich" ];
 }

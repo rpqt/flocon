@@ -15,5 +15,5 @@
       "http://127.0.0.1:${builtins.toString config.services.actual.settings.port}";
   };
 
-  clan.core.state.userdata.folders = [ "/var/lib/actual" ];
+  clan.core.state.acutal.folders = [ "/var/lib/actual" ];
 }
