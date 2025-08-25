@@ -38,9 +38,7 @@
         };
       };
 
-      "rpqt-zerotier" = {
-        module.input = "clan-core";
-        module.name = "zerotier";
+      zerotier = {
         roles.controller.machines.crocus = { };
         roles.moon.machines.crocus = {
           settings = {
