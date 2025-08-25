@@ -21,6 +21,7 @@
     ./taskchampion.nix
     ./topology.nix
 
+    ../../modules/lounge.nix
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix
     ../../system

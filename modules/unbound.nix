@@ -13,6 +13,7 @@ let
         "glance"
         "grafana"
         "images"
+        "lounge"
         "pinchflat"
         "rss"
         "tw"
