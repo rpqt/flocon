@@ -53,6 +53,12 @@
         roles.peer.tags."all" = { };
       };
 
+      internet = {
+        roles.default.machines.crocus = {
+          settings.host = "git.turifer.dev";
+        };
+      };
+
       "sshd" = {
         module.input = "clan-core";
         module.name = "sshd";
