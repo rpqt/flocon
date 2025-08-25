@@ -55,6 +55,8 @@
     };
   };
 
+  clan.core.state.gitea.folders = [ config.services.gitea.stateDir ];
+
   services.nginx.virtualHosts."git.turifer.dev" = {
     enableACME = true;
     forceSSL = true;
