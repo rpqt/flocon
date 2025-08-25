@@ -82,6 +82,12 @@
               units = "metric";
               hour-format = "24h";
             }
+            {
+              type = "weather";
+              location = "Saint-Michel-de-Maurienne, France";
+              units = "metric";
+              hour-format = "24h";
+            }
           ];
         }
       ];
