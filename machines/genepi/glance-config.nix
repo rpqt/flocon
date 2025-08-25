@@ -74,6 +74,11 @@
                   url = "https://pinchflat.home.rpqt.fr";
                   icon = "sh:pinchflat";
                 }
+                {
+                  title = "Home Assistant";
+                  url = "https://assistant.home.rpqt.fr";
+                  icon = "sh:home-assistant";
+                }
               ];
             }
             {
