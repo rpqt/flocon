@@ -18,6 +18,7 @@
       dnsPropagationCheck = true;
       environmentFile = config.clan.core.vars.generators.gandi.files.gandi-env.path;
       email = "admin@rpqt.fr";
+      dnsResolver = "1.1.1.1:53";
     };
   };
 
