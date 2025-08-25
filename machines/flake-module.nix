@@ -8,12 +8,14 @@
         deploy.targetHost = "root@crocus";
         tags = [
           "garage"
+          "server"
         ];
       };
       genepi = {
         deploy.targetHost = "root@genepi";
         tags = [
           "garage"
+          "server"
         ];
       };
     };
@@ -125,6 +127,41 @@
           ../modules/storagebox.nix
         ];
         roles.server.machines = { };
+      };
+
+      prometheus = {
+        module.input = "self";
+        module.name = "@rpqt/prometheus";
+
+        roles.scraper.machines.genepi = { };
+        roles.scraper.settings = {
+          extraScrapeConfigs = [
+            {
+              job_name = "garage";
+              static_configs = [
+                {
+                  labels.instance = "crocus";
+                  targets = [ "crocus.home.rpqt.fr:3903" ];
+                }
+                {
+                  labels.instance = "genepi";
+                  targets = [ "genepi.home.rpqt.fr:3903" ];
+                }
+              ];
+            }
+          ];
+        };
+
+        roles.target.tags.server = { };
+        roles.target.settings = {
+          exporters = {
+            node = {
+              enabledCollectors = [
+                "systemd"
+              ];
+            };
+          };
+        };
       };
     };
   };

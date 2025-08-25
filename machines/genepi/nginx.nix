@@ -4,4 +4,6 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
   };
+
+  networking.firewall.interfaces."zts7mq7onf".allowedTCPPorts = [ 443 ];
 }
