@@ -18,6 +18,7 @@
         inputs.clan-core.flakeModules.default
         inputs.nix-topology.flakeModule
 
+        ./clanServices/flake-module.nix
         ./devShells/flake-module.nix
         ./machines/flake-module.nix
         ./modules/flake-module.nix
