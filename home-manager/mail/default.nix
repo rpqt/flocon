@@ -64,5 +64,12 @@
       };
       thunderbird.enable = config.programs.thunderbird.enable;
     };
+
+    "romain.pqt@gmail.com" = {
+      address = "romain.pqt@gmail.com";
+      realName = "Romain Paquet";
+      flavor = "gmail.com";
+      thunderbird.enable = config.programs.thunderbird.enable;
+    };
   };
 }
