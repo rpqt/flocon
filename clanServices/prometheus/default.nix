@@ -57,7 +57,7 @@
               in
               (lib.map mkScrapeConfig allExporters) ++ settings.extraScrapeConfigs;
 
-            clan.core.state.prometheus.folders = [ config.services.prometheus.stateDir ];
+            clan.core.state.prometheus.folders = [ "/var/lib/${config.services.prometheus.stateDir}" ];
           };
       };
   };
