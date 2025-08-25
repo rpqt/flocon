@@ -38,7 +38,8 @@
   ];
 
   time.timeZone = "Europe/Paris";
-  clan.deployment.requireExplicitUpdate = true;
+
+  clan.core.deployment.requireExplicitUpdate = true;
 
   clan.core.settings.state-version.enable = true;
 
