@@ -34,6 +34,7 @@
 
   networking.hostName = "genepi";
 
+  time.timeZone = "Europe/Paris";
   clan.core.settings.state-version.enable = true;
 
   nix.gc = {
