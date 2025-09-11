@@ -1,7 +1,7 @@
 { config, ... }:
 {
   imports = [
-    ../../modules/gandi.nix
+    ./gandi.nix
   ];
 
   security.acme = {

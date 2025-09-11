@@ -79,6 +79,11 @@
                   url = "https://assistant.home.rpqt.fr";
                   icon = "sh:home-assistant";
                 }
+                {
+                  title = "Nextcloud";
+                  url = "https://cloud.home.rpqt.fr";
+                  icon = "sh:nextcloud";
+                }
               ];
             }
             {

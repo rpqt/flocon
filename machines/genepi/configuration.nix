@@ -4,7 +4,6 @@
 }:
 {
   imports = [
-    ./acme.nix
     ./actual.nix
     ./boot.nix
     ./builder.nix
@@ -21,6 +20,7 @@
     ./taskchampion.nix
     ./topology.nix
 
+    ../../modules/acme-home.nix
     ../../modules/lounge.nix
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix

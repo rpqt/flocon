@@ -7,6 +7,7 @@
     # ./radicle.nix
     ../../system
     ../../modules/remote-builder.nix
+    ./nextcloud.nix
     ./topology.nix
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix

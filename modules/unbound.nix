@@ -20,6 +20,11 @@ let
         "tw"
       ];
     };
+    crocus = {
+      subdomains = [
+        "cloud"
+      ];
+    };
   };
   zerotierInterface = "zts7mq7onf";
   machinesZerotierIpRecords =
