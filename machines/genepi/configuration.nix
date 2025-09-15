@@ -23,7 +23,8 @@
     ../../modules/lounge.nix
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix
-    ../../system
+    ../../system/core
+    ../../system/nix
 
     self.inputs.home-manager.nixosModules.home-manager
     {
