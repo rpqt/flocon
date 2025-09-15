@@ -17,7 +17,6 @@
     ./thunderbird.nix
     ./network.nix
     ./syncthing.nix
-    ./topology.nix
     ./video.nix
     ../../system
 

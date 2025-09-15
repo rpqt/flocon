@@ -16,7 +16,6 @@
     flake-parts.lib.mkFlake { inherit inputs; } ({
       imports = [
         inputs.clan-core.flakeModules.default
-        inputs.nix-topology.flakeModule
 
         ./clanServices/flake-module.nix
         ./devShells/flake-module.nix
@@ -28,12 +27,6 @@
         "x86_64-linux"
         "aarch64-linux"
       ];
-
-      perSystem = _: {
-        topology.modules = [
-          ./topology.nix
-        ];
-      };
 
       flake = {
         packages.aarch64-linux.genepi-installer-sd-image = nixos-generators.nixosGenerate {
@@ -82,9 +75,6 @@
 
     ignis.url = "github:ignis-sh/ignis";
     ignis.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-topology.url = "github:oddlama/nix-topology";
-    nix-topology.inputs.nixpkgs.follows = "nixpkgs";
 
     matugen.url = "github:InioX/Matugen";
     matugen.inputs.nixpkgs.follows = "nixpkgs";

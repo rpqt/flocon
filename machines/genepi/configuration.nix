@@ -18,7 +18,6 @@
     ./pinchflat.nix
     ./syncthing.nix
     ./taskchampion.nix
-    ./topology.nix
 
     ../../modules/acme-home.nix
     ../../modules/lounge.nix

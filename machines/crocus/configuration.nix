@@ -5,10 +5,10 @@
 {
   imports = [
     # ./radicle.nix
-    ../../system
+    ../../system/core
+    ../../system/nix
     ../../modules/remote-builder.nix
     ./nextcloud.nix
-    ./topology.nix
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix
     self.nixosModules.gitea
