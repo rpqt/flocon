@@ -22,6 +22,12 @@
           "syncthing"
         ];
       };
+      verbena = {
+        tags = [
+          "garage"
+          "server"
+        ];
+      };
     };
 
     inventory.instances = {
@@ -32,6 +38,7 @@
           "crocus" = { };
           "genepi" = { };
           "haze" = { };
+          "verbena" = { };
         };
         roles.default.settings.allowedKeys = {
           rpqt_haze = (import ../parts).keys.rpqt.haze;
