@@ -19,7 +19,8 @@ in
 
       replication_factor = 2;
 
-      rpc_bind_addr = "[${zerotier_ip}]:3901";
+      rpc_bind_addr = "[::]:3901";
+      rpc_public_addr = "[${zerotier_ip}]:3901";
 
       s3_api = {
         api_bind_addr = "127.0.0.1:3900";
