@@ -22,7 +22,7 @@ in
       adminpassFile = config.clan.core.vars.generators.nextcloud.files.admin-password.path;
       objectstore.s3 = {
         enable = true;
-        bucket = "garage";
+        bucket = "nextcloud";
         key = config.clan.core.vars.generators.nextcloud-s3-storage.files.access-key-id.value;
         secretFile = config.clan.core.vars.generators.nextcloud-s3-storage.files.access-key-secret.path;
         hostname = "127.0.0.1";
@@ -53,10 +53,6 @@ in
   services.nginx.virtualHosts.${config.services.nextcloud.hostName} = {
     forceSSL = true;
     useACMEHost = domain;
-    locations."/" = {
-      proxyPass = "http://127.0.0.1:8080";
-      proxyWebsockets = true;
-    };
   };
 
   clan.core.vars.generators.nextcloud = {
@@ -79,7 +75,6 @@ in
       type = "hidden";
       persist = true;
     };
-    files.access-key-id.owner = "nextcloud";
     files.access-key-id.secret = false;
     files.access-key-secret.owner = "nextcloud";
   };
