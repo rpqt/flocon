@@ -1,7 +1,6 @@
 { config, ... }:
 let
-  domain = "home.rpqt.fr";
-  fqdn = "cloud.${domain}";
+  fqdn = "cloud.rpqt.fr";
 in
 {
   imports = [
@@ -52,7 +51,14 @@ in
 
   services.nginx.virtualHosts.${config.services.nextcloud.hostName} = {
     forceSSL = true;
-    useACMEHost = domain;
+    enableACME = true;
+  };
+
+  # Redirect internal domain to the public one
+  services.nginx.virtualHosts."cloud.home.rpqt.fr" = {
+    forceSSL = true;
+    useACMEHost = "home.rpqt.fr";
+    locations."/".return = "301 http://${fqdn}$request_uri";
   };
 
   clan.core.vars.generators.nextcloud = {
