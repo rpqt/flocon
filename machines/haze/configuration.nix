@@ -47,6 +47,10 @@
     self.nixosConfigurations.crocus.config.clan.core.vars.generators.zerotier.files.zerotier-ip.value
   ];
 
+  environment.systemPackages = [
+    self.inputs.clan-core.packages.x86_64-linux.clan-app
+  ];
+
   programs.kdeconnect.enable = true;
 
   # Remote builds
