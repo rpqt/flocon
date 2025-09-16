@@ -134,7 +134,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "sh" "-c" "alacritty msg create-window || alacritty"; }
-    Mod+D { spawn "tofi-drun" "--drun-launch=true"; }
+    Mod+D { spawn "vicinae"; }
     Super+Alt+L { spawn "swaylock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }

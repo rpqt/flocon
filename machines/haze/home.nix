@@ -13,5 +13,6 @@
     ../../home-manager/desktop/gnome.nix
     ../../home-manager/desktop/niri.nix
     ../../home-manager/desktop/sway.nix
+    ../../home-manager/desktop/vicinae.nix
   ];
 }
