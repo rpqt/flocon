@@ -19,3 +19,8 @@ _pop3s._tcp.turifer.dev. 3000 IN SRV 0 1 995 pop.migadu.com.
 
 git.turifer.dev. 10800 IN A ${crocus_ipv4_address}
 git.turifer.dev. 10800 IN AAAA ${crocus_ipv6_address}
+
+%{ for addr in verbena_ipv4_addresses ~}
+%{ endfor ~}
+%{ for addr in verbena_ipv6_addresses ~}
+%{ endfor ~}
