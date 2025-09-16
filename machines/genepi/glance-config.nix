@@ -125,20 +125,20 @@
         }
         {
           size = "small";
-          widgets = [
-            {
+          widgets =
+            let
+              locations = [
+                "Krakow, Poland"
+                "Grenoble, France"
+                "Saint-Michel-de-Maurienne, France"
+              ];
+            in
+            builtins.map (location: {
               type = "weather";
-              location = "Grenoble, France";
+              inherit location;
               units = "metric";
               hour-format = "24h";
-            }
-            {
-              type = "weather";
-              location = "Saint-Michel-de-Maurienne, France";
-              units = "metric";
-              hour-format = "24h";
-            }
-          ];
+            }) locations;
         }
       ];
     }
