@@ -15,6 +15,7 @@ in
       "shopping_list"
       # For fast zlib compression
       "isal"
+      "shelly"
     ];
     config = {
       default_config = { };
