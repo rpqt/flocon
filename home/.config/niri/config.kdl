@@ -22,11 +22,13 @@ input {
 output "eDP-1" {
     mode "1920x1080@60.049"
     scale 1
-    position x=0 y=1080
+    position x=360 y=1440
 }
 
 output "HDMI-A-1" {
-    position x=1920 y=0
+    mode "3840x2160@60.000"
+    scale 1.5
+    position x=0 y=0
 }
 
 layout {
@@ -67,7 +69,23 @@ layout {
     }
 
     border {
-        off
+        width 2
+
+        // Color of the ring on the active monitor.
+        // active-color "#3d5f77"
+        active-color "#101010"
+
+        // Color of the ring on inactive monitors.
+        inactive-color "#101010"
+    }
+
+    shadow {
+        // on
+        softness 10
+        spread 5
+        offset x=0 y=0
+        draw-behind-window true
+        color "#00000070"
     }
 }
 
@@ -96,7 +114,7 @@ window-rule {
 
 // Enable rounded corners for all windows.
 window-rule {
-    geometry-corner-radius 4
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
@@ -306,7 +324,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 spawn-at-startup "wl-gammarelay-rs"
 spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/rpqt/.local/state/wallpaper"
-spawn-at-startup "ignis" "init" "--config" "/home/rpqt/rep/heath/config.py"
+spawn-at-startup "ignis" "init"
 spawn-at-startup "kdeconnect-indicator"
 
 spawn-at-startup "xwayland-satellite"
