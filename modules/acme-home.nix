@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
   imports = [
     ./gandi.nix
@@ -6,7 +6,7 @@
 
   security.acme = {
     acceptTerms = true;
-    defaults.email = "admin@rpqt.fr";
+    defaults.email = lib.mkDefault "admin@rpqt.fr";
   };
 
   security.acme = {
