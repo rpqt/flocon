@@ -99,7 +99,7 @@
         module.input = "clan-core";
         module.name = "borgbackup";
 
-        roles.client.machines = lib.genAttrs [ "crocus" "genepi" ] (
+        roles.client.machines = lib.genAttrs [ "crocus" "genepi" "verbena" ] (
           machine:
           let
             config = self.nixosConfigurations.${machine}.config;
@@ -109,7 +109,9 @@
           {
             settings.destinations."storagebox-${config.networking.hostName}" = {
               repo = "${user}@${host}:./borgbackup/${config.networking.hostName}";
-              rsh = "ssh -oPort=23 -i ${config.clan.core.vars.generators.borgbackup.files."borgbackup.ssh".path}";
+              rsh = "ssh -oPort=23 -i ${
+                config.clan.core.vars.generators.borgbackup.files."borgbackup.ssh".path
+              } -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
             };
           }
         );
