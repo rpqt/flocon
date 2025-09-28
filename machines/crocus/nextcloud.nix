@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
   fqdn = "cloud.rpqt.fr";
 in
@@ -30,6 +30,10 @@ in
         region = "garage";
         usePathStyle = true;
       };
+    };
+    extraAppsEnable = true;
+    extraApps = {
+      inherit (pkgs.nextcloud31Packages.apps) tasks;
     };
   };
 
