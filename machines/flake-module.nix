@@ -34,12 +34,8 @@
       "rpqt-admin" = {
         module.input = "clan-core";
         module.name = "admin";
-        roles.default.machines = {
-          "crocus" = { };
-          "genepi" = { };
-          "haze" = { };
-          "verbena" = { };
-        };
+        roles.default.tags.server = { };
+        roles.default.machines.haze = { };
         roles.default.settings.allowedKeys = {
           rpqt_haze = (import ../parts).keys.rpqt.haze;
         };
