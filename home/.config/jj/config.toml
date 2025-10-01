@@ -11,3 +11,13 @@ email = "rpqt@rpqt.fr"
 
 [aliases]
 s = ["status", "--no-pager"]
+
+[[--scope]]
+--when.repositories = ["~/agh"]
+[--scope.user]
+email = "romain@student.agh.edu.pl"
+
+[[--scope]]
+--when.repositories = ["~/imag"]
+[--scope.user]
+email = "romain.paquet@grenoble-inp.org"
