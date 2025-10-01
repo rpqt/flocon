@@ -89,6 +89,11 @@
                   url = "https://buildbot.turifer.dev";
                   icon = "https://www.buildbot.net/img/full_logo.svg";
                 }
+                {
+                  title = "Radicle";
+                  url = "https://app.radicle.xyz/nodes/radicle.rpqt.fr";
+                  icon = "sh:radicle";
+                }
               ];
             }
             {
