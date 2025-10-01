@@ -330,9 +330,7 @@ binds {
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-spawn-at-startup "wl-gammarelay-rs"
-spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/rpqt/.local/state/wallpaper"
-spawn-at-startup "ignis" "init"
+spawn-at-startup "dms" "run"
 spawn-at-startup "kdeconnect-indicator"
 
 spawn-at-startup "xwayland-satellite"
