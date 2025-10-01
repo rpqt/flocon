@@ -4,7 +4,7 @@
 }:
 {
   imports = [
-    # ./radicle.nix
+    ./radicle.nix
     ../../system/core
     ../../system/nix
     ../../modules/remote-builder.nix
