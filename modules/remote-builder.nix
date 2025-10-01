@@ -39,7 +39,9 @@ in
       isSystemUser = true;
       group = cfg.group;
       useDefaultShell = true;
-      openssh.authorizedKeys.keys = cfg.authorizedKeys;
+      openssh.authorizedKeys.keys = map (
+        key: ''restrict,command="nix-daemon --stdio" ${key}''
+      ) cfg.authorizedKeys;
     };
 
     users.groups.${cfg.user} = { };
