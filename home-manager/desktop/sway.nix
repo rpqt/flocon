@@ -7,6 +7,7 @@
 {
   imports = [
     self.homeManagerModules.dotfiles
+    ./wayland.nix
   ];
 
   home.packages = with pkgs; [

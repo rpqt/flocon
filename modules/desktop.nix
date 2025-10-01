@@ -3,6 +3,8 @@
   environment.systemPackages = [
     pkgs.mpv # video player
     pkgs.amberol # music player
+    pkgs.alacritty
+    pkgs.ghostty
   ];
 
   programs.firefox = {
