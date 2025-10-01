@@ -20,8 +20,9 @@
       };
     };
     settings = {
-      web.avatarUrl = "https://rpqt.fr/favicon.svg";
-      description = "rpqt's radicle node";
+      # FIXME: activation fails with rad saying the config is invalid
+      # web.avatarUrl = "https://rpqt.fr/favicon.svg";
+      # web.description = "rpqt's radicle node";
     };
   };
 
