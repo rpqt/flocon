@@ -19,6 +19,7 @@
 
         ./clanServices/flake-module.nix
         ./devShells/flake-module.nix
+        ./home-manager/flake-module.nix
         ./machines/flake-module.nix
         ./modules/flake-module.nix
       ];
