@@ -5,6 +5,7 @@
     pkgs.amberol # music player
     pkgs.alacritty
     pkgs.ghostty
+    pkgs.libreoffice
   ];
 
   programs.firefox = {
