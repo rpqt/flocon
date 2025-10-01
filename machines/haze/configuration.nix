@@ -17,13 +17,17 @@
     ../../system
 
     self.nixosModules.desktop
+    self.nixosModules.nix-defaults
 
     self.inputs.home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users.rpqt = ./home.nix;
-      home-manager.extraSpecialArgs = { inherit (self) inputs; };
+      home-manager.extraSpecialArgs = {
+        inherit (self) inputs;
+        inherit self;
+      };
     }
   ];
 

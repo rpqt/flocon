@@ -1,11 +1,9 @@
 {
   imports = [
     ../../home-manager/chat.nix
-    ../../home-manager/cli.nix
     ../../home-manager/common.nix
     ../../home-manager/desktop
     ../../home-manager/dev.nix
-    ../../home-manager/dotfiles.nix
     ../../home-manager/helix.nix
     ../../home-manager/mail
     ../../home-manager/minecraft.nix

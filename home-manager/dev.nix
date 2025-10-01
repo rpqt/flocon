@@ -1,5 +1,16 @@
-{ config, pkgs, ... }:
 {
+  self,
+  config,
+  pkgs,
+  ...
+}:
+{
+  imports = [
+    ./cli.nix
+    ./helix.nix
+    self.homeManagerModules.dotfiles
+  ];
+
   home.packages = with pkgs; [
     direnv
     hut

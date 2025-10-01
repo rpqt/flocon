@@ -1,6 +1,7 @@
-{ config, ... }:
+{ self, config, ... }:
 {
   imports = [
+    self.homeManagerModules.dotfiles
     ./ignis.nix
   ];
 

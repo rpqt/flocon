@@ -1,6 +1,12 @@
-{ config, inputs, ... }:
+{
+  self,
+  config,
+  inputs,
+  ...
+}:
 {
   imports = [
+    self.homeManagerModules.dotfiles
     inputs.ignis.homeManagerModules.default
   ];
 

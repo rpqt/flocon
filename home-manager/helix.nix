@@ -1,6 +1,14 @@
-{ config, pkgs, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  ...
+}:
+{
+  imports = [
+    self.homeManagerModules.dotfiles
+  ];
+
   home.packages = [ pkgs.helix ];
 
   programs.helix = {
