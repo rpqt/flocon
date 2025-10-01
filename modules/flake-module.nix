@@ -3,5 +3,9 @@
     gitea.imports = [
       ./gitea.nix
     ];
+
+    desktop.imports = [
+      ./desktop.nix
+    ];
   };
 }

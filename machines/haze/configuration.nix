@@ -6,19 +6,17 @@
   imports = [
     ./boot.nix
     ./chat.nix
-    ./firefox.nix
     ./gimp.nix
     ./gnome.nix
     ./hibernate.nix
-    ./hyprland.nix
     ./niri.nix
     ./ssh.nix
     ./steam.nix
-    ./thunderbird.nix
     ./network.nix
     ./syncthing.nix
-    ./video.nix
     ../../system
+
+    self.nixosModules.desktop
 
     self.inputs.home-manager.nixosModules.home-manager
     {
