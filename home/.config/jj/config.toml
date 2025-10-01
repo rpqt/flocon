@@ -9,8 +9,12 @@ diff-editor = ":builtin"
 name = "Romain Paquet"
 email = "rpqt@rpqt.fr"
 
+[revset-aliases]
+'closest_pushable(to)' = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
+
 [aliases]
 s = ["status", "--no-pager"]
+tug = ["bookmark", "move", "--from", "heads(::@ & bookmarks())", "--to", "closest_pushable(@)"]
 
 [[--scope]]
 --when.repositories = ["~/agh"]
@@ -21,3 +25,27 @@ email = "romain@student.agh.edu.pl"
 --when.repositories = ["~/imag"]
 [--scope.user]
 email = "romain.paquet@grenoble-inp.org"
+
+# After this line everything is taken from https://andre.arko.net/2025/09/28/stupid-jj-tricks
+
+[templates]
+draft_commit_description = '''
+  concat(
+    coalesce(description, default_commit_description, "\n"),
+    surround(
+      "\nJJ: This commit contains the following changes:\n", "",
+      indent("JJ:     ", diff.stat(72)),
+    ),
+    "\nJJ: ignore-rest\n",
+    diff.git(),
+  )
+'''
+log_node = '''
+if(self && !current_working_copy && !immutable && !conflict && in_branch(self),
+  "◇",
+  builtin_log_node
+)
+'''
+
+[template-aliases]
+"in_branch(commit)" = 'commit.contained_in("immutable_heads()..bookmarks()")'
