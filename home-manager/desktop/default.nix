@@ -3,6 +3,7 @@
   imports = [
     ./fonts.nix
     ./pass.nix
+    ./terminal.nix
     ./wayland.nix
   ];
 

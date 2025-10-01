@@ -17,7 +17,9 @@
     jujutsu
     nix-output-monitor
     python3
+    radicle-desktop
     radicle-node
+    radicle-tui
     typescript-language-server
     nil # Nix language server
     nixfmt-rfc-style
