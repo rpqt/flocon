@@ -1,13 +1,15 @@
 # NixOS & Home Manager config
 
+This repository contains all my system configurations, mostly deployed using Nix and [Clan].
+
 ## Structure
 
-- **home**: Home Manager modules
-- **hosts**: Host-specific configs
+- **home**: Dotfiles
+- **machines**: Host-specific configs
 - **infra**: Terraform/OpenTofu files
-- **secrets**: Age-encrypted secrets shared between multiple hosts.
-  Host-specific secrets are stored in their own directories.
-- **system**: Base NixOS modules shared among all hosts
+- **vars**: Encrypted secrets managed by clan
+- **modules**: NixOS modules
+- **clanServices**: Custom [Clan Services](https://docs.clan.lol/reference/clanServices)
 
 ## Dotfiles
 
@@ -16,3 +18,5 @@
 ```sh
 dotbot -c ./dotbot/windows.yaml -d home
 ```
+
+[Clan]: https//clan.lol
