@@ -87,7 +87,7 @@
                 {
                   title = "Buildbot";
                   url = "https://buildbot.turifer.dev";
-                  icon = "https://www.buildbot.net/img/full_logo.svg";
+                  icon = "https://buildbot.turifer.dev/icon.svg";
                 }
                 {
                   title = "Radicle";
