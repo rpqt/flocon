@@ -90,6 +90,22 @@
         roles.default.extraModules = [ self.nixosModules.common ];
       };
 
+      server-config = {
+        module = {
+          input = "clan-core";
+          name = "importer";
+        };
+        roles.default.tags.server = { };
+        roles.default.extraModules = [
+          {
+            nix.gc.automatic = true;
+            nix.gc.dates = "Mon 3:15";
+            nix.gc.randomizedDelaySec = "30min";
+            nix.gc.options = "--delete-older-than 30d";
+          }
+        ];
+      };
+
       "garage" = {
         module.input = "clan-core";
         module.name = "garage";
