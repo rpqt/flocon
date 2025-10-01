@@ -17,6 +17,7 @@
     common.imports = [
       {
         users.mutableUsers = lib.mkDefault false;
+        services.userborn.enable = lib.mkDefault true;
       }
     ];
   };
