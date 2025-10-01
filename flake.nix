@@ -87,16 +87,12 @@
     srvos.inputs.nixpkgs.follows = "nixpkgs";
 
     vicinae.url = "github:vicinaehq/vicinae";
+    vicinae.inputs.nixpkgs.follows = "nixpkgs";
 
     buildbot-nix.url = "github:nix-community/buildbot-nix";
     buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     dankMaterialShell.url = "github:AvengeMedia/DankMaterialShell";
     dankMaterialShell.inputs.nixpkgs.follows = "nixpkgs";
-  };
-
-  nixConfig = {
-    extra-substituters = [ "https://vicinae.cachix.org" ];
-    extra-trusted-public-keys = [ "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" ];
   };
 }
