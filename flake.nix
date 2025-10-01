@@ -90,6 +90,9 @@
 
     buildbot-nix.url = "github:nix-community/buildbot-nix";
     buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    dankMaterialShell.url = "github:AvengeMedia/DankMaterialShell";
+    dankMaterialShell.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {

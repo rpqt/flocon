@@ -41,17 +41,40 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1759521995,
-        "narHash": "sha256-F2L4PlonpvyLIRT305hFvoxFlo619/RA6DIeMIo4GGI=",
+        "lastModified": 1759572375,
+        "narHash": "sha256-Sa9DLvlZEZ86/tGt/9vxWoctOHrBIhUdfQ6vGMzi5pk=",
         "ref": "refs/heads/main",
-        "rev": "dc1dd9aa3f33501002af9323fd9a6cb2083fbe7d",
-        "revCount": 10391,
+        "rev": "9847d4558b9e654a01b885d800925e4bfa0afcfc",
+        "revCount": 10401,
         "type": "git",
         "url": "https://git.clan.lol/clan/clan-core"
       },
       "original": {
         "type": "git",
         "url": "https://git.clan.lol/clan/clan-core"
+      }
+    },
+    "dankMaterialShell": {
+      "inputs": {
+        "dgop": "dgop",
+        "dms-cli": "dms-cli",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": "quickshell"
+      },
+      "locked": {
+        "lastModified": 1759884507,
+        "narHash": "sha256-YhsD1d0Xk2LXp4Hgx7xI5nRS9REMKb+QGpejFM3fcdU=",
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "rev": "8cd0d5faa5f546472d3be5e843d58402ae3215a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "type": "github"
       }
     },
     "data-mesher": {
@@ -79,6 +102,27 @@
       "original": {
         "type": "tarball",
         "url": "https://git.clan.lol/clan/data-mesher/archive/main.tar.gz"
+      }
+    },
+    "dgop": {
+      "inputs": {
+        "nixpkgs": [
+          "dankMaterialShell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757252286,
+        "narHash": "sha256-QwWQzlxAGvIi6VAc8DQ6ONCKKwtPyaHQW1cQyGbP7Og=",
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "rev": "a65a02ddf8bade9c109d055e644e4bd851183bd5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "type": "github"
       }
     },
     "disko": {
@@ -119,6 +163,27 @@
       "original": {
         "owner": "nix-community",
         "repo": "disko",
+        "type": "github"
+      }
+    },
+    "dms-cli": {
+      "inputs": {
+        "nixpkgs": [
+          "dankMaterialShell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757296630,
+        "narHash": "sha256-3H236F5oIKkqpfnwrvZQs4Y5imKb6JCMFGDkHs8VDjQ=",
+        "owner": "AvengeMedia",
+        "repo": "danklinux",
+        "rev": "dac591711ab30d6b071a5cec674a3d2e04665ee1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "danklinux",
         "type": "github"
       }
     },
@@ -213,11 +278,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759519282,
-        "narHash": "sha256-Wj76KLk49eRS086h6Fh0si95P6qqpzO7Gno9/nI336E=",
+        "lastModified": 1759573136,
+        "narHash": "sha256-ILSPD0Dm8p0w0fCVzOx98ZH8yFDrR75GmwmH3fS2VnE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "bd92e8ee4a6031ca3dd836c91dc41c13fca1e533",
+        "rev": "5f06ceafc6c9b773a776b9195c3f47bbe1defa43",
         "type": "github"
       },
       "original": {
@@ -435,26 +500,32 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "dankMaterialShell",
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1759036355,
-        "narHash": "sha256-0m27AKv6ka+q270dw48KflE0LwQYrO7Fm4/2//KCVWg=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e9f00bd893984bc8ce46c895c3bf7cac95331127",
-        "type": "github"
+        "lastModified": 1756981260,
+        "narHash": "sha256-GhuD9QVimjynHI0OOyZsqJsnlXr2orowh9H+HYz4YMs=",
+        "ref": "refs/heads/master",
+        "rev": "6eb12551baf924f8fdecdd04113863a754259c34",
+        "revCount": 672,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
       }
     },
     "root": {
       "inputs": {
         "buildbot-nix": "buildbot-nix",
         "clan-core": "clan-core",
+        "dankMaterialShell": "dankMaterialShell",
         "disko": "disko_2",
         "flake-parts": "flake-parts_2",
         "home-manager": "home-manager",
@@ -599,14 +670,16 @@
     "vicinae": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1759516059,
-        "narHash": "sha256-yCzrjtxrBXUQXKp/7XnGWvVzv3ZpsYAQ30NS7KIdBJA=",
+        "lastModified": 1759528325,
+        "narHash": "sha256-51jQbWs7CDtY7/TIhhUhiPV/AXau3Gd+XJX+88lznmk=",
         "owner": "vicinaehq",
         "repo": "vicinae",
-        "rev": "5b18514e3145caafcc9f54cbd6f07994a91f0786",
+        "rev": "365cded21ad82d178cb35a076f9f6ac9cb8e1707",
         "type": "github"
       },
       "original": {
