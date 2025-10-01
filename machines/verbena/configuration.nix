@@ -1,8 +1,7 @@
 { self, lib, ... }:
 {
   imports = [
-    ../../system/core
-    ../../system/nix
+    self.nixosModules.nix-defaults
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix
 

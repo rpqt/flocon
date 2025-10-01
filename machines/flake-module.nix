@@ -2,7 +2,6 @@
 {
   clan = {
     meta.name = "blossom";
-
     inventory.machines = {
       crocus = {
         tags = [
@@ -37,7 +36,7 @@
         roles.default.tags.server = { };
         roles.default.machines.haze = { };
         roles.default.settings.allowedKeys = {
-          rpqt_haze = (import ../parts).keys.rpqt.haze;
+          rpqt_haze = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGa8R8obgptefcp27Cdp9bc2fiyc9x0oTfMsTPFp2ktE rpqt@haze";
         };
       };
 
@@ -64,9 +63,12 @@
         module.input = "clan-core";
         module.name = "sshd";
         roles.server.tags.all = { };
+        roles.server.extraModules = [
+          self.nixosModules.hardened-ssh-server
+        ];
       };
 
-      "rpqt-password-haze" = {
+      user-rpqt = {
         module.input = "clan-core";
         module.name = "users";
         roles.default.machines.haze = {
@@ -74,6 +76,18 @@
             user = "rpqt";
           };
         };
+        roles.default.extraModules = [
+          self.nixosModules.user-rpqt
+        ];
+      };
+
+      common-config = {
+        module = {
+          input = "clan-core";
+          name = "importer";
+        };
+        roles.default.tags.all = { };
+        roles.default.extraModules = [ self.nixosModules.common ];
       };
 
       "garage" = {

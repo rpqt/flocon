@@ -1,6 +1,0 @@
-{ self, ... }:
-{
-  imports = [
-    ./tailscale.nix
-  ];
-}

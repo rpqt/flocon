@@ -23,9 +23,9 @@
     ../../modules/lounge.nix
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix
-    ../../system/core
-    ../../system/nix
+    self.nixosModules.nix-defaults
 
+    self.nixosModules.user-rpqt
   ];
 
   networking.hostName = "genepi";

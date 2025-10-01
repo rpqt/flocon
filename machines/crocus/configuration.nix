@@ -5,8 +5,7 @@
 {
   imports = [
     ./radicle.nix
-    ../../system/core
-    ../../system/nix
+    self.nixosModules.nix-defaults
     ../../modules/remote-builder.nix
     ./nextcloud.nix
     ../../modules/unbound.nix

@@ -14,7 +14,6 @@
     ./steam.nix
     ./network.nix
     ./syncthing.nix
-    ../../system
 
     self.nixosModules.desktop
     self.nixosModules.nix-defaults
@@ -69,6 +68,18 @@
     extraOptions = ''
       builders-use-substitutes = true
     '';
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  i18n.supportedLocales = [
+    "en_US.UTF-8/UTF-8"
+    "fr_FR.UTF-8/UTF-8"
+  ];
+
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
   };
 
   services.tailscale.useRoutingFeatures = "client";

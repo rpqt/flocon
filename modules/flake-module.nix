@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   flake.nixosModules = {
     gitea.imports = [
@@ -6,6 +7,17 @@
 
     desktop.imports = [
       ./desktop.nix
+    ];
+
+    nix-defaults.imports = [ ./nix-defaults.nix ];
+    tailscale.imports = [ ./tailscale.nix ];
+    user-rpqt.imports = [ ./user-rpqt.nix ];
+    hardened-ssh-server.imports = [ ./hardened-ssh-server.nix ];
+
+    common.imports = [
+      {
+        users.mutableUsers = lib.mkDefault false;
+      }
     ];
   };
 }
