@@ -180,6 +180,35 @@
           };
         };
       };
+
+      buildbot = {
+        module.input = "self";
+        module.name = "@rpqt/buildbot";
+
+        roles.master.machines.verbena = {
+          settings = {
+            domain = "buildbot.turifer.dev";
+            admins = [ "rpqt" ];
+            topic = "buildbot-nix";
+            gitea.instanceUrl = "https://git.turifer.dev";
+          };
+        };
+
+        roles.master.extraModules = [
+          {
+            services.nginx.virtualHosts."buildbot.turifer.dev" = {
+              enableACME = true;
+              forceSSL = true;
+            };
+
+            security.acme.certs."buildbot.turifer.dev" = {
+              email = "admin@turifer.dev";
+            };
+          }
+        ];
+
+        roles.worker.machines.verbena = { };
+      };
     };
   };
 }

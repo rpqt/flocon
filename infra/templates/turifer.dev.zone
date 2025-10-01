@@ -21,6 +21,8 @@ git.turifer.dev. 10800 IN A ${crocus_ipv4_address}
 git.turifer.dev. 10800 IN AAAA ${crocus_ipv6_address}
 
 %{ for addr in verbena_ipv4_addresses ~}
+buildbot.turifer.dev. 10800 IN A ${addr}
 %{ endfor ~}
 %{ for addr in verbena_ipv6_addresses ~}
+buildbot.turifer.dev. 10800 IN AAAA ${addr}
 %{ endfor ~}

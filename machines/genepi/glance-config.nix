@@ -84,6 +84,11 @@
                   url = "https://cloud.home.rpqt.fr";
                   icon = "sh:nextcloud";
                 }
+                {
+                  title = "Buildbot";
+                  url = "https://buildbot.turifer.dev";
+                  icon = "https://www.buildbot.net/img/full_logo.svg";
+                }
               ];
             }
             {
