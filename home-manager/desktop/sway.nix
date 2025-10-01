@@ -11,8 +11,6 @@
   ];
 
   home.packages = with pkgs; [
-    alacritty
-    ghostty
     tofi
     i3status-rust
     wlsunset
@@ -31,9 +29,4 @@
     "i3status-rust".source = "${config.dotfiles.path}/.config/i3status-rust";
     "tofi/config".source = "${config.dotfiles.path}/.config/tofi/config";
   };
-
-  programs.alacritty.enable = true;
-  xdg.configFile."alacritty".source = "${config.dotfiles.path}/.config/alacritty";
-
-  xdg.configFile."ghostty/config".source = "${config.dotfiles.path}/.config/ghostty/config";
 }
