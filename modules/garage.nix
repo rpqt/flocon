@@ -34,7 +34,8 @@ in
       };
 
       admin = {
-        api_bind_addr = "127.0.0.1:3903";
+        api_bind_addr = "[${zerotier_ip}]:3903";
+        # TODO: use metrics_token
       };
     };
   };
