@@ -8,7 +8,6 @@
       flake-parts,
       home-manager,
       impermanence,
-      nixos-generators,
       nixos-hardware,
       self,
       ...
@@ -22,37 +21,13 @@
         ./home-manager/flake-module.nix
         ./machines/flake-module.nix
         ./modules/flake-module.nix
+        ./packages/flake-module.nix
       ];
 
       systems = [
         "x86_64-linux"
         "aarch64-linux"
       ];
-
-      flake = {
-        packages.aarch64-linux.genepi-installer-sd-image = nixos-generators.nixosGenerate {
-          specialArgs = {
-            inherit inputs;
-          };
-          system = "aarch64-linux";
-          format = "sd-aarch64-installer";
-          modules = [
-            nixos-hardware.nixosModules.raspberry-pi-4
-            ./system/core
-            ./machines/genepi/network.nix
-            ./machines/genepi/hardware-configuration.nix
-            { networking.hostName = "genepi"; }
-            { sdImage.compressImage = false; }
-            {
-              nixpkgs.overlays = [
-                (final: super: {
-                  makeModulesClosure = x: super.makeModulesClosure (x // { allowMissing = true; });
-                })
-              ];
-            }
-          ];
-        };
-      };
     });
 
   inputs = {
