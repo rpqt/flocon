@@ -2,6 +2,15 @@
   "machines": {
     "verbena": {
       "installedAt": 1757633120
+    },
+    "crocus": {
+      "installedAt": 1757633120
+    },
+    "haze": {
+      "installedAt": 1757633120
+    },
+    "genepi": {
+      "installedAt": 1757633120
     }
   }
 }
