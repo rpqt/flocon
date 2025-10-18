@@ -33,10 +33,4 @@
   time.timeZone = "Europe/Paris";
 
   clan.core.settings.state-version.enable = true;
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
-  };
 }
