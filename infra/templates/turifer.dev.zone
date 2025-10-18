@@ -17,8 +17,12 @@ _submissions._tcp.turifer.dev. 3000 IN SRV 0 1 465 smtp.migadu.com.
 _imaps._tcp.turifer.dev. 3000 IN SRV 0 1 993 imap.migadu.com.
 _pop3s._tcp.turifer.dev. 3000 IN SRV 0 1 995 pop.migadu.com.
 
-git.turifer.dev. 10800 IN A ${crocus_ipv4_address}
-git.turifer.dev. 10800 IN AAAA ${crocus_ipv6_address}
+%{ for addr in verbena_ipv4_addresses ~}
+git.turifer.dev. 10800 IN A ${addr}
+%{ endfor ~}
+%{ for addr in verbena_ipv6_addresses ~}
+git.turifer.dev. 10800 IN AAAA ${addr}
+%{ endfor ~}
 
 %{ for addr in verbena_ipv4_addresses ~}
 buildbot.turifer.dev. 10800 IN A ${addr}

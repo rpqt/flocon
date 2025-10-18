@@ -54,7 +54,7 @@
       };
 
       internet = {
-        roles.default.machines.crocus = {
+        roles.default.machines.verbena = {
           settings.host = "git.turifer.dev";
         };
       };

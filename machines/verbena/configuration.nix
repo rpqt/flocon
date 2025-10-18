@@ -5,6 +5,7 @@
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix
     self.nixosModules.nextcloud
+    self.nixosModules.gitea
 
     self.inputs.srvos.nixosModules.server
   ];

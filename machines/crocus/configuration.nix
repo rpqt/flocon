@@ -9,7 +9,6 @@
     ../../modules/remote-builder.nix
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix
-    self.nixosModules.gitea
     self.inputs.srvos.nixosModules.server
     self.inputs.srvos.nixosModules.hardware-hetzner-cloud
   ];
