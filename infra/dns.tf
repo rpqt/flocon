@@ -23,23 +23,20 @@ resource "gandi_livedns_record" "rpqt_fr_radicle_aaaa" {
 }
 
 resource "gandi_livedns_record" "rpqt_fr_cloud_a" {
-  zone = data.gandi_livedns_domain.rpqt_fr.id
-  name = "cloud"
-  type = "A"
-  ttl  = 10800
-  values = [
-    hcloud_server.crocus_server.ipv4_address,
-  ]
+  zone   = data.gandi_livedns_domain.rpqt_fr.id
+  name   = "cloud"
+  type   = "A"
+  ttl    = 10800
+  values = local.verbena_ipv4_addresses
 }
 
 resource "gandi_livedns_record" "rpqt_fr_cloud_aaaa" {
-  zone = data.gandi_livedns_domain.rpqt_fr.id
-  name = "cloud"
-  type = "AAAA"
-  ttl  = 10800
-  values = [
-    hcloud_server.crocus_server.ipv6_address,
-  ]
+  zone   = data.gandi_livedns_domain.rpqt_fr.id
+  name   = "cloud"
+  type   = "AAAA"
+  ttl    = 10800
+  values = local.verbena_ipv6_addresses
+}
 }
 
 data "ovh_vps" "verbena_vps" {

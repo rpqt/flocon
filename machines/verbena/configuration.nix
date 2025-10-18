@@ -4,6 +4,7 @@
     self.nixosModules.nix-defaults
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix
+    self.nixosModules.nextcloud
 
     self.inputs.srvos.nixosModules.server
   ];

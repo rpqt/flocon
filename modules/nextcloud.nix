@@ -4,13 +4,14 @@ let
 in
 {
   imports = [
-    ../../modules/acme-home.nix
+    ./acme-home.nix
   ];
 
   services.nextcloud = {
     enable = true;
     hostName = fqdn;
     https = true;
+    package = pkgs.nextcloud32;
     config = {
       dbtype = "pgsql";
       dbuser = "nextcloud";
@@ -33,7 +34,7 @@ in
     };
     extraAppsEnable = true;
     extraApps = {
-      inherit (pkgs.nextcloud31Packages.apps) tasks;
+      # inherit (pkgs.nextcloud32Packages.apps) tasks;
     };
   };
 

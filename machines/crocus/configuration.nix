@@ -7,7 +7,6 @@
     ./radicle.nix
     self.nixosModules.nix-defaults
     ../../modules/remote-builder.nix
-    ./nextcloud.nix
     ../../modules/unbound.nix
     ../../modules/unbound-auth.nix
     self.nixosModules.gitea

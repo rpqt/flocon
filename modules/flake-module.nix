@@ -13,6 +13,7 @@
     tailscale.imports = [ ./tailscale.nix ];
     user-rpqt.imports = [ ./user-rpqt.nix ];
     hardened-ssh-server.imports = [ ./hardened-ssh-server.nix ];
+    nextcloud.imports = [ ./nextcloud.nix ];
 
     common.imports = [
       {
