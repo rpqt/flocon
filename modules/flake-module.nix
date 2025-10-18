@@ -15,6 +15,7 @@
     hardened-ssh-server.imports = [ ./hardened-ssh-server.nix ];
     nextcloud.imports = [ ./nextcloud.nix ];
 
+    server.imports = [
     common.imports = [
       {
         users.mutableUsers = lib.mkDefault false;
