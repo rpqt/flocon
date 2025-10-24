@@ -25,7 +25,7 @@ in
         bucket = "nextcloud";
         key = config.clan.core.vars.generators.nextcloud-s3-storage.files.access-key-id.value;
         secretFile = config.clan.core.vars.generators.nextcloud-s3-storage.files.access-key-secret.path;
-        hostname = config.clan.core.vars.generators.zerotier.files.zerotier-ip.value;
+        hostname = "[${config.clan.core.vars.generators.zerotier.files.zerotier-ip.value}]";
         port = 3900;
         useSsl = false;
         region = "garage";
