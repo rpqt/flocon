@@ -59,13 +59,6 @@ in
     enableACME = true;
   };
 
-  # Redirect internal domain to the public one
-  services.nginx.virtualHosts."cloud.home.rpqt.fr" = {
-    forceSSL = true;
-    useACMEHost = "home.rpqt.fr";
-    locations."/".return = "301 http://${fqdn}$request_uri";
-  };
-
   clan.core.vars.generators.nextcloud = {
     prompts.admin-password = {
       description = "nextcloud admin password";

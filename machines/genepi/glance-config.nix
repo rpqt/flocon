@@ -81,7 +81,7 @@
                 }
                 {
                   title = "Nextcloud";
-                  url = "https://cloud.home.rpqt.fr";
+                  url = "https://cloud.rpqt.fr";
                   icon = "sh:nextcloud";
                 }
                 {
