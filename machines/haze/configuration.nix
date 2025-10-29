@@ -52,6 +52,7 @@
   environment.systemPackages = [
     self.inputs.clan-core.packages.x86_64-linux.clan-app
     pkgs.aseprite
+    pkgs.linux-wifi-hotspot
   ];
 
   programs.kdeconnect.enable = true;
