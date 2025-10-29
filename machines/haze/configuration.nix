@@ -1,5 +1,6 @@
 {
   self,
+  pkgs,
   ...
 }:
 {
@@ -50,6 +51,7 @@
 
   environment.systemPackages = [
     self.inputs.clan-core.packages.x86_64-linux.clan-app
+    pkgs.aseprite
   ];
 
   programs.kdeconnect.enable = true;
