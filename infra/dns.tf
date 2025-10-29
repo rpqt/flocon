@@ -37,7 +37,6 @@ resource "gandi_livedns_record" "rpqt_fr_cloud_aaaa" {
   ttl    = 10800
   values = local.verbena_ipv6_addresses
 }
-}
 
 data "ovh_vps" "verbena_vps" {
   service_name = "vps-7e78bac2.vps.ovh.net"
