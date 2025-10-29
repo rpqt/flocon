@@ -34,6 +34,21 @@
     ];
   };
 
+  fileSystems."/data1" = {
+    device = "/dev/disk/by-id/scsi-0HC_Volume_103766469";
+  };
+
+  services.garage.settings.data_dir = [
+    {
+      path = "/var/lib/garage/data";
+      capacity = "20G";
+    }
+    {
+      path = "/data1/garage";
+      capacity = "20G";
+    }
+  ];
+
   clan.core.settings.state-version.enable = true;
 
   services.avahi.allowInterfaces = [
