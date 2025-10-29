@@ -9,6 +9,9 @@ diff-editor = ":builtin"
 name = "Romain Paquet"
 email = "rpqt@rpqt.fr"
 
+[git]
+write-change-id-header = true
+
 [revset-aliases]
 'closest_pushable(to)' = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
 
