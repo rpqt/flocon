@@ -174,6 +174,11 @@
                   targets = [ "verbena.home.rpqt.fr:3903" ];
                 }
               ];
+              authorization = {
+                type = "Bearer";
+                credentials_file =
+                  self.nixosConfigurations.verbena.config.clan.core.vars.generators.garage.files.metrics_token.path;
+              };
             }
           ];
         };
