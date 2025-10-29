@@ -98,10 +98,10 @@
         roles.default.tags.server = { };
         roles.default.extraModules = [
           {
-            nix.gc.automatic = true;
-            nix.gc.dates = "Mon 3:15";
-            nix.gc.randomizedDelaySec = "30min";
-            nix.gc.options = "--delete-older-than 30d";
+            nix.gc.automatic = lib.mkDefault true;
+            nix.gc.dates = lib.mkDefault "Mon 3:15";
+            nix.gc.randomizedDelaySec = lib.mkDefault "30min";
+            nix.gc.options = lib.mkDefault "--delete-older-than 30d";
           }
         ];
       };
