@@ -32,4 +32,5 @@
   };
 
   xdg.configFile."hut/config".source = "${config.dotfiles.path}/.config/hut/config";
+  home.file.".ssh/config".source = "${config.dotfiles.path}/.ssh/config";
 }
