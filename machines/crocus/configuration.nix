@@ -51,6 +51,8 @@
 
   clan.core.settings.state-version.enable = true;
 
+  clan.core.networking.buildHost = "root@haze";
+
   services.avahi.allowInterfaces = [
     "zts7mq7onf"
   ];
