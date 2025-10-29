@@ -49,6 +49,7 @@ in
     allowedTCPPorts = [
       s3_port
       rpc_port
+      admin_port
     ];
   };
 }
