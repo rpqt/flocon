@@ -32,5 +32,8 @@
 
   time.timeZone = "Europe/Paris";
 
+  services.prometheus.checkConfig = "syntax-only";
+  clan.core.vars.generators.garage.files.metrics_token.owner = "prometheus";
+
   clan.core.settings.state-version.enable = true;
 }
