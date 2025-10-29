@@ -16,6 +16,9 @@
     nextcloud.imports = [ ./nextcloud.nix ];
 
     server.imports = [
+      ./motd.nix
+    ];
+
     common.imports = [
       {
         users.mutableUsers = lib.mkDefault false;
