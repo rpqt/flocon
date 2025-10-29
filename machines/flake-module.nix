@@ -169,6 +169,10 @@
                   labels.instance = "genepi";
                   targets = [ "genepi.home.rpqt.fr:3903" ];
                 }
+                {
+                  labels.instance = "verbena";
+                  targets = [ "verbena.home.rpqt.fr:3903" ];
+                }
               ];
             }
           ];
