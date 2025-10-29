@@ -3,10 +3,13 @@
 {
   _class = "clan.service";
   manifest.name = "prometheus";
+  manifest.description = "Prometheus metrics collection across the clan network.";
+  manifest.readme = builtins.readFile ./README.md;
 
   # Only works with zerotier (until a unified network module is ready)
 
   roles.scraper = {
+    description = "A server that scrapes metrics from exporters of machines that have the 'target' role.";
     interface = {
       options.extraScrapeConfigs = lib.mkOption {
         type = lib.types.listOf lib.types.attrs;
@@ -63,6 +66,7 @@
   };
 
   roles.target = {
+    description = "A machine on which to collect and export metrics.";
     interface =
       { lib, ... }:
       {
