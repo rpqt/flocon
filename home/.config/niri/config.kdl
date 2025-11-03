@@ -345,7 +345,6 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 spawn-at-startup "dms" "run"
 spawn-at-startup "kdeconnect-indicator"
 spawn-at-startup "~/rep/flocon/home/bin/monitor-dark-mode.sh"
-spawn-at-startup "vicinae" "server"
 
 spawn-at-startup "xwayland-satellite"
 environment {
