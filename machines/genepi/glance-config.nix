@@ -67,7 +67,7 @@
                 {
                   title = "Pinchflat";
                   url = "https://pinchflat.home.rpqt.fr";
-                  icon = "sh:pinchflat";
+                  icon = "https://cdn.jsdelivr.net/gh/selfhst/icons/png/pinchflat.png";
                 }
                 {
                   title = "Home Assistant";
