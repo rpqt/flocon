@@ -15,11 +15,10 @@
     flake-parts.lib.mkFlake { inherit inputs; } ({
       imports = [
         inputs.clan-core.flakeModules.default
-
+        ./clan/flake-module.nix
         ./clanServices/flake-module.nix
         ./devShells/flake-module.nix
         ./home-manager/flake-module.nix
-        ./machines/flake-module.nix
         ./modules/flake-module.nix
         ./packages/flake-module.nix
       ];
