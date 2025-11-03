@@ -51,7 +51,7 @@
                           targetHost = targetConfig.clan.core.vars.generators.zerotier.files.zerotier-ip.value;
                         in
                         [
-                          "${targetHost}:${toString targetConfig.services.prometheus.exporters.${exporter}.port}"
+                          "[${targetHost}]:${toString targetConfig.services.prometheus.exporters.${exporter}.port}"
                         ];
                       labels.instance = machineName;
                     }) machinesWithExporter;
