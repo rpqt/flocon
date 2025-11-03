@@ -45,11 +45,6 @@
                   icon = "sh:immich";
                 }
                 {
-                  title = "Grafana";
-                  url = "https://grafana.home.rpqt.fr";
-                  icon = "sh:grafana";
-                }
-                {
                   title = "FreshRSS";
                   url = "https://rss.home.rpqt.fr";
                   icon = "sh:freshrss";
@@ -93,6 +88,23 @@
                   title = "Radicle";
                   url = "https://app.radicle.xyz/nodes/radicle.rpqt.fr";
                   icon = "sh:radicle";
+                }
+              ];
+            }
+            {
+              type = "monitor";
+              cache = "1m";
+              title = "Monitoring";
+              sites = [
+                {
+                  title = "Grafana";
+                  url = "https://grafana.home.rpqt.fr";
+                  icon = "sh:grafana";
+                }
+                {
+                  title = "Prometheus";
+                  url = "http://genepi.home.rpqt.fr:9090";
+                  icon = "sh:prometheus";
                 }
               ];
             }
