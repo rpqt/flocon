@@ -38,15 +38,14 @@ in
     };
   };
 
-  services.postgresql = {
+  clan.core.postgresql = {
     enable = true;
-    ensureDatabases = [ "nextcloud" ];
-    ensureUsers = [
-      {
-        name = "nextcloud";
-        ensureDBOwnership = true;
-      }
-    ];
+    databases = {
+      nextcloud = {
+        create.enable = true;
+        restore.stopOnRestore = [ "nextcloud" ];
+      };
+    };
   };
 
   systemd.services."nextcloud-setup" = {
