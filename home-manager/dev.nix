@@ -13,6 +13,7 @@
 
   home.packages = with pkgs; [
     direnv
+    gh
     hut
     jujutsu
     nix-output-monitor
@@ -23,6 +24,7 @@
     typescript-language-server
     nil # Nix language server
     nixfmt-rfc-style
+    nixpkgs-review
   ];
 
   programs.direnv = {
