@@ -7,6 +7,7 @@
   ];
 
   clan.meta.name = "blossom";
+  clan.meta.tld = "val";
 
   clan.inventory.instances."rpqt-admin" = {
     module.input = "clan-core";
