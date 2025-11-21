@@ -30,3 +30,10 @@ buildbot.turifer.dev. 10800 IN A ${addr}
 %{ for addr in verbena_ipv6_addresses ~}
 buildbot.turifer.dev. 10800 IN AAAA ${addr}
 %{ endfor ~}
+
+%{ for addr in verbena_ipv4_addresses ~}
+wg1.turifer.dev. 10800 IN A ${addr}
+%{ endfor ~}
+%{ for addr in verbena_ipv6_addresses ~}
+wg1.turifer.dev. 10800 IN AAAA ${addr}
+%{ endfor ~}

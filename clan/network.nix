@@ -17,4 +17,19 @@
       settings.host = "git.turifer.dev";
     };
   };
+
+  clan.inventory.instances.wireguard = {
+    module.name = "wireguard";
+    module.input = "clan-core";
+    roles.controller = {
+      machines.verbena.settings = {
+        endpoint = "wg1.turifer.dev";
+      };
+    };
+    roles.peer.machines = {
+      haze = { };
+      crocus = { };
+      genepi = { };
+    };
+  };
 }
