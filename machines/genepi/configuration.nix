@@ -17,7 +17,6 @@
     ./nginx.nix
     ./pinchflat.nix
     ./syncthing.nix
-    ./taskchampion.nix
 
     ../../modules/acme-home.nix
     ../../modules/lounge.nix
