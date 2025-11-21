@@ -1,4 +1,4 @@
-{ self, pkgs, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages = [
     pkgs.mpv # video player
@@ -6,6 +6,7 @@
     pkgs.alacritty
     pkgs.ghostty
     pkgs.libreoffice
+    pkgs.nautilus
   ];
 
   programs.firefox = {
@@ -14,4 +15,9 @@
   };
 
   programs.thunderbird.enable = true;
+
+  programs.nautilus-open-any-terminal = {
+    enable = true;
+    terminal = "ghostty";
+  };
 }
