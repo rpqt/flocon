@@ -19,3 +19,8 @@ tofu import hcloud_firewall.hcloud_firewall YYY
 ```
 
 For Hetzner Cloud, the resource IDs can be found in the URL of the admin console.
+
+## Outputs
+
+The nix configuration reads some values from the `outputs.json` file.
+When modifying these, the file should be regenerated with `tofu output -json > outputs.json`.

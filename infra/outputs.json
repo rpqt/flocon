@@ -1,0 +1,17 @@
+{
+  "verbena_gateway6": {
+    "sensitive": false,
+    "type": "string",
+    "value": "2001:41d0:305:2100::1"
+  },
+  "verbena_ipv4": {
+    "sensitive": false,
+    "type": "string",
+    "value": "51.68.122.153"
+  },
+  "verbena_ipv6": {
+    "sensitive": false,
+    "type": "string",
+    "value": "2001:41d0:305:2100::271e"
+  }
+}
