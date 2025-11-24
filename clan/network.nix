@@ -32,4 +32,35 @@
       genepi = { };
     };
   };
+
+  # Temporarily patched version of clan-core/coredns for AAAA records support
+  clan.inventory.instances.coredns = {
+    module.name = "@rpqt/coredns";
+    module.input = "self";
+
+    roles.default.tags.all = { };
+    roles.server.machines.verbena = {
+      settings.ip = "fd28:387a:90:c400::1";
+    };
+    roles.server.machines.crocus = {
+      settings.ip = "fd28:387a:90:c400:6db2:dfc3:c376:9956";
+    };
+    roles.server.settings = {
+      tld = "home.rpqt.fr";
+    };
+
+    roles.default.machines.genepi.settings = {
+      ip = "fd28:387a:90:c400:ab23:3d38:a148:f539"; # FIXME: IPv4 expected (A record)
+      services = [
+        "actual"
+        "assistant"
+        "glance"
+        "grafana"
+        "images"
+        "lounge"
+        "pinchflat"
+        "rss"
+      ];
+    };
+  };
 }

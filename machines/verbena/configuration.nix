@@ -2,8 +2,6 @@
 {
   imports = [
     self.nixosModules.nix-defaults
-    ../../modules/unbound.nix
-    ../../modules/unbound-auth.nix
     self.nixosModules.nextcloud
     self.nixosModules.gitea
 
