@@ -6,6 +6,24 @@
     self.nixosModules.gitea
 
     self.inputs.srvos.nixosModules.server
+
+    {
+      # Add Pixel-7a as external device for clan wireguard network
+      networking.wireguard.interfaces.wireguard = {
+        ips = [ "100.42.42.1/32" ];
+        peers = [
+          {
+            publicKey = "BVgDQM18SfNofQsWs7m6fblaTB04Gk74VxR/zK8AKQ4=";
+            allowedIPs =
+              let
+                suffix = "cafe:cafe";
+              in
+              [ "fd28:387a:90:c400:${suffix}::/96" ];
+            persistentKeepalive = 25;
+          }
+        ];
+      };
+    }
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
