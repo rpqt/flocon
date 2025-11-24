@@ -62,3 +62,7 @@ resource "hcloud_firewall" "crocus_firewall" {
     source_ips = ["0.0.0.0/0", "::/0"]
   }
 }
+
+output "crocus_ipv4" {
+  value = hcloud_primary_ip.crocus_ipv4.ip_address
+}

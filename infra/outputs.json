@@ -1,4 +1,9 @@
 {
+  "crocus_ipv4": {
+    "sensitive": false,
+    "type": "string",
+    "value": "116.203.18.122"
+  },
   "verbena_gateway6": {
     "sensitive": false,
     "type": "string",
