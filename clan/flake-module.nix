@@ -114,7 +114,7 @@
           repo = "${user}@${host}:./borgbackup/${config.networking.hostName}";
           rsh = "ssh -oPort=23 -i ${
             config.clan.core.vars.generators.borgbackup.files."borgbackup.ssh".path
-          } -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
+          } -oStrictHostKeyChecking=accept-new";
         };
       }
     );
