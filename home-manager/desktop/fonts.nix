@@ -6,4 +6,8 @@
   ];
 
   fonts.fontconfig.enable = true;
+  fonts.fontconfig.defaultFonts = {
+    sansSerif = [ "Adwaita Sans" ];
+    monospace = [ "Adwaita Mono" ];
+  };
 }
