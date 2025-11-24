@@ -1,7 +1,4 @@
 { self, lib, ... }:
-let
-  tf_outputs = builtins.fromJSON (builtins.readFile ../../infra/outputs.json);
-in
 {
   imports = [
     self.nixosModules.nix-defaults
@@ -20,13 +17,13 @@ in
   networking.useDHCP = lib.mkDefault true;
 
   networking.defaultGateway6 = {
-    address = tf_outputs.verbena_gateway6.value;
+    address = self.infra.machines.verbena.gateway6;
     interface = "ens3";
   };
   networking.interfaces."ens3" = {
     ipv6.addresses = [
       {
-        address = tf_outputs.verbena_ipv6.value;
+        address = self.infra.machines.verbena.ipv6;
         prefixLength = 64;
       }
     ];
