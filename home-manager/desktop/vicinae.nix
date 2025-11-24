@@ -1,6 +1,7 @@
 {
   config,
   inputs,
+  pkgs,
   lib,
   ...
 }:
@@ -12,6 +13,7 @@
   services.vicinae = {
     enable = true;
     autoStart = true;
+    package = pkgs.vicinae;
   };
 
   xdg.configFile."vicinae/vicinae.json".source =
