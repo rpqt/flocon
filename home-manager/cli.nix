@@ -26,6 +26,7 @@
     taskwarrior3
     tealdeer
     vivid
+    yazi
     zoxide
   ];
 
