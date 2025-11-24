@@ -25,6 +25,8 @@
     self.nixosModules.nix-defaults
 
     self.nixosModules.user-rpqt
+
+    self.inputs.srvos.nixosModules.mixins-terminfo
   ];
 
   networking.hostName = "genepi";
