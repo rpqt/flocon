@@ -13,9 +13,8 @@
   };
 
   clan.inventory.instances.internet = {
-    roles.default.machines.verbena = {
-      settings.host = "git.turifer.dev";
-    };
+    roles.default.machines.verbena.settings.host = self.infra.machines.verbena.ipv4;
+    roles.default.machines.crocus.settings.host = self.infra.machines.crocus.ipv4;
   };
 
   clan.inventory.instances.wireguard = {
