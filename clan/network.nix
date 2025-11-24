@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   clan.inventory.instances.zerotier = {
     roles.controller.machines.crocus = { };
