@@ -42,8 +42,5 @@
     443
   ];
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "admin@turifer.dev";
-  };
+  security.acme.acceptTerms = true;
 }
