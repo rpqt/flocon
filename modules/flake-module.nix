@@ -9,6 +9,7 @@
       ./desktop.nix
     ];
 
+    dev.imports = [ ./dev.nix ];
     nix-defaults.imports = [ ./nix-defaults.nix ];
     tailscale.imports = [ ./tailscale.nix ];
     user-rpqt.imports = [ ./user-rpqt.nix ];

@@ -17,6 +17,7 @@
     ./syncthing.nix
 
     self.nixosModules.desktop
+    self.nixosModules.dev
     self.nixosModules.nix-defaults
 
     self.inputs.home-manager.nixosModules.home-manager

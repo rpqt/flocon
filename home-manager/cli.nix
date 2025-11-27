@@ -1,6 +1,7 @@
 {
   self,
   config,
+  osConfig,
   pkgs,
   ...
 }:
@@ -32,8 +33,11 @@
 
   programs.zoxide.enable = true;
   programs.starship.enable = true;
-  programs.atuin.enable = true;
   programs.bat.enable = true;
+
+  programs.atuin.enable = true;
+  xdg.dataFile."atuin/key".source =
+    config.lib.file.mkOutOfStoreSymlink osConfig.clan.core.vars.generators.atuin.files.key.path;
 
   programs.zsh = {
     enable = true;
