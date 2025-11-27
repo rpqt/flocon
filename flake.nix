@@ -49,9 +49,6 @@
     clan-core.inputs.nixpkgs.follows = "nixpkgs";
     clan-core.inputs.flake-parts.follows = "flake-parts";
 
-    ignis.url = "github:ignis-sh/ignis";
-    ignis.inputs.nixpkgs.follows = "nixpkgs";
-
     matugen.url = "github:InioX/Matugen";
     matugen.inputs.nixpkgs.follows = "nixpkgs";
 
