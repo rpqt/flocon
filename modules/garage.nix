@@ -25,10 +25,10 @@ in
       replication_factor = 3;
 
       rpc_bind_addr = "[::]:${toString rpc_port}";
-      rpc_public_addr = "[${zerotier_ip}]:${toString rpc_port}";
+      rpc_public_addr = "[::]:${toString rpc_port}";
 
       s3_api = {
-        api_bind_addr = "[${zerotier_ip}]:${toString s3_port}";
+        api_bind_addr = "[::]:${toString s3_port}";
         s3_region = "garage";
         root_domain = ".s3.garage.home.rpqt.fr";
       };
@@ -39,17 +39,22 @@ in
       };
 
       admin = {
-        api_bind_addr = "[${zerotier_ip}]:${toString admin_port}";
+        api_bind_addr = "[::]:${toString admin_port}";
         # TODO: use metrics_token
       };
     };
   };
 
-  networking.firewall.interfaces.${zerotier_interface} = {
-    allowedTCPPorts = [
-      s3_port
-      rpc_port
-      admin_port
-    ];
-  };
+  networking.firewall.interfaces =
+    let
+      allowedTCPPorts = [
+        s3_port
+        rpc_port
+        admin_port
+      ];
+    in
+    {
+      ${zerotier_interface} = { inherit allowedTCPPorts; };
+      wireguard = { inherit allowedTCPPorts; };
+    };
 }
