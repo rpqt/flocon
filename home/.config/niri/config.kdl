@@ -152,14 +152,8 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-    XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-"; }
-    XF86MonBrightnessUp   { spawn "brightnessctl" "set" "+5%"; }
-    // XF86MonBrightnessUp allow-when-locked=true {
-       // spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
-    // }
-    // XF86MonBrightnessDown allow-when-locked=true {
-       // spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
-    // }  
+    XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }  
 
     XF86AudioPlay { spawn "playerctl" "play-pause"; }
     XF86AudioNext { spawn "playerctl" "next"; }
