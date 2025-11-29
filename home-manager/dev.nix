@@ -12,6 +12,7 @@
   ];
 
   home.packages = with pkgs; [
+    delta
     direnv
     gh
     hut
