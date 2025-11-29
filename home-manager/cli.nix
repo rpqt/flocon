@@ -24,7 +24,6 @@
     nh
     ripgrep
     skim
-    taskwarrior3
     tealdeer
     vivid
     yazi
