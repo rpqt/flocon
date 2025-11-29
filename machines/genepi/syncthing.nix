@@ -23,5 +23,17 @@ in
     group = lib.mkForce "users";
     dataDir = home;
     configDir = lib.mkForce "${home}/.config/syncthing";
+    guiPasswordFile = config.clan.core.vars.generators.syncthing-gui.files.password.path;
+  };
+
+  clan.core.vars.generators.syncthing-gui = {
+    files.password = {
+      secret = true;
+      owner = user;
+    };
+    runtimeInputs = [ pkgs.xkcdpass ];
+    script = ''
+      xkcdpass -n 7 > $out/password
+    '';
   };
 }
