@@ -4,7 +4,7 @@
 }:
 {
   imports = [
-    ./radicle.nix
+    self.nixosModules.radicle
     self.nixosModules.nix-defaults
     ../../modules/remote-builder.nix
     self.inputs.srvos.nixosModules.server

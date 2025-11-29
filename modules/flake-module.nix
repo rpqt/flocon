@@ -15,6 +15,7 @@
     user-rpqt.imports = [ ./user-rpqt.nix ];
     hardened-ssh-server.imports = [ ./hardened-ssh-server.nix ];
     nextcloud.imports = [ ./nextcloud.nix ];
+    radicle.imports = [ ./radicle.nix ];
 
     server.imports = [
       ./motd.nix
