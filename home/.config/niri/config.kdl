@@ -1,3 +1,9 @@
+include "dms/alttab.kdl"
+include "dms/binds.kdl"
+include "dms/colors.kdl"
+include "dms/layout.kdl"
+include "dms/wpblur.kdl"
+
 input {
     keyboard {
         xkb {
@@ -55,39 +61,6 @@ layout {
     // You can change the default width of the new windows.
     default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-
-    // You can change how the focus ring looks.
-    focus-ring {
-        off
-        // How many logical pixels the ring extends out from the windows.
-        width 3
-
-        // Color of the ring on the active monitor.
-        active-color "#101010"
-
-        // Color of the ring on inactive monitors.
-        inactive-color "#505050"
-    }
-
-    border {
-        width 2
-
-        // Color of the ring on the active monitor.
-        // active-color "#3d5f77"
-        active-color "#101010"
-
-        // Color of the ring on inactive monitors.
-        inactive-color "#101010"
-    }
-
-    shadow {
-        // on
-        softness 10
-        spread 5
-        offset x=0 y=0
-        draw-behind-window true
-        color "#00000070"
-    }
 }
 
 prefer-no-csd
@@ -121,12 +94,6 @@ window-rule {
     open-floating true
 }
 
-// Enable rounded corners for all windows.
-window-rule {
-    geometry-corner-radius 10
-    clip-to-geometry true
-}
-
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -146,14 +113,6 @@ binds {
     // Mod+D { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+D { spawn "vicinae" "toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock session" { spawn "loginctl" "lock-session"; }
-
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
-    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-
-    XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }  
 
     XF86AudioPlay { spawn "playerctl" "play-pause"; }
     XF86AudioNext { spawn "playerctl" "next"; }
@@ -347,9 +306,4 @@ environment {
 
 hotkey-overlay {
     skip-at-startup
-}
-
-layer-rule {
-    match namespace="dms:blurwallpaper"
-    place-within-backdrop true
 }
