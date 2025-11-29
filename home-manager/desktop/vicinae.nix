@@ -1,19 +1,13 @@
 {
   config,
-  inputs,
-  pkgs,
   lib,
   ...
 }:
 {
-  imports = [
-    inputs.vicinae.homeManagerModules.default
-  ];
-
-  services.vicinae = {
+  programs.vicinae = {
     enable = true;
-    autoStart = true;
-    package = pkgs.vicinae;
+    systemd.enable = true;
+    systemd.autoStart = true;
   };
 
   xdg.configFile."vicinae/vicinae.json".source =

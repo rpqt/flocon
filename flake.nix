@@ -58,9 +58,6 @@
     srvos.url = "github:nix-community/srvos";
     srvos.inputs.nixpkgs.follows = "nixpkgs";
 
-    vicinae.url = "github:vicinaehq/vicinae";
-    vicinae.inputs.nixpkgs.follows = "nixpkgs";
-
     buildbot-nix.url = "github:nix-community/buildbot-nix";
     buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
 
