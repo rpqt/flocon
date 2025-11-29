@@ -55,6 +55,8 @@
     pkgs.aseprite
     pkgs.linux-wifi-hotspot
     pkgs.anytype
+    pkgs.typst
+    pkgs.anki
   ];
 
   programs.kdeconnect.enable = true;
