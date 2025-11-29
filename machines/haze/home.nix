@@ -9,7 +9,6 @@
     ../../home-manager/minecraft.nix
     ../../home-manager/desktop
     ../../home-manager/desktop/gnome.nix
-    ../../home-manager/desktop/dank.nix
     ../../home-manager/desktop/niri.nix
     ../../home-manager/desktop/vicinae.nix
   ];
