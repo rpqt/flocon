@@ -1,0 +1,31 @@
+$TTL 3600
+@	IN SOA dns100.ovh.net. tech.ovh.net. (2026010123 86400 3600 3600000 60)
+    IN NS     dns100.ovh.net.
+	IN NS     ns100.ovh.net.
+
+rpqt.fr. 3000 IN TXT "hosted-email-verify=pgeaq3bp"
+rpqt.fr. 3000 IN MX 10 aspmx1.migadu.com.
+rpqt.fr. 3000 IN MX 20 aspmx2.migadu.com.
+rpqt.fr. 3000 IN TXT "v=spf1 include:spf.migadu.com -all"
+key1._domainkey.rpqt.fr. 3000 IN CNAME key1.rpqt.fr._domainkey.migadu.com.
+key2._domainkey.rpqt.fr. 3000 IN CNAME key2.rpqt.fr._domainkey.migadu.com.
+key3._domainkey.rpqt.fr. 3000 IN CNAME key3.rpqt.fr._domainkey.migadu.com.
+_dmarc.rpqt.fr. 3000 IN TXT "v=DMARC1; p=quarantine;"
+autoconfig.rpqt.fr. 3000 IN CNAME autoconfig.migadu.com.
+_autodiscover._tcp.rpqt.fr. 3000 IN SRV 0 1 443 autodiscover.migadu.com.
+_submissions._tcp.rpqt.fr. 3000 IN SRV 0 1 465 smtp.migadu.com.
+_imaps._tcp.rpqt.fr. 3000 IN SRV 0 1 993 imap.migadu.com.
+_pop3s._tcp.rpqt.fr. 3000 IN SRV 0 1 995 pop.migadu.com.
+
+@ 10800 IN A 46.23.81.157
+@ 10800 IN AAAA 2a03:6000:1813:1337::157
+
+%{ for addr in verbena_ipv4_addresses ~}
+cloud 10800 IN A ${addr}
+%{ endfor ~}
+%{ for addr in verbena_ipv6_addresses ~}
+cloud 10800 IN AAAA ${addr}
+%{ endfor ~}
+
+radicle 10800 IN A ${crocus_ipv4_address}
+radicle 10800 IN AAAA ${crocus_ipv6_address}
