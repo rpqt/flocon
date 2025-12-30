@@ -6,15 +6,11 @@
       nixpkgs,
       clan-core,
       flake-parts,
-      home-manager,
-      impermanence,
-      nixos-hardware,
-      self,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } ({
       imports = [
-        inputs.clan-core.flakeModules.default
+        clan-core.flakeModules.default
         ./clan/flake-module.nix
         ./clanServices/flake-module.nix
         ./devShells/flake-module.nix
@@ -39,8 +35,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    impermanence.url = "github:nix-community/impermanence";
-
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     nixos-generators.url = "github:nix-community/nixos-generators";
@@ -48,9 +42,6 @@
     clan-core.url = "git+https://git.clan.lol/clan/clan-core";
     clan-core.inputs.nixpkgs.follows = "nixpkgs";
     clan-core.inputs.flake-parts.follows = "flake-parts";
-
-    matugen.url = "github:InioX/Matugen";
-    matugen.inputs.nixpkgs.follows = "nixpkgs";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
