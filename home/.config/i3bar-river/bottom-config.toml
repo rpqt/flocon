@@ -1,6 +1,0 @@
-font = "JetBrains Mono NF Bold 12"
-height = 24
-background = "#000000"
-command = "i3status-rs ~/.config/i3status-rust/bottom-config.toml"
-position = "bottom"
-show_tags = false
