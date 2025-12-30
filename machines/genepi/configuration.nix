@@ -12,7 +12,6 @@
     ./homeassistant.nix
     ./immich.nix
     ./monitoring
-    ./mpd.nix
     ./network.nix
     ./nginx.nix
     ./pinchflat.nix
