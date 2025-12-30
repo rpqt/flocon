@@ -25,6 +25,9 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
+workspace "browser" {
+}
+
 output "eDP-1" {
     mode "1920x1080@60.049"
     scale 1
@@ -72,6 +75,7 @@ cursor {
 window-rule {
     match app-id=r#"^firefox$"#
     open-maximized true
+    open-on-workspace "browser"
     focus-ring {
         off
     }
