@@ -11,6 +11,8 @@
   ];
 
   home.packages = with pkgs; [
+    age
+    age-plugin-yubikey
     bottom
     btop
     comma
@@ -23,6 +25,7 @@
     jjui
     lazygit
     nh
+    passage
     ripgrep
     skim
     tealdeer
