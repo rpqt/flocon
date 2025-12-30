@@ -33,7 +33,7 @@ locals {
     verbena_ipv6_addresses = local.verbena_ipv6_addresses
   })
 
-  rpqt_fr_zone_file = templatefile("./templates/turifer.dev.zone", {
+  rpqt_fr_zone_file = templatefile("./templates/rpqt.fr.zone", {
     crocus_ipv4_address = hcloud_server.crocus_server.ipv4_address
     crocus_ipv6_address = hcloud_server.crocus_server.ipv6_address
 
