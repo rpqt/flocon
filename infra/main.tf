@@ -6,7 +6,7 @@ terraform {
     }
     ovh = {
       source  = "ovh/ovh"
-      version = "2.5.0"
+      version = "~> 2.5.0"
     }
     assert = {
       source = "hashicorp/assert"
