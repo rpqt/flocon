@@ -20,6 +20,7 @@
     eza
     fd
     glow
+    jjui
     lazygit
     nh
     ripgrep
