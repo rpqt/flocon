@@ -9,6 +9,10 @@
   clan.meta.name = "blossom";
   clan.meta.domain = "val";
 
+  clan.secrets.age.plugins = [
+    "age-plugin-yubikey"
+  ];
+
   clan.inventory.instances."rpqt-admin" = {
     module.input = "clan-core";
     module.name = "admin";
