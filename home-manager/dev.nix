@@ -9,6 +9,7 @@
     ./cli.nix
     ./helix.nix
     self.homeManagerModules.dotfiles
+    self.inputs.direnv-instant.homeModules.direnv-instant
   ];
 
   home.packages = with pkgs; [
@@ -33,6 +34,8 @@
     enableZshIntegration = true;
     nix-direnv.enable = true;
   };
+
+  programs.direnv-instant.enable = true;
 
   xdg.configFile."hut/config".source = "${config.dotfiles.path}/.config/hut/config";
   home.file.".ssh/config".source = "${config.dotfiles.path}/.ssh/config";
