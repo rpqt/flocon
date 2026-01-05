@@ -36,7 +36,8 @@
   clan.core.networking.targetHost = "rpqt@haze.local";
 
   networking.search = [
-    "home.rpqt.fr"
+    "val"
+    "wireguard"
   ];
 
   time.timeZone = "Europe/Paris";
