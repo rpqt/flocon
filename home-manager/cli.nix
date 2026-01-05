@@ -5,6 +5,20 @@
   pkgs,
   ...
 }:
+let
+  shellAliases = {
+    ls = "eza";
+    lsa = "ls -A";
+    ll = "ls -lh";
+    lla = "ls -lAh";
+    h = "hx";
+    g = "git";
+    cd = "z";
+    tree = "eza --tree";
+    ".." = "cd ..";
+    "..." = "cd ../..";
+  };
+in
 {
   imports = [
     self.homeManagerModules.dotfiles
@@ -45,18 +59,12 @@
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
-    shellAliases = {
-      ls = "eza";
-      lsa = "ls -A";
-      ll = "ls -lh";
-      lla = "ls -lAh";
-      h = "hx";
-      g = "git";
-      cd = "z";
-      tree = "eza --tree";
-      ".." = "cd ..";
-      "..." = "cd ../..";
-    };
+    inherit shellAliases;
+  };
+
+  programs.fish = {
+    enable = true;
+    inherit shellAliases;
   };
 
   xdg.configFile."git".source = "${config.dotfiles.path}/.config/git";
