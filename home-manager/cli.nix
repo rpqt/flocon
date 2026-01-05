@@ -40,6 +40,7 @@ in
     lazygit
     nh
     passage
+    rage
     ripgrep
     skim
     tealdeer
