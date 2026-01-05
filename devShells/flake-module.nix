@@ -11,7 +11,7 @@
           inputs'.clan-core.packages.clan-cli
           pkgs.garage
           pkgs.nil # Nix language server
-          pkgs.nixfmt-rfc-style
+          pkgs.nixfmt
           pkgs.opentofu
           pkgs.terraform-ls
           pkgs.deploy-rs
