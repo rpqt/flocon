@@ -1,21 +1,26 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
   user = "rpqt";
   home = config.users.users.${user}.home;
-  domain = "home.rpqt.fr";
-  subdomain = "genepi.${domain}";
+  tld = "val";
+  domain = "genepi.${tld}";
 in
 {
 
-  services.nginx.virtualHosts.${subdomain} = {
+  services.nginx.virtualHosts.${domain} = {
     forceSSL = true;
-    useACMEHost = "${domain}";
-    locations."/syncthing".proxyPass = "http://${config.services.syncthing.guiAddress}";
+    enableACME = true;
+    locations."/syncthing" = {
+      proxyPass = "http://${config.services.syncthing.guiAddress}";
+    };
   };
+
+  security.acme.certs.${domain}.server = "https://ca.${tld}/acme/acme/directory";
 
   services.syncthing = {
     enable = true;
@@ -23,7 +28,12 @@ in
     group = lib.mkForce "users";
     dataDir = home;
     configDir = lib.mkForce "${home}/.config/syncthing";
+    guiAddress = "0.0.0.0:8384";
     guiPasswordFile = config.clan.core.vars.generators.syncthing-gui.files.password.path;
+  };
+
+  networking.firewall.interfaces.wireguard = {
+    allowedTCPPorts = [ 8384 ];
   };
 
   clan.core.vars.generators.syncthing-gui = {

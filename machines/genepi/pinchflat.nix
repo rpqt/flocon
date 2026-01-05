@@ -3,6 +3,10 @@
   pkgs,
   ...
 }:
+let
+  tld = "val";
+  domain = "pinchflat.${tld}";
+in
 {
   services.pinchflat = {
     enable = true;
@@ -23,9 +27,11 @@
 
   clan.core.state.pinchflat.folders = [ "/var/lib/pinchflat" ];
 
-  services.nginx.virtualHosts."pinchflat.home.rpqt.fr" = {
+  services.nginx.virtualHosts.${domain} = {
     forceSSL = true;
-    useACMEHost = "home.rpqt.fr";
+    enableACME = true;
     locations."/".proxyPass = "http://127.0.0.1:${builtins.toString config.services.pinchflat.port}";
   };
+
+  security.acme.certs.${domain}.server = "https://ca.${tld}/acme/acme/directory";
 }

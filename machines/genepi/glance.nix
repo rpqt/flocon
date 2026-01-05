@@ -1,18 +1,20 @@
 { config, ... }:
 let
-  domain = "home.rpqt.fr";
-  subdomain = "glance.${domain}";
+  tld = "val";
+  domain = "glance.${tld}";
 in
 {
   services.glance = {
     enable = true;
-    settings = ./glance-config.nix;
+    settings = (import ./glance-config.nix) { inherit tld; };
   };
 
-  services.nginx.virtualHosts.${subdomain} = {
+  services.nginx.virtualHosts.${domain} = {
     forceSSL = true;
-    useACMEHost = "${domain}";
+    enableACME = true;
     locations."/".proxyPass =
       "http://127.0.0.1:${toString config.services.glance.settings.server.port}";
   };
+
+  security.acme.certs.${domain}.server = "https://ca.${tld}/acme/acme/directory";
 }

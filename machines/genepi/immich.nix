@@ -1,19 +1,19 @@
 { config, ... }:
 let
-  domain = "home.rpqt.fr";
-  subdomain = "images.${domain}";
+  tld = "val";
+  domain = "images.${tld}";
 in
 {
   services.immich = {
     enable = true;
     settings = {
-      server.externalDomain = "https://${subdomain}";
+      server.externalDomain = "https://${domain}";
     };
   };
 
-  services.nginx.virtualHosts.${subdomain} = {
+  services.nginx.virtualHosts.${domain} = {
     forceSSL = true;
-    useACMEHost = "${domain}";
+    enableACME = true;
     locations."/" = {
       proxyPass = "http://${toString config.services.immich.host}:${toString config.services.immich.port}";
       proxyWebsockets = true;
@@ -25,6 +25,8 @@ in
       '';
     };
   };
+
+  security.acme.certs.${domain}.server = "https://ca.${tld}/acme/acme/directory";
 
   clan.core.state.immich.folders = [ "/var/lib/immich" ];
 }

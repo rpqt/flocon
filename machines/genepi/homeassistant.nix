@@ -1,7 +1,7 @@
 { config, ... }:
 let
-  domain = "home.rpqt.fr";
-  subdomain = "assistant.${domain}";
+  tld = "val";
+  domain = "assistant.${tld}";
 in
 {
   services.home-assistant = {
@@ -26,9 +26,9 @@ in
     };
   };
 
-  services.nginx.virtualHosts.${subdomain} = {
+  services.nginx.virtualHosts.${domain} = {
     forceSSL = true;
-    useACMEHost = "${domain}";
+    enableACME = true;
     extraConfig = ''
       proxy_buffering off;
     '';
@@ -37,4 +37,6 @@ in
       proxyWebsockets = true;
     };
   };
+
+  security.acme.certs.${domain}.server = "https://ca.${tld}/acme/acme/directory";
 }

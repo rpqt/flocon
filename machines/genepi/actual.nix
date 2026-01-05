@@ -1,4 +1,7 @@
 { config, ... }:
+let
+  domain = "actual.val";
+in
 {
   services.actual = {
     enable = true;
@@ -8,12 +11,14 @@
     };
   };
 
-  services.nginx.virtualHosts."actual.home.rpqt.fr" = {
+  services.nginx.virtualHosts.${domain} = {
     forceSSL = true;
-    useACMEHost = "home.rpqt.fr";
+    enableACME = true;
     locations."/".proxyPass =
       "http://127.0.0.1:${builtins.toString config.services.actual.settings.port}";
   };
 
-  clan.core.state.acutal.folders = [ "/var/lib/actual" ];
+  security.acme.certs.${domain}.server = "https://ca.val/acme/acme/directory";
+
+  clan.core.state.actual.folders = [ "/var/lib/actual" ];
 }

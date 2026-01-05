@@ -1,3 +1,4 @@
+{ tld }:
 {
   theme = {
     light = true;
@@ -41,22 +42,22 @@
               sites = [
                 {
                   title = "Immich";
-                  url = "https://images.home.rpqt.fr";
+                  url = "https://images.${tld}";
                   icon = "sh:immich";
                 }
                 {
                   title = "FreshRSS";
-                  url = "https://rss.home.rpqt.fr";
+                  url = "https://rss.${tld}";
                   icon = "sh:freshrss";
                 }
                 {
                   title = "Syncthing";
-                  url = "https://genepi.home.rpqt.fr/syncthing";
+                  url = "https://genepi.${tld}/syncthing";
                   icon = "sh:syncthing";
                 }
                 {
                   title = "Actual Budget";
-                  url = "https://actual.home.rpqt.fr";
+                  url = "https://actual.${tld}";
                   icon = "sh:actual-budget";
                 }
                 {
@@ -66,12 +67,12 @@
                 }
                 {
                   title = "Pinchflat";
-                  url = "https://pinchflat.home.rpqt.fr";
+                  url = "https://pinchflat.${tld}";
                   icon = "https://cdn.jsdelivr.net/gh/selfhst/icons/png/pinchflat.png";
                 }
                 {
                   title = "Home Assistant";
-                  url = "https://assistant.home.rpqt.fr";
+                  url = "https://assistant.${tld}";
                   icon = "sh:home-assistant";
                 }
                 {
@@ -98,12 +99,12 @@
               sites = [
                 {
                   title = "Grafana";
-                  url = "https://grafana.home.rpqt.fr";
+                  url = "https://grafana.${tld}";
                   icon = "sh:grafana";
                 }
                 {
                   title = "Prometheus";
-                  url = "http://genepi.home.rpqt.fr:9090";
+                  url = "http://genepi.${tld}:9090";
                   icon = "sh:prometheus";
                 }
               ];
@@ -115,7 +116,7 @@
               sites = [
                 {
                   title = "Lounge";
-                  url = "https://lounge.home.rpqt.fr";
+                  url = "https://lounge.${tld}";
                   icon = "si:html5";
                 }
                 {
@@ -178,7 +179,7 @@
               cache = "12h";
               feeds = [
                 {
-                  url = "https://rss.home.rpqt.fr/api/query.php?user=rpqt&t=74HfeLZ6Wu9h4MmjNR38Rz&f=rss";
+                  url = "https://rss.${tld}/api/query.php?user=rpqt&t=74HfeLZ6Wu9h4MmjNR38Rz&f=rss";
                 }
               ];
             }
