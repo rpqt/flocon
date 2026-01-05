@@ -53,6 +53,7 @@
     roles.default.tags.all = { };
     roles.server.machines.verbena = {
       settings.ip = "fd28:387a:90:c400::1";
+      settings.dnsPort = 53;
     };
     roles.server.machines.crocus = {
       settings.ip = "fd28:387a:90:c400:6db2:dfc3:c376:9956";

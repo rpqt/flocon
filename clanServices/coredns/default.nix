@@ -118,11 +118,13 @@
 
                 ''
                   .:${dnsPort} {
+                      bind wireguard
                       forward . 1.1.1.1
                       cache 30
                   }
 
                   ${settings.tld}:${dnsPort} {
+                      bind wireguard
                       file ${zonefile}
                   }
                 '';
@@ -168,7 +170,7 @@
             networking.nameservers = map (
               m:
               let
-                port = config.services.unbound.settings.port or 53;
+                port = config.services.unbound.settings.server.port or 53;
               in
               "127.0.0.1:${toString port}#${roles.server.machines.${m}.settings.tld}"
             ) (lib.attrNames roles.server.machines);
@@ -179,11 +181,11 @@
 
             services.unbound = {
               enable = true;
-              resolveLocalQueries = true;
+              # resolveLocalQueries = true;
               checkconf = true;
               settings = {
                 server = {
-                  # port = 5353;
+                  port = 5353;
                   verbosity = 2;
                   interface = [ "127.0.0.1" ];
                   access-control = [ "127.0.0.0/8 allow" ];
