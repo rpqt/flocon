@@ -33,16 +33,17 @@
     };
   };
 
-  # clan.inventory.instances.certificates = {
-  #   module.name = "certificates";
-  #   module.input = "clan-core";
+  clan.inventory.instances.certificates = {
+    module.name = "certificates";
+    module.input = "clan-core";
 
-  #   roles.ca.machines.verbena = {
-  #     settings.acmeEmail = "admin@rpqt.fr";
-  #   };
-  #   roles.default.tags.all = { };
-  #   roles.default.settings.acmeEmail = "admin@rpqt.fr";
-  # };
+    roles.ca.machines.verbena = {
+      settings.acmeEmail = "admin@rpqt.fr";
+      settings.tlds = [ "val" ];
+    };
+    roles.default.tags.all = { };
+    roles.default.settings.acmeEmail = "admin@rpqt.fr";
+  };
 
   # Temporarily patched version of clan-core/coredns for AAAA records support
   clan.inventory.instances.coredns = {
@@ -57,7 +58,14 @@
       settings.ip = "fd28:387a:90:c400:6db2:dfc3:c376:9956";
     };
     roles.server.settings = {
-      tld = "home.rpqt.fr";
+      tld = "val";
+    };
+
+    roles.default.machines.verbena.settings = {
+      ip = "fd28:387a:90:c400::1";
+      services = [
+        "ca"
+      ];
     };
 
     roles.default.machines.genepi.settings = {
