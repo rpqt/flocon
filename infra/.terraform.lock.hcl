@@ -40,7 +40,8 @@ provider "registry.opentofu.org/hetznercloud/hcloud" {
 }
 
 provider "registry.opentofu.org/ovh/ovh" {
-  version = "2.10.0"
+  version     = "2.10.0"
+  constraints = "> 2.5.0"
   hashes = [
     "h1:6CHM/tHZ7vAvQKtdqurs6ExO+46gpFooZ0zdaW74DKE=",
     "zh:1582485c59b5e25fa407417de3040dfc31bfec3f9b884d51953f6625b930d2f6",
