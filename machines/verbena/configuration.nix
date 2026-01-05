@@ -4,6 +4,7 @@
     self.nixosModules.nix-defaults
     self.nixosModules.nextcloud
     self.nixosModules.gitea
+    self.nixosModules.vaultwarden
 
     self.inputs.srvos.nixosModules.server
 

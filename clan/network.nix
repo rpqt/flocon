@@ -66,6 +66,7 @@
       ip = "fd28:387a:90:c400::1";
       services = [
         "ca"
+        "vaultwarden"
       ];
     };
 
