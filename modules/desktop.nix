@@ -20,4 +20,6 @@
     enable = true;
     terminal = "ghostty";
   };
+
+  services.pcscd.enable = true;
 }
