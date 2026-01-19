@@ -64,5 +64,19 @@
         type = "AAAA";
         records = [ { value = infra.machines.verbena.ipv6; } ];
       };
+
+      wg1_turifer_dev_a = {
+        zone = config.resource.hcloud_zone.turifer_dev "name";
+        name = "wg1";
+        type = "A";
+        records = [ { value = infra.machines.verbena.ipv4; } ];
+      };
+
+      wg1_turifer_dev_aaaa = {
+        zone = config.resource.hcloud_zone.turifer_dev "name";
+        name = "wg1";
+        type = "AAAA";
+        records = [ { value = infra.machines.verbena.ipv6; } ];
+      };
     };
 }
