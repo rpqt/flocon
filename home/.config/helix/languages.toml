@@ -58,3 +58,7 @@ auto-format = true
 [[language]]
 name = "vento"
 indent = { tab-width = 2, unit = "\t" }
+
+[[language]]
+name = "ocaml"
+auto-format = true
