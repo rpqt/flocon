@@ -11,6 +11,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } ({
       imports = [
         clan-core.flakeModules.default
+        inputs.terranix.flakeModule
         ./clan/flake-module.nix
         ./clanServices/flake-module.nix
         ./devShells/flake-module.nix
@@ -55,5 +56,9 @@
     direnv-instant.url = "github:Mic92/direnv-instant";
     direnv-instant.inputs.nixpkgs.follows = "nixpkgs";
     direnv-instant.inputs.flake-parts.follows = "flake-parts";
+
+    terranix.url = "github:terranix/terranix";
+    terranix.inputs.nixpkgs.follows = "nixpkgs";
+    terranix.inputs.flake-parts.follows = "flake-parts";
   };
 }
