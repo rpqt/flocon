@@ -24,7 +24,7 @@ in
           value = lib.tf.ref ''provider::hcloud::txt_record("v=spf1 include:spf.migadu.com -all")'';
         }
         {
-          value = lib.tf.ref ''provider::hcloud::txt_record("hosted-email-verify=pgeaq3bp")'';
+          value = lib.tf.ref ''provider::hcloud::txt_record("hosted-email-verify=${hostedEmailVerify}")'';
         }
       ];
     };
