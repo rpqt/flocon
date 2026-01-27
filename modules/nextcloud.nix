@@ -34,7 +34,7 @@ in
     };
     extraAppsEnable = true;
     extraApps = {
-      # inherit (pkgs.nextcloud32Packages.apps) tasks;
+      inherit (config.services.nextcloud.package.packages.apps) tasks contacts calendar;
     };
   };
 
