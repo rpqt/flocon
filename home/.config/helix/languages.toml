@@ -44,6 +44,8 @@ source = { git = "https://github.com/treeman/tree-sitter-djot", rev = "master" }
 [[language]]
 name = "nix"
 formatter = { command = "nixfmt" }
+auto-format = true
+language-servers = [ "nixd" ]
 
 [[language]]
 name = "java"
