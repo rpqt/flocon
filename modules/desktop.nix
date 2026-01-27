@@ -9,6 +9,10 @@
     pkgs.nautilus
   ];
 
+  fonts.packages = [
+    pkgs.inter
+  ];
+
   programs.firefox = {
     enable = true;
     nativeMessagingHosts.packages = [ pkgs.passff-host ];
