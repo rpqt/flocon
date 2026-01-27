@@ -8,7 +8,6 @@
     ./boot.nix
     ./chat.nix
     ./gimp.nix
-    ./gnome.nix
     ./hibernate.nix
     ./niri.nix
     ./ssh.nix
