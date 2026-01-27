@@ -1,6 +1,6 @@
 [general]
-live_config_reload = false
-import = ["~/.config/alacritty/themes/kanagawa_wave.toml"]
+live_config_reload = true
+import = ["~/.config/alacritty/themes/default_light.toml"]
 
 [font]
 size = 14
