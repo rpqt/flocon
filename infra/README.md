@@ -9,6 +9,11 @@ gandi_token = XXX
 hcloud_token = YYY
 ```
 
+## Deploying
+
+Apply configuration from the repository root with `nix run .#infra.apply` (runs `tofu apply`).
+There is also `nix run .#infra.plan` for `tofu plan`, etc.
+
 ## Importing
 
 To import already existent resources, use the `import` command:
