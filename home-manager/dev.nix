@@ -25,6 +25,7 @@
     radicle-tui
     typescript-language-server
     nil # Nix language server
+    nixd
     nixfmt
     nixpkgs-review
   ];
