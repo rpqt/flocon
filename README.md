@@ -1,15 +1,18 @@
-# NixOS & Home Manager config
+# Flocon
 
 This repository contains all my system configurations, mostly deployed using Nix and [Clan].
 
 ## Structure
 
-- **home**: Dotfiles
-- **machines**: Host-specific configs
-- **infra**: Terraform/OpenTofu files
-- **vars**: Encrypted secrets managed by clan
-- **modules**: NixOS modules
+- **clan**: Clan configuration
 - **clanServices**: Custom [Clan Services](https://docs.clan.lol/reference/clanServices)
+- **home**: Dotfiles
+- **home-manager**: [Home Manager] modules
+- **infra**: [Terranix] files (for Terraform/OpenTofu)
+- **machines**: Per-host configurations
+- **modules**: [NixOS] modules
+- **packages**: Nix packages
+- **vars**: Encrypted secrets managed by clan
 
 ## Dotfiles
 
@@ -19,4 +22,7 @@ This repository contains all my system configurations, mostly deployed using Nix
 dotbot -c ./dotbot/windows.yaml -d home
 ```
 
-[Clan]: https//clan.lol
+[Clan]: https://clan.lol
+[Home Manager]: https://home-manager.dev
+[NixOS]: https://nixos.org
+[Terranix]: https://terranix.org
