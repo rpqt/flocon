@@ -15,7 +15,7 @@
 
   programs.firefox = {
     enable = true;
-    nativeMessagingHosts.packages = [ pkgs.passff-host ];
+    languagePacks = [ "fr" ];
   };
 
   programs.thunderbird.enable = true;
