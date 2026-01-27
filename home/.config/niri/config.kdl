@@ -3,6 +3,8 @@ include "dms/binds.kdl"
 include "dms/colors.kdl"
 include "dms/layout.kdl"
 include "dms/wpblur.kdl"
+include "dms/cursor.kdl"
+include "dms/outputs.kdl"
 
 input {
     keyboard {
