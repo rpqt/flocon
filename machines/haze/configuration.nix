@@ -15,8 +15,8 @@
     ./network.nix
     ./syncthing.nix
 
+    self.nixosModules.atuin-config
     self.nixosModules.desktop
-    self.nixosModules.dev
     self.nixosModules.lanzaboote
     self.nixosModules.nix-defaults
 
@@ -26,7 +26,6 @@
       home-manager.useUserPackages = true;
       home-manager.users.rpqt = ./home.nix;
       home-manager.extraSpecialArgs = {
-        inherit (self) inputs;
         inherit self;
       };
     }

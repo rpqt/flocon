@@ -3,29 +3,30 @@
 
   outputs =
     inputs@{
-      nixpkgs,
       clan-core,
       flake-parts,
       ...
     }:
-    flake-parts.lib.mkFlake { inherit inputs; } ({
+    flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         clan-core.flakeModules.default
+        inputs.home-manager.flakeModules.home-manager
         inputs.terranix.flakeModule
         ./clan/flake-module.nix
         ./clanServices/flake-module.nix
         ./devShells/flake-module.nix
-        ./home-manager/flake-module.nix
+        ./homeModules/flake-module.nix
         ./infra/flake-module.nix
         ./modules/flake-module.nix
         ./packages/flake-module.nix
+        ./flakeModules/flake-module.nix
       ];
 
       systems = [
         "x86_64-linux"
         "aarch64-linux"
       ];
-    });
+    };
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";

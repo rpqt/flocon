@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    self.homeManagerModules.dotfiles
+    self.homeModules.dotfiles
   ];
 
   home.packages = [ pkgs.helix ];

@@ -1,8 +1,7 @@
 { self, config, ... }:
 {
   imports = [
-    self.homeManagerModules.dotfiles
-    ./wayland.nix
+    self.homeModules.dotfiles
   ];
 
   xdg.configFile."niri".source = "${config.dotfiles.path}/.config/niri";

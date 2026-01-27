@@ -21,7 +21,7 @@ let
 in
 {
   imports = [
-    self.homeManagerModules.dotfiles
+    self.homeModules.dotfiles
   ];
 
   home.packages = with pkgs; [
@@ -53,10 +53,6 @@ in
   programs.starship.enable = true;
   programs.bat.enable = true;
 
-  programs.atuin.enable = true;
-  xdg.dataFile."atuin/key".source =
-    config.lib.file.mkOutOfStoreSymlink osConfig.clan.core.vars.generators.atuin.files.key.path;
-
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
@@ -67,6 +63,33 @@ in
     enable = true;
     inherit shellAliases;
   };
+
+  programs.zellij.enable = true;
+
+  # programs.khal = {
+  #   enable = true;
+  # };
+
+  # accounts.calendar.basePath = ".calendar";
+
+  # programs.pimsync.enable = true;
+
+  # accounts.calendar.accounts.personal = {
+  #   pimsync.enable = true;
+  #   khal.enable = true;
+  #   thunderbird.enable = true;
+  #   remote = {
+  #     url = "https://cloud.rpqt.fr/remote.php/dav/calendars/rpqt/personal/";
+
+  #     type = "caldav";
+  #     userName = "rpqt@rpqt.fr";
+  #     passwordCommand = [
+  #       "sh"
+  #       "-c"
+  #       "passage web/cloud.rpqt.fr | head -n 1"
+  #     ];
+  #   };
+  # };
 
   xdg.configFile."git".source = "${config.dotfiles.path}/.config/git";
   xdg.configFile."jj/config.toml".source = "${config.dotfiles.path}/.config/jj/config.toml";

@@ -8,8 +8,9 @@
   imports = [
     ./cli.nix
     ./helix.nix
-    self.homeManagerModules.dotfiles
+    self.homeModules.dotfiles
     self.inputs.direnv-instant.homeModules.direnv-instant
+    self.homeModules.atuin-config
   ];
 
   home.packages = with pkgs; [
