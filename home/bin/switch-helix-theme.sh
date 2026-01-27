@@ -20,10 +20,10 @@ set_alacritty_theme() {
 
 if [[ "$2" == "prefer-dark" ]]; then
   set_helix_theme "$HELIX_THEME_DARK"
-  sey_alacritty_theme "$HELIX_THEME_DARK"
+  set_alacritty_theme "$ALACRITTY_THEME_DARK"
 else
   set_helix_theme "$HELIX_THEME_LIGHT"
-  set_alacritty_theme "$HELIX_THEME_LIGHT"
+  set_alacritty_theme "$ALACRITTY_THEME_LIGHT"
 fi
 
 pkill -USR1 hx || true
