@@ -15,6 +15,7 @@ in
         ROOT_URL = "https://${cfg.settings.server.DOMAIN}";
         DOMAIN = "git.rpqt.fr";
         HTTP_PORT = 3001;
+        LANDING_PAGE = "explore";
       };
 
       session.PROVIDER = "db";
