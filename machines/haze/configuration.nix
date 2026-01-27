@@ -18,6 +18,7 @@
 
     self.nixosModules.desktop
     self.nixosModules.dev
+    self.nixosModules.lanzaboote
     self.nixosModules.nix-defaults
 
     self.inputs.home-manager.nixosModules.home-manager
