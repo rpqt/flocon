@@ -6,7 +6,7 @@ let
 in
 {
   imports = [
-    ./storagebox.nix
+    self.nixosModules.storagebox
     self.inputs.clan-core.clanModules.borgbackup
   ];
 

@@ -17,8 +17,7 @@
     ./pinchflat.nix
     ./syncthing.nix
 
-    ../../modules/acme-home.nix
-    ../../modules/lounge.nix
+    self.nixosModules.lounge
     self.nixosModules.nix-defaults
 
     self.nixosModules.user-rpqt

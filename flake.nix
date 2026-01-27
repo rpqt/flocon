@@ -17,7 +17,7 @@
         ./devShells/flake-module.nix
         ./homeModules/flake-module.nix
         ./infra/flake-module.nix
-        ./modules/flake-module.nix
+        ./nixosModules/flake-module.nix
         ./packages/flake-module.nix
         ./flakeModules/flake-module.nix
       ];

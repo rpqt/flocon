@@ -6,7 +6,7 @@
   imports = [
     self.nixosModules.radicle
     self.nixosModules.nix-defaults
-    ../../modules/remote-builder.nix
+    self.nixosModules.remote-builder
     self.inputs.srvos.nixosModules.server
     self.inputs.srvos.nixosModules.hardware-hetzner-cloud
   ];

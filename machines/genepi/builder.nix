@@ -1,6 +1,7 @@
+{ self, ... }:
 {
   imports = [
-    ../../modules/remote-builder.nix
+    self.nixosModules.remote-builder
   ];
 
   roles.remote-builder = {

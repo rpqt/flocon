@@ -93,7 +93,7 @@
     module.input = "clan-core";
     module.name = "importer";
     roles.default.tags.garage = { };
-    roles.default.extraModules = [ ../modules/garage.nix ];
+    roles.default.extraModules = [ self.nixosModules.garage ];
   };
 
   clan.inventory.instances."trusted-nix-caches" = {
@@ -123,7 +123,7 @@
       }
     );
     roles.client.extraModules = [
-      ../modules/storagebox.nix
+      self.nixosModules.storagebox
     ];
     roles.server.machines = { };
   };
