@@ -66,6 +66,11 @@
                   icon = "sh:gitea";
                 }
                 {
+                  title = "Forgejo";
+                  url = "https://git.rpqt.fr";
+                  icon = "sh:forgejo";
+                }
+                {
                   title = "Pinchflat";
                   url = "https://pinchflat.${tld}";
                   icon = "https://cdn.jsdelivr.net/gh/selfhst/icons/png/pinchflat.png";
