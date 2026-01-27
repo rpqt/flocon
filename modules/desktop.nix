@@ -26,4 +26,15 @@
   };
 
   services.pcscd.enable = true;
+
+  services.displayManager = {
+    sddm.enable = true;
+    sddm.wayland.enable = true;
+  };
+
+  # Display manager keyboard layout
+  services.xserver = {
+    enable = true;
+    xkb.layout = "fr";
+  };
 }
