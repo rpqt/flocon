@@ -22,6 +22,7 @@
       tags = [
         "garage"
         "server"
+        "dns"
       ];
     };
   };
