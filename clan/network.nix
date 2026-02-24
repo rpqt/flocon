@@ -40,33 +40,36 @@
     roles.default.tags.all = { };
   };
 
-  # Temporarily patched version of clan-core/coredns for AAAA records support
-  clan.inventory.instances.coredns = {
-    module.name = "@rpqt/coredns";
+  clan.inventory.instances.dns = {
     module.input = "self";
+    module.name = "@schallerclan/dns";
 
-    roles.default.tags.all = { };
-    roles.server.machines.verbena = {
-      settings.ip = "fd28:387a:90:c400::1";
-      settings.dnsPort = 53;
-    };
-    roles.server.machines.crocus = {
-      settings.ip = "fd28:387a:90:c400:6db2:dfc3:c376:9956";
-    };
-    roles.server.settings = {
-      tld = "val";
-    };
+    roles.server.tags = [ "dns" ];
+    roles.default.tags = [ "all" ];
 
-    roles.default.machines.verbena.settings = {
-      ip = "fd28:387a:90:c400::1";
-      services = [
-        "ca"
-        "vaultwarden"
-      ];
+    roles.default.machines."verbena".settings = {
+      records = {
+        AAAA = [
+          "200:b038:ab12:ac69:8675:7e47:41f4:12f4" # yggdrasil
+        ];
+      };
+      services = [ "vaultwarden" ];
     };
 
-    roles.default.machines.genepi.settings = {
-      ip = "fd28:387a:90:c400:ab23:3d38:a148:f539"; # FIXME: IPv4 expected (A record)
+    roles.default.machines."crocus".settings = {
+      records = {
+        AAAA = [
+          "200:bcfc:9787:29b9:46e0:e75d:a912:dfdc" # yggdrasil
+        ];
+      };
+    };
+
+    roles.default.machines."genepi".settings = {
+      records = {
+        AAAA = [
+          "200:b839:2d6f:3dad:adab:e104:26e2:f12b" # yggdrasil
+        ];
+      };
       services = [
         "actual"
         "assistant"
