@@ -7,6 +7,8 @@
     pkgs.ghostty
     pkgs.libreoffice
     pkgs.nautilus
+    pkgs.loupe
+    pkgs.evince
   ];
 
   fonts.packages = [
