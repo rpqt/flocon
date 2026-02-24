@@ -11,7 +11,6 @@
     ./hibernate.nix
     ./niri.nix
     ./ssh.nix
-    ./steam.nix
     ./network.nix
     ./syncthing.nix
 
@@ -19,6 +18,7 @@
     self.nixosModules.desktop
     self.nixosModules.lanzaboote
     self.nixosModules.nix-defaults
+    self.nixosModules.steam
 
     self.inputs.home-manager.nixosModules.home-manager
     {
