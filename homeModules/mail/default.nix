@@ -84,22 +84,6 @@ in
       ];
     };
 
-    "romain@student.agh.edu.pl" = {
-      address = "romain@student.agh.edu.pl";
-      aliases = [ "382799@student.agh.edu.pl" ];
-      realName = "Romain Paquet";
-      userName = "romain@student.agh.edu.pl";
-      imap = {
-        host = "poczta.agh.edu.pl";
-        port = 993;
-      };
-      smtp = {
-        host = "poczta.agh.edu.pl";
-        port = 465;
-      };
-      thunderbird.enable = config.programs.thunderbird.enable;
-    };
-
     "romain.pqt@gmail.com" = {
       address = "romain.pqt@gmail.com";
       realName = "Romain Paquet";
