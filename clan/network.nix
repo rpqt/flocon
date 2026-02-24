@@ -35,16 +35,9 @@
     };
   };
 
-  clan.inventory.instances.certificates = {
-    module.name = "certificates";
-    module.input = "clan-core";
-
-    roles.ca.machines.verbena = {
-      settings.acmeEmail = "admin@rpqt.fr";
-      settings.tlds = [ "val" ];
-    };
+  clan.inventory.instances.pki = {
+    module.name = "pki";
     roles.default.tags.all = { };
-    roles.default.settings.acmeEmail = "admin@rpqt.fr";
   };
 
   # Temporarily patched version of clan-core/coredns for AAAA records support
