@@ -146,7 +146,7 @@
         domain = "buildbot.turifer.dev";
         admins = [ "rpqt" ];
         topic = "buildbot-nix";
-        gitea.instanceUrl = "https://git.turifer.dev";
+        gitea.instanceUrl = "https:/git.rpqt.fr";
       };
     };
 

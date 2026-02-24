@@ -3,7 +3,6 @@
   imports = [
     self.nixosModules.nix-defaults
     self.nixosModules.nextcloud
-    self.nixosModules.gitea
     self.nixosModules.forgejo
 
     self.inputs.srvos.nixosModules.server
