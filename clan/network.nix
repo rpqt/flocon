@@ -2,13 +2,11 @@
 {
   clan.inventory.instances.zerotier = {
     roles.controller.machines.crocus = { };
-    roles.moon.machines.crocus = {
-      settings = {
-        stableEndpoints = [
-          "116.203.18.122"
-          "2a01:4f8:1c1e:e415::/64"
-        ];
-      };
+    roles.moon.machines.crocus.settings = {
+      stableEndpoints = [
+        self.infra.machines.crocus.ipv4
+        self.infra.machines.crocus.ipv6
+      ];
     };
     roles.peer.tags."all" = { };
   };
