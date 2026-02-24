@@ -13,17 +13,6 @@
     "age-plugin-yubikey"
   ];
 
-  clan.inventory.instances."rpqt-admin" = {
-    module.input = "clan-core";
-    module.name = "admin";
-    roles.default.tags.server = { };
-    roles.default.machines.haze = { };
-    roles.default.settings.allowedKeys = {
-      rpqt_haze = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGa8R8obgptefcp27Cdp9bc2fiyc9x0oTfMsTPFp2ktE rpqt@haze";
-      nixbld_haze = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIyNC2sn5m7m52r4kVZqg0T7abqdz5xh/blU3cYtHKAE nixbld@haze";
-    };
-  };
-
   clan.inventory.instances."sshd" = {
     module.input = "clan-core";
     module.name = "sshd";
@@ -35,6 +24,10 @@
       certificate.searchDomains = [
         "home.rpqt.fr"
       ];
+      authorizedKeys = {
+        rpqt_haze = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGa8R8obgptefcp27Cdp9bc2fiyc9x0oTfMsTPFp2ktE rpqt@haze";
+        nixbld_haze = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIyNC2sn5m7m52r4kVZqg0T7abqdz5xh/blU3cYtHKAE nixbld@haze";
+      };
     };
 
     roles.client.tags.all = { };
