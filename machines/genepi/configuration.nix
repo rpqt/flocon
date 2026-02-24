@@ -6,7 +6,6 @@
   imports = [
     ./actual.nix
     ./boot.nix
-    ./builder.nix
     ./freshrss.nix
     ./glance.nix
     ./homeassistant.nix

@@ -56,22 +56,6 @@
 
   programs.kdeconnect.enable = true;
 
-  # Remote builds
-  nix = {
-    distributedBuilds = true;
-    buildMachines = [
-      {
-        sshUser = "nixremote";
-        sshKey = "/etc/ssh/ssh_host_ed25519_key";
-        systems = [ "aarch64-linux" ];
-        hostName = "genepi";
-      }
-    ];
-    extraOptions = ''
-      builders-use-substitutes = true
-    '';
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   i18n.supportedLocales = [
