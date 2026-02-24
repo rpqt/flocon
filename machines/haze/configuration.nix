@@ -84,7 +84,6 @@
     wheelNeedsPassword = false;
   };
 
-  services.tailscale.useRoutingFeatures = "client";
 
   services.displayManager.autoLogin = {
     enable = true;
