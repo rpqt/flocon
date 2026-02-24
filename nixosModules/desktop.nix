@@ -5,7 +5,6 @@
     pkgs.amberol # music player
     pkgs.alacritty
     pkgs.ghostty
-    pkgs.libreoffice
     pkgs.nautilus
     pkgs.loupe
     pkgs.evince
