@@ -175,4 +175,9 @@
     roles.worker.machines.verbena = { };
   };
 
+  clan.inventory.instances.vaultwarden = {
+    module.input = "self";
+    module.name = "@rpqt/vaultwarden";
+    roles.default.machines.verbena = { };
+  };
 }
