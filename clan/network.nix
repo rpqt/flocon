@@ -1,5 +1,9 @@
 { self, ... }:
 {
+  clan.inventory.instances.yggdrasil = {
+    roles.default.tags.all = { };
+  };
+
   clan.inventory.instances.zerotier = {
     roles.controller.machines.crocus = { };
     roles.moon.machines.crocus.settings = {
