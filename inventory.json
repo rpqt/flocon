@@ -13,6 +13,9 @@
     "genepi": {
       "installedAt": 1757633120,
       "description": "Raspberry Pi 4B"
+    },
+    "renoir": {
+      "installedAt": 1773686855
     }
   }
 }
