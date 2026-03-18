@@ -22,6 +22,6 @@ if [ -r ~/.profile ]; then
 fi
 
 # Load machine-specific config
-if [ -r ~/.config/zsh/$HOST.zsh ]; then
-  source ~/.config/zsh/$HOST.zsh
+if [ -r ~/.config/zsh/$HOSTNAME.zsh ]; then
+  source ~/.config/zsh/$HOSTNAME.zsh
 fi
