@@ -32,6 +32,7 @@
       haze = { };
       crocus = { };
       genepi = { };
+      renoir = { };
     };
   };
 
@@ -46,6 +47,14 @@
 
     roles.server.tags = [ "dns" ];
     roles.default.tags = [ "all" ];
+
+    roles.default.machines."renoir".settings = {
+      records = {
+        AAAA = [
+          "205:8a34:1a76:f16c:964c:36e:7240:630f" # yggdrasil
+        ];
+      };
+    };
 
     roles.default.machines."verbena".settings = {
       records = {
