@@ -18,6 +18,11 @@
         "syncthing"
       ];
     };
+    renoir = {
+      tags = [
+        "syncthing"
+      ];
+    };
     verbena = {
       tags = [
         "garage"
