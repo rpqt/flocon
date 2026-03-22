@@ -32,10 +32,13 @@
   clan.inventory.instances.user-rpqt = {
     module.input = "clan-core";
     module.name = "users";
-    roles.default.machines.haze = {
-      settings = {
-        user = "rpqt";
-      };
+    roles.default.machines = {
+      haze = { };
+      crocus = { };
+      renoir = { };
+    };
+    roles.default.settings = {
+      user = "rpqt";
     };
     roles.default.extraModules = [
       self.nixosModules.user-rpqt
