@@ -119,16 +119,16 @@
     roles.peer.tags.syncthing = { };
     roles.peer.settings.folders = {
       Documents = {
-        path = "~/Documents";
+        path = "/home/rpqt/Documents";
       };
       Music = {
-        path = "~/Music";
+        path = "/home/rpqt/Music";
       };
       Pictures = {
-        path = "~/Pictures";
+        path = "/home/rpqt/Pictures";
       };
       Videos = {
-        path = "~/Videos";
+        path = "/home/rpqt/Videos";
       };
     };
     roles.peer.settings.extraDevices = {
