@@ -10,6 +10,10 @@ if status is-interactive
         source $XDG_CONFIG_HOME/sh/per-host/$hostname.sh
     end
 
+    if test -r $XDG_CONFIG_HOME/fish/per-host/$hostname.fish
+        source $XDG_CONFIG_HOME/fish/per-host/$hostname.fish
+    end
+
     if type -q atuin
         atuin init fish | source
     end
