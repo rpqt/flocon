@@ -42,8 +42,7 @@
   hardware.bluetooth.enable = true;
 
   services.displayManager = {
-    sddm.enable = true;
-    sddm.wayland.enable = true;
+    gdm.enable = true;
   };
 
   # Display manager keyboard layout
