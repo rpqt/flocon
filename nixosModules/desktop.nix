@@ -50,4 +50,6 @@
     enable = true;
     xkb.layout = "fr";
   };
+
+  programs.kdeconnect.enable = true;
 }
