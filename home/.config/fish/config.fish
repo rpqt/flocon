@@ -25,6 +25,9 @@ if status is-interactive
 
     if type -q eza
         alias ls=eza
+        if not type -q tree
+            alias tree=eza --tree
+        end
     end
 
     if type -q starship
