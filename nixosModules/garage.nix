@@ -6,9 +6,6 @@
   ...
 }:
 let
-  zerotier_interface = "zts7mq7onf";
-  zerotier_ip =
-    self.nixosConfigurations.${config.networking.hostName}.config.clan.core.vars.generators.zerotier.files.zerotier-ip.value;
   s3_port = 3900;
   rpc_port = 3901;
   web_port = 3902;
@@ -45,16 +42,9 @@ in
     };
   };
 
-  networking.firewall.interfaces =
-    let
-      allowedTCPPorts = [
-        s3_port
-        rpc_port
-        admin_port
-      ];
-    in
-    {
-      ${zerotier_interface} = { inherit allowedTCPPorts; };
-      wireguard = { inherit allowedTCPPorts; };
-    };
+  networking.firewall.interfaces.ygg.allowedTCPPorts = [
+    s3_port
+    rpc_port
+    admin_port
+  ];
 }
