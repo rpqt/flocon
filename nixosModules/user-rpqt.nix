@@ -22,7 +22,7 @@
     extraGroups = [
       "wheel"
     ]
-    ++ lib.mkIf config.networking.networkmanager.enabled [ "networkmanager" ];
+    ++ (if config.networking.networkmanager ? enabled then [ "networkmanager" ] else [ ]);
   };
 
   programs.fish.enable = true;
