@@ -6,7 +6,7 @@
 {
   services.radicle = {
     enable = true;
-    privateKeyFile = config.clan.core.vars.generators.radicle.files."id_ed25519".path;
+    privateKey = config.clan.core.vars.generators.radicle.files."id_ed25519".path;
     publicKey = config.clan.core.vars.generators.radicle.files."id_ed25519.pub".value;
     node = {
       openFirewall = true;

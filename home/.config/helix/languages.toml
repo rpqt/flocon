@@ -33,15 +33,6 @@ file-types = ["ts"]
 language-servers = ["deno-lsp"]
 
 [[language]]
-name = "djot"
-scope = "source.djot"
-file-types = ["dj"]
-
-[[grammar]]
-name = "djot"
-source = { git = "https://github.com/treeman/tree-sitter-djot", rev = "master" }
-
-[[language]]
 name = "nix"
 formatter = { command = "nixfmt" }
 auto-format = true

@@ -20,6 +20,7 @@
     };
     renoir = {
       tags = [
+        "garage"
         "syncthing"
       ];
     };
@@ -27,7 +28,8 @@
       tags = [
         "garage"
         "server"
-        "dns"
+        # FIXME: find a way to protect the public DNS against DoS
+        # "dns"
       ];
     };
   };
