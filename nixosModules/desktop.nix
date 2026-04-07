@@ -1,5 +1,9 @@
-{ pkgs, ... }:
+{ self, pkgs, ... }:
 {
+  imports = [
+    self.nixosModules.chat
+  ];
+
   environment.systemPackages = [
     pkgs.mpv # video player
     pkgs.amberol # music player

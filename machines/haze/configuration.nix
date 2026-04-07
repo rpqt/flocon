@@ -6,7 +6,6 @@
 {
   imports = [
     ./boot.nix
-    ./chat.nix
     ./gimp.nix
     ./hibernate.nix
     ./ssh.nix
