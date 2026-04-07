@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -eu
+
+for remote in $(git remote); do
+	git push "$remote" $@
+done
