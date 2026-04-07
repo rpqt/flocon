@@ -1,3 +1,4 @@
+{ ... }:
 {
   _class = "clan.service";
   manifest.name = "home-assistant";
