@@ -9,7 +9,6 @@
     ./chat.nix
     ./gimp.nix
     ./hibernate.nix
-    ./niri.nix
     ./ssh.nix
     ./network.nix
     ./syncthing.nix
@@ -17,6 +16,7 @@
     self.nixosModules.atuin-config
     self.nixosModules.desktop
     self.nixosModules.lanzaboote
+    self.nixosModules.niri
     self.nixosModules.nix-defaults
     self.nixosModules.steam
 
@@ -65,7 +65,6 @@
     enable = true;
     wheelNeedsPassword = false;
   };
-
 
   services.displayManager.autoLogin = {
     enable = true;
