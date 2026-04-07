@@ -39,4 +39,6 @@
       security.acme.acceptTerms = true;
     }
   ];
+
+  time.timeZone = "Europe/Paris";
 }
