@@ -2,3 +2,5 @@
 /.helix
 /.settings
 /.classpath
+/.cache
+/compile_commands.json
