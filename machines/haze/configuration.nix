@@ -54,8 +54,6 @@
     pkgs.anki
   ];
 
-  programs.kdeconnect.enable = true;
-
   nixpkgs.config.allowUnfree = true;
 
   i18n.supportedLocales = [
