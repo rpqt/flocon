@@ -6,7 +6,6 @@
   imports = [
     self.nixosModules.radicle
     self.nixosModules.nix-defaults
-    self.nixosModules.remote-builder
     self.inputs.srvos.nixosModules.server
     self.inputs.srvos.nixosModules.hardware-hetzner-cloud
   ];
@@ -39,7 +38,7 @@
   services.garage.settings.data_dir = [
     {
       path = "/var/lib/garage/data";
-      capacity = "20G";
+      capacity = "24G";
     }
     {
       path = "/data1/garage";
@@ -48,8 +47,6 @@
   ];
 
   clan.core.settings.state-version.enable = true;
-
-  clan.core.networking.buildHost = "root@haze";
 
   services.avahi.allowInterfaces = [
     "zts7mq7onf"
