@@ -13,6 +13,7 @@
           pkgs.nil # Nix language server
           pkgs.nixfmt
           pkgs.opentofu
+          pkgs.selfci
           pkgs.terraform-ls
           pkgs.deploy-rs
           pkgs.zsh
