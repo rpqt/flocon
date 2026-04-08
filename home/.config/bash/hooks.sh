@@ -10,7 +10,7 @@ fi
 
 # Launch atuin if it is installed
 if command -v atuin >/dev/null; then
-  eval "$(atuin init bash)"
+  source <(atuin init bash)
 fi
 
 # Init zoxide if present and alias cd to it
