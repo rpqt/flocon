@@ -5,8 +5,7 @@
     recommendedTlsSettings = true;
   };
 
-  networking.firewall.interfaces."zts7mq7onf".allowedTCPPorts = [ 443 ];
-  networking.firewall.interfaces."wireguard".allowedTCPPorts = [
+  networking.firewall.interfaces."ygg".allowedTCPPorts = [
     80
     443
   ];
