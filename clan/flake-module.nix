@@ -2,6 +2,7 @@
 {
   imports = [
     ./backups.nix
+    ./glance/flake-module.nix
     ./machines.nix
     ./monitoring.nix
     ./network.nix

@@ -1,6 +1,7 @@
 {
   imports = [
     ./buildbot/flake-module.nix
+    ./glance/flake-module.nix
     ./prometheus/flake-module.nix
   ];
 
