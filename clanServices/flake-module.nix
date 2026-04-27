@@ -5,6 +5,4 @@
   ];
 
   clan.modules."@rpqt/vaultwarden" = ./vaultwarden.nix;
-
-  clan.modules."@schallerclan/dns" = ./dns.nix;
 }
