@@ -152,11 +152,11 @@
     roles.default.machines.verbena = { };
   };
 
-  # clan.inventory.instances.home-assistant = {
-  #   module.input = "self";
-  #   module.name = "@rpqt/home-assistant";
-  #   roles.default.machines.genepi = { };
-  # };
+  clan.inventory.instances.home-assistant = {
+    module.input = "self";
+    module.name = "@rpqt/home-assistant";
+    roles.default.machines.genepi = { };
+  };
 
   # clan.inventory.instances.firefox-syncserver = {
   # module.input = "self";
