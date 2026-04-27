@@ -21,6 +21,7 @@
     renoir = {
       tags = [
         "garage"
+        "server"
         "syncthing"
       ];
     };
