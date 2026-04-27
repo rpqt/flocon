@@ -1,35 +1,30 @@
 {
   self,
+  lib,
   ...
 }:
 {
   imports = [
-    ./actual.nix
-    ./boot.nix
-    ./freshrss.nix
-    ./glance.nix
-    ./homeassistant.nix
-    ./immich.nix
-    ./monitoring
     ./network.nix
     ./nginx.nix
-    ./pinchflat.nix
-    ./syncthing.nix
 
-    self.nixosModules.lounge
     self.nixosModules.nix-defaults
-
-    self.nixosModules.user-rpqt
-
-    self.inputs.srvos.nixosModules.mixins-terminfo
+    self.nixosModules.rpi4
   ];
+
+  image.modules.sd-card = {
+    disabledModules = [
+      ./hardware-configuration.nix
+    ];
+    users.users.rpqt = {
+      hashedPasswordFile = lib.mkForce null;
+      password = "foo";
+    };
+  };
 
   networking.hostName = "genepi";
 
   time.timeZone = "Europe/Paris";
-
-  services.prometheus.checkConfig = "syntax-only";
-  clan.core.vars.generators.garage.files.metrics_token.owner = "prometheus";
 
   clan.core.settings.state-version.enable = true;
 }

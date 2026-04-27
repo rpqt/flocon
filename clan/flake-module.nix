@@ -17,6 +17,7 @@
   clan.inventory.instances."sshd" = {
     module.input = "clan-core";
     module.name = "sshd";
+
     roles.server.tags.all = { };
     roles.server.extraModules = [
       self.nixosModules.hardened-ssh-server
@@ -27,7 +28,6 @@
         nixbld_haze = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIyNC2sn5m7m52r4kVZqg0T7abqdz5xh/blU3cYtHKAE nixbld@haze";
       };
     };
-
   };
 
   clan.inventory.instances.user-rpqt = {
@@ -36,6 +36,7 @@
     roles.default.machines = {
       haze = { };
       crocus = { };
+      genepi = { };
       renoir = { };
     };
     roles.default.settings = {
@@ -149,4 +150,16 @@
     module.name = "@rpqt/vaultwarden";
     roles.default.machines.verbena = { };
   };
+
+  # clan.inventory.instances.home-assistant = {
+  #   module.input = "self";
+  #   module.name = "@rpqt/home-assistant";
+  #   roles.default.machines.genepi = { };
+  # };
+
+  # clan.inventory.instances.firefox-syncserver = {
+  # module.input = "self";
+  # module.name = "@rpqt/firefox-syncserver";
+  # roles.server.machines.renoir = { };
+  # };
 }
