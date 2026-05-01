@@ -61,12 +61,6 @@
     module.input = "clan-core";
     module.name = "garage";
     roles.default.tags.garage = { };
-  };
-
-  clan.inventory.instances."garage-config" = {
-    module.input = "clan-core";
-    module.name = "importer";
-    roles.default.tags.garage = { };
     roles.default.extraModules = [ self.nixosModules.garage ];
   };
 
