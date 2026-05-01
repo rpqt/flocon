@@ -1,4 +1,5 @@
 local-zone: "val." transparent
 local-data: "glance.val. CNAME renoir.val."
 local-data: "assistant.val. CNAME genepi.val."
+local-data: "lounge.val. CNAME renoir.val."
 local-data: "vaultwarden.val. CNAME verbena.val."
