@@ -8,6 +8,7 @@
       crocus = { };
       genepi = { };
       renoir = { };
+      verbena = { };
     };
     roles.default.settings = {
       user = "rpqt";
