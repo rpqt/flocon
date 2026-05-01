@@ -6,6 +6,7 @@
     ./machines.nix
     ./monitoring.nix
     ./network.nix
+    ./users.nix
   ];
 
   clan.meta.name = "blossom";
@@ -29,23 +30,6 @@
         nixbld_haze = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIyNC2sn5m7m52r4kVZqg0T7abqdz5xh/blU3cYtHKAE nixbld@haze";
       };
     };
-  };
-
-  clan.inventory.instances.user-rpqt = {
-    module.input = "clan-core";
-    module.name = "users";
-    roles.default.machines = {
-      haze = { };
-      crocus = { };
-      genepi = { };
-      renoir = { };
-    };
-    roles.default.settings = {
-      user = "rpqt";
-    };
-    roles.default.extraModules = [
-      self.nixosModules.user-rpqt
-    ];
   };
 
   clan.inventory.instances.common-config = {
