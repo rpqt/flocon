@@ -33,6 +33,7 @@
 
   fileSystems."/data1" = {
     device = "/dev/disk/by-id/scsi-0HC_Volume_103766469";
+    fsType = "ext4";
   };
 
   services.garage.settings.data_dir = [
