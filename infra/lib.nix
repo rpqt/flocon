@@ -84,5 +84,19 @@ in
       type = "SRV";
       records = [ { value = "0 1 995 pop.migadu.com."; } ];
     };
+
+    caldavs = {
+      inherit zone;
+      name = "_caldavs._tcp";
+      type = "SRV";
+      records = [ { value = "0 1 443 cdav.migadu.com."; } ];
+    };
+
+    carddavs = {
+      inherit zone;
+      name = "_carddavs._tcp";
+      type = "SRV";
+      records = [ { value = "0 1 443 cdav.migadu.com."; } ];
+    };
   };
 }
