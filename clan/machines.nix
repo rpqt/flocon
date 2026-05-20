@@ -33,5 +33,10 @@
         # "dns"
       ];
     };
+    verso = {
+      tags = [
+        "syncthing"
+      ];
+    };
   };
 }
