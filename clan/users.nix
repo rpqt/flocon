@@ -3,13 +3,7 @@
   clan.inventory.instances.user-rpqt = {
     module.input = "clan-core";
     module.name = "users";
-    roles.default.machines = {
-      haze = { };
-      crocus = { };
-      genepi = { };
-      renoir = { };
-      verbena = { };
-    };
+    roles.default.tags = [ "all" ];
     roles.default.settings = {
       user = "rpqt";
       openssh.authorizedKeys.keys = [
