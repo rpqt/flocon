@@ -33,6 +33,7 @@
       crocus = { };
       genepi = { };
       renoir = { };
+      verso = { };
     };
   };
 
