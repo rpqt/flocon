@@ -9,6 +9,7 @@
         tld = self.clan.inventory.meta.domain;
       in
       {
+        server.port = 5678;
         theme = {
           light = true;
           background-color = "0 0 95";
