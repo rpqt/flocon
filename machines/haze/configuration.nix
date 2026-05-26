@@ -68,4 +68,7 @@
     enable = true;
     user = "rpqt";
   };
+
+  # Battery
+  services.upower.enable = true;
 }
