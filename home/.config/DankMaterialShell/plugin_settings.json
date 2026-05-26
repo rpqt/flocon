@@ -1,0 +1,18 @@
+{
+  "dankBatteryAlerts": {
+    "enabled": true,
+    "criticalThreshold": 20
+  },
+  "dankKDEConnect": {
+    "enabled": true,
+    "selectedDeviceId": "48bb2491d9f24e8aab3dfb4e066cd473"
+  },
+  "dankHooks": {
+    "enabled": true,
+    "lightMode": "/home/rpqt/rep/flocon/home/bin/switch-helix-theme.sh"
+  },
+  "musicLyrics": {
+    "enabled": true,
+    "musixmatchToken": "2604187cf55da42c5603d48767673e9b6ca4eff5f4b6c00a8e37ef"
+  }
+}

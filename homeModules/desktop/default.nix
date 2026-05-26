@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./dms.nix
     ./fonts.nix
     ./pass.nix
     ./terminal.nix
