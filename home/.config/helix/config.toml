@@ -5,6 +5,7 @@ line-number = "absolute"
 auto-completion = true
 auto-format = true
 end-of-line-diagnostics = "hint"
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"
