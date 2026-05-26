@@ -4,13 +4,13 @@
 provider "registry.opentofu.org/hashicorp/external" {
   version = "2.3.5"
   hashes = [
-    "h1:en/2hMK/W/2hKtsEkbxGiiYwi/pSPS/UoGDILHIHjmw=",
+    "h1:TMh8VmOBDDtgxPPyPFShqh09X+Bb719QhUIex0I+dRE=",
   ]
 }
 
 provider "registry.opentofu.org/hetznercloud/hcloud" {
-  version = "1.58.0"
+  version = "1.61.0"
   hashes = [
-    "h1:6C2LNEvCyGPyWgALDAFTNbRp+5Iuikd4Ju1Xejh+aeg=",
+    "h1:42P6mAeVV9Iu/1ZExJ1J6chfP9FY6x/rGMk+1IvCSGM=",
   ]
 }
