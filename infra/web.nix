@@ -51,6 +51,20 @@
         records = [ { value = infra.machines.verbena.ipv6; } ];
       };
 
+      auth_rpqt_fr_a = {
+        zone = config.resource.hcloud_zone.rpqt_fr "name";
+        name = "auth";
+        type = "A";
+        records = [ { value = infra.machines.verbena.ipv4; } ];
+      };
+
+      auth_rpqt_fr_aaaa = {
+        zone = config.resource.hcloud_zone.rpqt_fr "name";
+        name = "auth";
+        type = "AAAA";
+        records = [ { value = infra.machines.verbena.ipv6; } ];
+      };
+
       buildbot_turifer_dev_a = {
         zone = config.resource.hcloud_zone.turifer_dev "name";
         name = "buildbot";

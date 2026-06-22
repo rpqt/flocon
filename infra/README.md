@@ -14,6 +14,13 @@ hcloud_token = YYY
 Apply configuration from the repository root with `nix run .#infra.apply` (runs `tofu apply`).
 There is also `nix run .#infra.plan` for `tofu plan`, etc.
 
+## Updating dependencies
+
+```sh
+nix build .#infra.config -o config.tf.json
+tofu init -upgrade
+```
+
 ## Importing
 
 To import already existent resources, use the `import` command:
