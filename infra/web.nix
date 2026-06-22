@@ -79,6 +79,20 @@
         records = [ { value = infra.machines.verbena.ipv6; } ];
       };
 
+      nixbot_rpqt_fr_a = {
+        zone = config.resource.hcloud_zone.rpqt_fr "name";
+        name = "nixbot";
+        type = "A";
+        records = [ { value = infra.machines.verbena.ipv4; } ];
+      };
+
+      nixbot_rpqt_fr_aaaa = {
+        zone = config.resource.hcloud_zone.rpqt_fr "name";
+        name = "nixbot";
+        type = "AAAA";
+        records = [ { value = infra.machines.verbena.ipv6; } ];
+      };
+
       wg1_turifer_dev_a = {
         zone = config.resource.hcloud_zone.turifer_dev "name";
         name = "wg1";
