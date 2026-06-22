@@ -6,10 +6,7 @@
 {
   imports = [
     self.nixosModules.atuin-config
-    self.nixosModules.desktop
-    self.nixosModules.niri
     self.nixosModules.nix-defaults
-    self.nixosModules.steam
     ../haze/syncthing.nix
 
     {
