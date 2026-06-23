@@ -5,6 +5,7 @@
     inputs@{
       clan-core,
       flake-parts,
+      self,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -26,6 +27,15 @@
         "x86_64-linux"
         "aarch64-linux"
       ];
+
+      flake.nixosConfigurations.klp1-clanless = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit self; };
+        modules = [
+          ./machines/klp1/configuration.nix
+          ./machines/klp1/hardware-configuration.nix
+        ];
+      };
     };
 
   inputs = {
