@@ -108,4 +108,10 @@
   # module.name = "@rpqt/firefox-syncserver";
   # roles.server.machines.renoir = { };
   # };
+
+  clan.inventory.instances.webapps = {
+    module.input = "clan-community";
+    module.name = "webapps";
+    roles.default.tags = [ "desktop" ];
+  };
 }
