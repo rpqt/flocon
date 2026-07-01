@@ -15,6 +15,7 @@
     };
     haze = {
       tags = [
+        "desktop"
         "syncthing"
       ];
     };
@@ -35,6 +36,7 @@
     };
     verso = {
       tags = [
+        "desktop"
         "syncthing"
       ];
     };
