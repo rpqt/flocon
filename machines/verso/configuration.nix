@@ -21,8 +21,4 @@
 
   time.timeZone = "Europe/Paris";
 
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "rpqt";
-  };
 }

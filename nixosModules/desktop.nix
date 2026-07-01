@@ -46,7 +46,11 @@
   hardware.bluetooth.enable = true;
 
   services.displayManager = {
-    gdm.enable = true;
+    dms-greeter = {
+      enable = true;
+      compositor.name = "niri";
+      configHome = "/home/rpqt";
+    };
   };
 
   # Display manager keyboard layout
