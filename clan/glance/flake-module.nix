@@ -51,6 +51,11 @@
                     title = "Services";
                     sites = [
                       {
+                        title = "Authelia";
+                        url = "https://auth.rpqt.fr";
+                        icon = "sh:authelia";
+                      }
+                      {
                         title = "Immich";
                         url = "https://images.${tld}";
                         icon = "sh:immich";
@@ -71,19 +76,9 @@
                         icon = "sh:actual-budget";
                       }
                       {
-                        title = "Gitea";
-                        url = "https://git.turifer.dev";
-                        icon = "sh:gitea";
-                      }
-                      {
                         title = "Forgejo";
                         url = "https://git.rpqt.fr";
                         icon = "sh:forgejo";
-                      }
-                      {
-                        title = "Pinchflat";
-                        url = "https://pinchflat.${tld}";
-                        icon = "https://cdn.jsdelivr.net/gh/selfhst/icons/png/pinchflat.png";
                       }
                       {
                         title = "Home Assistant";
@@ -96,9 +91,9 @@
                         icon = "sh:nextcloud";
                       }
                       {
-                        title = "Buildbot";
-                        url = "https://buildbot.turifer.dev";
-                        icon = "https://buildbot.turifer.dev/icon.svg";
+                        title = "Nixbot";
+                        url = "https://nixbot.rpqt.fr";
+                        icon = "https://nixbot.rpqt.fr/static/favicon.svg";
                       }
                       {
                         title = "Radicle";
@@ -142,6 +137,28 @@
                     ];
                   }
                   {
+                    type = "monitor";
+                    cache = "1m";
+                    title = "External services";
+                    sites = [
+                      {
+                        title = "Qobuz";
+                        url = "https://play.qobuz.com";
+                        icon = "https://www.qobuz.com/favicon.ico";
+                      }
+                      {
+                        title = "Github";
+                        url = "https://github.com";
+                        icon = "sh:github";
+                      }
+                      {
+                        title = "Clan Gitea";
+                        url = "https://git.clan.lol";
+                        icon = "sh:gitea";
+                      }
+                    ];
+                  }
+                  {
                     type = "bookmarks";
                     groups = [
                       {
@@ -166,12 +183,11 @@
                 widgets =
                   let
                     locations = [
-                      "Krakow, Poland"
                       "Grenoble, France"
                       "Saint-Michel-de-Maurienne, France"
                     ];
                   in
-                  builtins.map (location: {
+                  map (location: {
                     type = "weather";
                     inherit location;
                     units = "metric";
