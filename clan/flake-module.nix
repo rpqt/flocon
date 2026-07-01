@@ -28,6 +28,7 @@
       authorizedKeys = {
         rpqt_haze = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGa8R8obgptefcp27Cdp9bc2fiyc9x0oTfMsTPFp2ktE rpqt@haze";
         nixbld_haze = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIyNC2sn5m7m52r4kVZqg0T7abqdz5xh/blU3cYtHKAE nixbld@haze";
+        rpqt_verso = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGwlZDKQ8hTeD/ngPSp/7DFjtoySyTaB3bDFQ+jPaPdy rpqt@verso";
       };
     };
   };
