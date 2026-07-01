@@ -9,7 +9,7 @@ include "dms/outputs.kdl"
 input {
     keyboard {
         xkb {
-            layout "fr,us(colemak_dh),us"
+            layout "fr,us(colemak_dh),us,fr(ergol)"
             options "grp:win_space_toggle"
         }
     }
