@@ -83,6 +83,16 @@
     roles.default.machines.genepi = { };
   };
 
+  clan.inventory.instances.auth0 = {
+    module.input = "clan-community";
+    module.name = "authelia";
+
+    roles.default.machines.verbena.settings = {
+      publicHost = "auth.rpqt.fr";
+      domain = "rpqt.fr";
+    };
+  };
+
   # clan.inventory.instances.firefox-syncserver = {
   # module.input = "self";
   # module.name = "@rpqt/firefox-syncserver";
