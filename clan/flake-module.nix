@@ -93,6 +93,16 @@
     };
   };
 
+  clan.inventory.instances.nixbot = {
+    module.input = "self";
+    module.name = "@rpqt/nixbot";
+    roles.default.machines.verbena.settings = {
+      oidcDomain = "auth.rpqt.fr";
+      domain = "nixbot.rpqt.fr";
+      admins = [ "oidc:auth.rpqt.fr:rpqt" ];
+    };
+  };
+
   # clan.inventory.instances.firefox-syncserver = {
   # module.input = "self";
   # module.name = "@rpqt/firefox-syncserver";
