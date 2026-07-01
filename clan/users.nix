@@ -6,11 +6,20 @@
     roles.default.tags = [ "all" ];
     roles.default.settings = {
       user = "rpqt";
+      share = true;
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGa8R8obgptefcp27Cdp9bc2fiyc9x0oTfMsTPFp2ktE rpqt@haze"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICoam8/MoZkXbjXOYAQLtoFDbAAV6JJhPis/KAwJ/7Q5 rpqt@renoir"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGwlZDKQ8hTeD/ngPSp/7DFjtoySyTaB3bDFQ+jPaPdy rpqt@verso"
       ];
+      identity.auth0 = {
+        email = "rpqt@rpqt.fr";
+        groups = [
+          "admins"
+          "users"
+          "nixbot-users"
+        ];
+      };
     };
     roles.default.extraModules = [
       self.nixosModules.user-rpqt
