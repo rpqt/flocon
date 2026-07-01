@@ -1,4 +1,4 @@
-{ self, ... }:
+{ pkgs, self, ... }:
 {
   imports = [
     self.nixosModules.atuin-config
@@ -21,4 +21,7 @@
 
   time.timeZone = "Europe/Paris";
 
+  environment.systemPackages = [
+    pkgs.llama-cpp-rocm
+  ];
 }
