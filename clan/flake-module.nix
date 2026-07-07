@@ -114,4 +114,15 @@
     module.name = "webapps";
     roles.default.tags = [ "desktop" ];
   };
+
+  clan.inventory.instances.wakeonlan = {
+    module.input = "self";
+    module.name = "@shallerclan/wakeonlan";
+    roles.target.machines."verso".settings.interfaces = [
+      {
+        mac = "34:5a:60:42:0b:62";
+      }
+    ];
+    roles.source.tags = [ "home" ];
+  };
 }
