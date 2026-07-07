@@ -114,7 +114,7 @@
                       }
                       {
                         title = "Prometheus";
-                        url = "http://genepi.${tld}:9090";
+                        url = "http://renoir.${tld}:9090/targets";
                         icon = "sh:prometheus";
                       }
                     ];
