@@ -37,7 +37,6 @@ in
 
       admin = {
         api_bind_addr = "[::]:${toString admin_port}";
-        # TODO: use metrics_token
       };
     };
   };
