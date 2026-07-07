@@ -79,10 +79,12 @@
     clan-core.url = "git+https://git.clan.lol/clan/clan-core";
     clan-core.inputs.nixpkgs.follows = "nixpkgs";
     clan-core.inputs.flake-parts.follows = "flake-parts";
+    clan-core.inputs.treefmt-nix.follows = "treefmt-nix";
 
     clan-community.url = "https://git.clan.lol/clan/clan-community/archive/main.tar.gz";
     clan-community.inputs.clan-core.follows = "clan-core";
     clan-community.inputs.flake-parts.follows = "flake-parts";
+    clan-community.inputs.treefmt-nix.follows = "treefmt-nix";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -92,17 +94,23 @@
 
     buildbot-nix.url = "github:nix-community/buildbot-nix";
     buildbot-nix.inputs.nixpkgs.follows = "nixpkgs";
+    buildbot-nix.inputs.treefmt-nix.follows = "treefmt-nix";
 
     nixbot.url = "github:Mic92/nixbot";
     nixbot.inputs.nixpkgs.follows = "nixpkgs";
+    nixbot.inputs.treefmt-nix.follows = "treefmt-nix";
 
     direnv-instant.url = "github:Mic92/direnv-instant";
     direnv-instant.inputs.nixpkgs.follows = "nixpkgs";
     direnv-instant.inputs.flake-parts.follows = "flake-parts";
+    direnv-instant.inputs.treefmt-nix.follows = "treefmt-nix";
 
     terranix.url = "github:terranix/terranix";
     terranix.inputs.nixpkgs.follows = "nixpkgs";
     terranix.inputs.flake-parts.follows = "flake-parts";
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     lanzaboote.url = "github:nix-community/lanzaboote/v1.1.0";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
