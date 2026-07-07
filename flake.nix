@@ -36,6 +36,33 @@
           ./machines/klp1/hardware-configuration.nix
         ];
       };
+
+      perSystem =
+        {
+          self',
+          lib,
+          system,
+          ...
+        }:
+        {
+          checks =
+            let
+              nixosMachines = lib.mapAttrs' (
+                name: config: lib.nameValuePair "nixos-${name}" config.config.system.build.toplevel
+              ) ((lib.filterAttrs (_: config: config.pkgs.system == system)) self.nixosConfigurations);
+              blacklistPackages = [
+                "genepi-installer-sd-image"
+              ];
+              packages = lib.mapAttrs' (n: lib.nameValuePair "package-${n}") (
+                lib.filterAttrs (n: _v: !(builtins.elem n blacklistPackages)) self'.packages
+              );
+              devShells = lib.mapAttrs' (n: lib.nameValuePair "devShell-${n}") self'.devShells;
+              homeConfigurations = lib.mapAttrs' (
+                name: config: lib.nameValuePair "home-manager-${name}" config.activation-script
+              ) (self'.legacyPackages.homeConfigurations or { });
+            in
+            nixosMachines // packages // devShells // homeConfigurations;
+        };
     };
 
   inputs = {
