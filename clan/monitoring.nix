@@ -4,7 +4,7 @@
     module.input = "self";
     module.name = "@rpqt/prometheus";
 
-    roles.scraper.machines.genepi = { };
+    roles.scraper.machines.renoir = { };
     roles.scraper.settings = {
       extraScrapeConfigs = [
         {
@@ -12,27 +12,35 @@
           static_configs = [
             {
               labels.instance = "crocus";
-              targets = [ "crocus.home.rpqt.fr:3903" ];
+              targets = [ "crocus.val:3903" ];
             }
             {
-              labels.instance = "genepi";
-              targets = [ "genepi.home.rpqt.fr:3903" ];
+              labels.instance = "renoir";
+              targets = [ "renoir.val:3903" ];
             }
             {
               labels.instance = "verbena";
-              targets = [ "verbena.home.rpqt.fr:3903" ];
+              targets = [ "verbena.val:3903" ];
             }
           ];
           authorization = {
             type = "Bearer";
-            credentials_file =
-              self.nixosConfigurations.verbena.config.clan.core.vars.generators.garage.files.metrics_token.path;
+            credentials_file = "/run/credentials/prometheus.service/garage_metrics_token_path";
           };
         }
       ];
     };
+    roles.scraper.extraModules = [
+      ({ config, ... }: {
+        systemd.services.prometheus.serviceConfig = {
+          LoadCredential = [
+            "garage_metrics_token_path:${config.clan.core.vars.generators.garage.files.metrics_token.path}"
+          ];
+        };
+      })
+    ];
 
-    roles.target.tags.server = { };
+    roles.target.tags = [ "server" ];
     roles.target.settings = {
       exporters = {
         node = {
