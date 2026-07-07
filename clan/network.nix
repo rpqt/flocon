@@ -52,6 +52,7 @@
     roles.push.machines = {
       haze = { };
       renoir = { };
+      verso = { };
     };
     roles.default.tags = [ "all" ];
     roles.push.extraModules = [
