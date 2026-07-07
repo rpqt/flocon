@@ -5,6 +5,9 @@
   manifest.name = "prometheus";
   manifest.description = "Prometheus metrics collection across the clan network.";
   manifest.readme = builtins.readFile ./README.md;
+  manifest.exports.out = [
+    "endpoints"
+  ];
 
   # Only works with zerotier (until a unified network module is ready)
 
@@ -21,18 +24,28 @@
       {
         settings,
         roles,
+        meta,
+        mkExports,
         ...
       }:
+      let
+        host = "grafana.${meta.domain}";
+      in
       {
+        exports = mkExports {
+          endpoints.hosts = [ host ];
+        };
+
         nixosModule =
-          { config, lib, ... }:
+          { config, pkgs, ... }:
           {
             services.prometheus.enable = true;
+            services.prometheus.checkConfig = "syntax-only";
             services.prometheus.scrapeConfigs =
               let
                 allExporters = lib.unique (
                   lib.concatLists (
-                    lib.map (machine: lib.attrNames machine.settings.exporters) (lib.attrValues roles.target.machines)
+                    map (machine: lib.attrNames machine.settings.exporters) (lib.attrValues roles.target.machines)
                   )
                 );
                 hasExporter =
@@ -44,14 +57,16 @@
                   in
                   {
                     job_name = exporter;
-                    static_configs = lib.map (machineName: {
+                    static_configs = map (machineName: {
                       targets =
                         let
                           targetConfig = self.nixosConfigurations.${machineName}.config;
-                          targetHost = targetConfig.clan.core.vars.generators.zerotier.files.zerotier-ip.value;
+                          isIPv6 = addr: builtins.match ".*:.*:.*" addr != null;
+                          escapeIPv6 = addr: if isIPv6 addr then "[${addr}]" else addr;
+                          targetHost = escapeIPv6 (lib.head targetConfig.clan.core.networking.internalListenAddresses);
                         in
                         [
-                          "[${targetHost}]:${toString targetConfig.services.prometheus.exporters.${exporter}.port}"
+                          "${targetHost}:${toString targetConfig.services.prometheus.exporters.${exporter}.port}"
                         ];
                       labels.instance = machineName;
                     }) machinesWithExporter;
@@ -61,6 +76,54 @@
               (lib.map mkScrapeConfig allExporters) ++ settings.extraScrapeConfigs;
 
             clan.core.state.prometheus.folders = [ "/var/lib/${config.services.prometheus.stateDir}" ];
+
+            # Grafana
+
+            services.grafana = {
+              enable = true;
+              settings = {
+                server = {
+                  http_port = 3000;
+                  domain = host;
+                };
+                security = {
+                  secret_key = config.clan.core.vars.generators.grafana-secret.files.key.path;
+                  csrf_trusted_origins = host;
+                };
+              };
+              provision = {
+                enable = true;
+                datasources = {
+                  settings = {
+                    datasources = [
+                      {
+                        name = "Prometheus";
+                        type = "prometheus";
+                        access = "proxy";
+                        url = "http://127.0.0.1:${toString config.services.prometheus.port}"; # TODO: decouple
+                        isDefault = true;
+                      }
+                    ];
+                  };
+                };
+              };
+            };
+
+            clan.core.vars.generators.grafana-secret = {
+              files.key = { };
+              runtimeInputs = [
+                pkgs.openssl
+              ];
+              script = "openssl rand -hex 32 > $out/key";
+            };
+
+            services.nginx.virtualHosts.${host} = {
+              forceSSL = true;
+              locations."/" = {
+                proxyPass = "http://127.0.0.1:${toString config.services.grafana.settings.server.http_port}";
+                proxyWebsockets = true;
+              };
+            };
           };
       };
   };
@@ -96,12 +159,18 @@
       {
         nixosModule =
           { config, lib, ... }:
+          let
+            isIPv6 = addr: builtins.match ".*:.*:.*" addr != null;
+            escapeIPv6 = addr: if isIPv6 addr then "[${addr}]" else addr;
+          in
           {
             services.prometheus.exporters = builtins.mapAttrs (
               name: exporterSettings:
               exporterSettings
               // {
                 enable = true;
+                listenAddress = escapeIPv6 (lib.head config.clan.core.networking.internalListenAddresses); # TODO: what if there are multiple addresses?
+                openFirewall = true;
               }
             ) settings.exporters;
 
