@@ -101,6 +101,14 @@
       domain = "nixbot.rpqt.fr";
       admins = [ "oidc:auth.rpqt.fr:rpqt" ];
     };
+    roles.default.extraModules = [
+      {
+        services.nixbot = {
+          evalWorkerCount = 2;
+          evalMaxMemorySize = 4096; # per-worker memory limit in MiB
+        };
+      }
+    ];
   };
 
   # clan.inventory.instances.firefox-syncserver = {
