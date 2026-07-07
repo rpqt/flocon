@@ -34,7 +34,7 @@ language-servers = ["deno-lsp"]
 
 [[language]]
 name = "nix"
-formatter = { command = "nixfmt" }
+formatter = { command = "nixfmt", args = ["-"] }
 auto-format = true
 language-servers = [ "nixd" ]
 
