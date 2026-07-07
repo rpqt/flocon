@@ -30,8 +30,6 @@
       tags = [
         "garage"
         "server"
-        # FIXME: find a way to protect the public DNS against DoS
-        # "dns"
       ];
     };
     verso = {
