@@ -1,13 +1,26 @@
-{ self, ... }:
+{ self, inputs, ... }:
 {
+  imports = [
+    inputs.terranix.flakeModule
+  ];
+
   perSystem =
-    { pkgs, ... }:
+    { pkgs, inputs', ... }:
     {
       terranix.terranixConfigurations.infra = {
-        terraformWrapper.package = pkgs.opentofu.withPlugins (p: [
-          p.hashicorp_external
-          p.hetznercloud_hcloud
-        ]);
+        terraformWrapper = {
+          package = pkgs.opentofu.withPlugins (p: [
+            p.hashicorp_external
+            p.hetznercloud_hcloud
+          ]);
+          extraRuntimeInputs = [
+            inputs'.clan-core.packages.clan-cli
+          ];
+          prefixText = ''
+            HCLOUD_TOKEN="$(clan secrets get hcloud-token)"
+            export HCLOUD_TOKEN
+          '';
+        };
 
         extraArgs = { inherit (self) infra; };
         modules = [

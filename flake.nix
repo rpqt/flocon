@@ -12,7 +12,6 @@
       imports = [
         clan-core.flakeModules.default
         inputs.home-manager.flakeModules.home-manager
-        inputs.terranix.flakeModule
         ./clan/flake-module.nix
         ./clanServices/flake-module.nix
         ./devShells/flake-module.nix
