@@ -5,7 +5,7 @@
   ...
 }:
 {
-  imports = [ self.inputs.dms-plugin-registry.modules.default ];
+  imports = [ self.inputs.dms-plugin-registry.nixosModules.default ];
 
   programs.niri.enable = true;
 
