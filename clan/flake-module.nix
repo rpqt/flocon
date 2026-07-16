@@ -6,6 +6,7 @@
     ./machines.nix
     ./monitoring.nix
     ./network.nix
+    ./syncthing.nix
     ./users.nix
   ];
 
